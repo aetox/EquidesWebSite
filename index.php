@@ -7,6 +7,8 @@
     <title>Equides</title>
 </head>
 <body>
-    
+    <?php
+    echo ("Salut");
+    ?>
 </body>
 </html>

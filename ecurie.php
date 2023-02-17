@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 
 
-<?php echo ("Accueil"); ?>
+<?php echo ("Ecurie"); ?>
 
 
 <?php include("footer.php"); ?>

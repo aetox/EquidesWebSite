@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.accueil,form#accueil_connexion {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+
+    background-color: rgba(207, 113, 3, 1);
+    font-family: 'Asap Condensed', sans-serif;
+
+    color: white;
+
+}
+
+form#accueil_connexion{
+
+    background-color: rgba(217, 217, 217, 0.8);
+    
+
+    border-radius: 20px;
+    padding: 30px;
+}
+
+form#accueil_connexion input {
+
+    width: 209px;
+    height: 46px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+   
+}
+
+form#accueil_connexion input#remember_me  {
+
+    width: 15px ;
+    height: 15px ;   
+}
+
+form#accueil_connexion label {
+
+    color: rgba(0, 0, 0, 0.5);
+}
+
+form#accueil_connexion input::placeholder {
+
+    font-family: 'Asap Condensed', sans-serif;
+    padding-left: 20px;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+form#accueil_connexion button {
+
+    width: 156px;
+    height: 46px;
+    margin-top: 9px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-family: 'Asap Condensed', sans-serif;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: rgba(0, 109, 31, 1);
+    transition: 0.5s;
+
+}
+
+form#accueil_connexion button:hover{
+
+    color: rgba(0, 109, 31, 1) ;
+    background-color: white;
+    font-size: 17px;
+    border: 3px solid rgba(0, 109, 31, 1);
+    
+}
+
+form#accueil_connexion a {
+
+    text-decoration: none;
+    padding-top: 15px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.accueil a {
+
+    text-decoration: none;
+    padding-top: 15px;
+    font-weight:600;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: underline;
+}
+

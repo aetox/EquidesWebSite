@@ -2,7 +2,8 @@
 
 <div class="accueil">
 
-    <img src="#" alt="Logo">
+    <img src="ASSETS/logo_equides.png" alt="Logo">
+    <h1>EQUIDES</h1>
 
         <form name="accueil_connexion" id="accueil_connexion">
 
@@ -29,3 +30,4 @@
 
 
 <?php include("footer.php"); ?>
+ 

@@ -39,3 +39,17 @@ header ul li a {
     letter-spacing: 1px;
    
 }
+
+nav {
+
+    background-color: rgba(207, 113, 3, 1);
+}
+
+nav a{
+
+    font-family: 'Asap Condensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px !important;
+    font-weight: bold !important;
+   
+}

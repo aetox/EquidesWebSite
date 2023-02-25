@@ -5,32 +5,26 @@ body {
     padding: 0;
 }
 
-.accueil,form#accueil_connexion {
+/*     -----     CLASSE CONNEXION & INSCRIPTION     -----     */
 
+.connexion, #form_connexion, .inscription, #form_inscription {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-
     background-color: rgba(207, 113, 3, 1);
     font-family: 'Asap Condensed', sans-serif;
-
     color: white;
-
 }
 
-form#accueil_connexion{
-
+#form_connexion, #form_inscription{
     background-color: rgba(217, 217, 217, 0.8);
-    
-
     border-radius: 20px;
     padding: 30px;
 }
 
-form#accueil_connexion input {
-
+#form_connexion input, #form_inscription input {
     width: 209px;
     height: 46px;
     border-radius: 20px;
@@ -39,32 +33,25 @@ form#accueil_connexion input {
     margin-top: 10px;
     margin-bottom: 10px;
     font-family: 'Asap Condensed', sans-serif;
-
 }
 
-
-form#accueil_connexion input#remember_me  {
-
+#form_connexion #remember_me ,#form_inscription #inscription_accept_conditions  {
     width: 15px ;
     height: 15px ;   
 }
 
-form#accueil_connexion label {
-
+#form_connexion label, #form_inscription label {
     color: rgba(0, 0, 0, 0.5);
-   
 }
 
-form#accueil_connexion input::placeholder {
-
+#form_connexion input::placeholder, #form_inscription input::placeholder {
     font-family: 'Asap Condensed', sans-serif;
     text-transform: uppercase;
     font-style: italic;
     letter-spacing: 1px;
 }
 
-form#accueil_connexion button {
-
+#form_connexion button, #form_inscription button {
     width: 156px;
     height: 46px;
     margin-top: 9px;
@@ -78,43 +65,39 @@ form#accueil_connexion button {
     letter-spacing: 2px;
     background-color: rgba(0, 109, 31, 1);
     transition: 0.5s;
-
 }
 
-form#accueil_connexion button:hover{
-
-    color: rgba(0, 109, 31, 1) ;
-    background-color: white;
-    font-size: 17px;
-    border: 3px solid rgba(0, 109, 31, 1);
-    
+#form_connexion button:hover, #form_inscription button:hover{
+    color: white;
+    background-color: rgb(30, 179, 0);
+    letter-spacing: 3.5px;
+    border: 0px solid rgba(0, 109, 31, 1);
 }
 
-form#accueil_connexion a {
-
+#form_connexion a {
     text-decoration: none;
     padding-top: 15px;
     color: rgba(0, 0, 0, 0.5);
 }
 
+#form_connexion a:hover {
+    text-decoration: underline;
+}
 
-.accueil img {
-
+.connexion img, .inscription img {
     width: 150px;
 }
 
-
-.accueil h1 {
-
+.connexion h1, .inscription h1 {
     font-style: italic;
     letter-spacing: 1px;
-
 }
 
+.connexion p, .inscription p {
+    margin-top: 10px;
+}
 
-
-.accueil a {
-
+.connexion a, .inscription a {
     text-decoration: none;
     padding-top: 15px;
     font-weight:600;
@@ -123,4 +106,10 @@ form#accueil_connexion a {
     text-decoration: underline;
     letter-spacing: 1px;
 }
+
+.connexion a:hover, .inscription a:hover {
+    color: rgba(0, 109, 31, 1);
+}
+
+
 

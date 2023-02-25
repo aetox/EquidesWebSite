@@ -1,11 +1,11 @@
 <?php include("header.php"); ?>
 
-<div class="accueil">
+<div class="connexion">
 
     <img src="ASSETS/logo_equides.png" alt="Logo">
     <h1>EQUIDES</h1>
 
-        <form name="accueil_connexion" id="accueil_connexion">
+        <form name="form_connexion" id="form_connexion">
 
             <h1>Connexion</h1>
 

@@ -1,3 +1,6 @@
+<?php require("connexion_bdd.php"); ?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,6 +14,7 @@
     <title>Equides</title>
 </head>
 <body>
+
    
     <header>
         <!-- <img src="ASSETS/logo_equides.png" alt="Logo">

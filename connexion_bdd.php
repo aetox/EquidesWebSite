@@ -1,7 +1,7 @@
 <?php
-           $servername = 'phpmyadmin.cluster030.hosting.ovh.net:20184';
-           $username = 'tqbjsdmportfolio';
-           $password = '1hGs2iBMiODynq0yr0RkvO0bUzk7NN';
+           $servername = 'localhost';
+           $username = 'root';
+           $password = 'root';
            
 
            //On essaie de se connecter
@@ -17,23 +17,5 @@
            catch(PDOException $e){
              echo "Erreur : " . $e->getMessage();
            }
-           
-          //  $host = "phpmyadmin.cluster030.hosting.ovh.net";
-          //  $user = "tqbjsdmportfolio";
-          //  $password = "1hGs2iBMiODynq0yr0RkvO0bUzk7NN";
-          //  $dbname = "tqbjsdmportfolio";
-          //  $port = "20184";
-          //  $options = array(
-          //    PDO::MYSQL_ATTR_SSL_CA => '/<path to>/ca.pem',
-          //    PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => true
-          //  );
-           
-          //  try {
-          //    $conn = new PDO("mysql:host=$host; port=$port; dbname=$dbname", $user, $password, $options);
-          //    var_dump($conn->query("SHOW STATUS LIKE 'Ssl_cipher';")->fetchAll());
-          //    $conn = null;
-          //  }
-          //  catch (Throwable $e) {
-          //    echo "Captured Throwable for connection : " . $e->getMessage() . PHP_EOL;
-          //  }
+  
         ?> 

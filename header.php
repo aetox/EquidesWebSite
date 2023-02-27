@@ -14,17 +14,7 @@
     <title>Equides</title>
 </head>
 <body>
-
-   
     <header>
-        <!-- <img src="ASSETS/logo_equides.png" alt="Logo">
-        <ul>
-            <li><a href="index.php">Accueil</a></li>
-            <li><a href="equides.php">Equides</a></li>
-            <li><a href="ecurie.php">Ecurie</a></li>
-            <li><a href="profil.php">Mon profil</a></li>
-        </ul> -->
-        </header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">
@@ -43,5 +33,5 @@
                 </div>
             </div>
         </nav>
-  
+    </header>
     

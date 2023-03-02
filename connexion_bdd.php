@@ -1,21 +1,13 @@
 <?php
-           $servername = 'localhost';
-           $username = 'root';
-           $password = 'root';
-           
+$BDD = array();
+$BDD['host'] = "localhost";
+$BDD['user'] = "root";
+$BDD['pass'] = "root";
+$BDD['db'] = "tqbjsdmportfolio";
 
-           //On essaie de se connecter
-           try{
-               $conn = new PDO("mysql:host=$servername;dbname=tqbjsdmportfolio", $username, $password);
-               //On définit le mode d'erreur de PDO sur Exception
-               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              // echo 'Connexion réussie';
-           }
-           
-           /*On capture les exceptions si une exception est lancée et on affiche
-            *les informations relatives à celle-ci*/
-           catch(PDOException $e){
-             echo "Erreur : " . $e->getMessage();
-           }
-  
-        ?> 
+$mysqli = mysqli_connect($BDD['host'], $BDD['user'], $BDD['pass'], $BDD['db']);
+if(!$mysqli) {
+    echo "Connexion non établie.";
+    exit;
+}
+?>

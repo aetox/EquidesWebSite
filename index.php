@@ -3,28 +3,15 @@
 
 
 
-<?php
-        // affiche message d'erreur   
-        if(isset($info)){ ?>
-            <?php 
-
-            for($i = 0; $i < count($info); ++$i) { ?>
-            <p class="request_message" style ="color: red">
-            <?= print_r($info[$i],true); ?>
-            </p>
-            
-            <?php
-            }
-        }
-?> 
 
     
 <div class="connexion">
 
+
     <img src="ASSETS/logo_equides.png" alt="Logo">
     <h1>EQUIDES</h1>
 
-        <form name="form_connexion" id="form_connexion" action ="index.php" method="post">
+        <form name="form_connexion" id="form_connexion" method="post">
 
             <h1>Connexion</h1>
 

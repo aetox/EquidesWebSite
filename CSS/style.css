@@ -7,7 +7,7 @@ body {
 
 /*     -----     CLASSE CONNEXION & INSCRIPTION     -----     */
 
-.connexion, #form_connexion, .inscription, #form_inscription {
+.connexion, #form_connexion, .inscription, #form_inscription, .ajoutEquides, #formAjoutEquides {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,13 +18,13 @@ body {
     color: white;
 }
 
-#form_connexion, #form_inscription{
+#form_connexion, #form_inscription, #formAjoutEquides{
     background-color: rgba(217, 217, 217, 0.8);
     border-radius: 20px;
     padding: 30px;
 }
 
-#form_connexion input, #form_inscription input {
+#form_connexion input, #form_inscription input, #formAjoutEquides input {
     width: 209px;
     height: 46px;
     border-radius: 20px;
@@ -40,7 +40,7 @@ body {
     height: 15px ;   
 }
 
-#form_connexion label, #form_inscription label {
+#form_connexion label, #form_inscription label, #formAjoutEquides label {
     color: rgba(0, 0, 0, 0.5);
 }
 
@@ -51,7 +51,7 @@ body {
     letter-spacing: 1px;
 }
 
-#form_connexion button, #form_inscription button {
+#form_connexion button, #form_inscription button, #formAjoutEquides button {
     width: 156px;
     height: 46px;
     margin-top: 9px;
@@ -67,7 +67,7 @@ body {
     transition: 0.5s;
 }
 
-#form_connexion button:hover, #form_inscription button:hover{
+#form_connexion button:hover, #form_inscription button:hover, #formAjoutEquides button:hover{
     color: white;
     background-color: rgb(30, 179, 0);
     letter-spacing: 3.5px;
@@ -84,20 +84,20 @@ body {
     text-decoration: underline;
 }
 
-.connexion img, .inscription img {
+.connexion img, .inscription img, .ajoutEquides img {
     width: 150px;
 }
 
-.connexion h1, .inscription h1 {
+.connexion h1, .inscription h1, .ajoutEquides h1 {
     font-style: italic;
     letter-spacing: 1px;
 }
 
-.connexion p, .inscription p {
+.connexion p, .inscription p, .ajoutEquides p {
     margin-top: 10px;
 }
 
-.connexion a, .inscription a {
+.connexion a, .inscription a, .ajoutEquides a {
     text-decoration: none;
     padding-top: 15px;
     font-weight:600;
@@ -107,7 +107,7 @@ body {
     letter-spacing: 1px;
 }
 
-.connexion a:hover, .inscription a:hover {
+.connexion a:hover, .inscription a:hover, .ajoutEquides a:hover {
     color: rgba(0, 109, 31, 1);
 }
 

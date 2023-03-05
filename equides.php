@@ -29,7 +29,7 @@
 		<h1>Equides</h1>
 		<h1>Ajouter un equide</h1>
 
-		<form method="post" id="formAjoutEquides" name="formajoutEquides">
+		<form method="post" id="formAjoutEquides" name="formajoutEquides" enctype="multipart/form-data">
 
 			<label for="numSire">Numero de sire :</label>
 			<input type="number" id="numSire" name="numSire" required><br>
@@ -72,6 +72,9 @@
 
 			<label for="mere_equide">Mere :</label>
 			<input type="text" id="mere_equide" name="mere_equide" required><br>
+
+			<label for="photo_equides">Photo de l'equide :</label>
+			<input type="file" id="photo_equide" name="photo_equide" required><br>
 
 			<button type="submit" name="ajouter">Ajouter </button>
 

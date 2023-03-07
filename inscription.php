@@ -1,15 +1,33 @@
 <?php include("header.php"); ?>
+<?php include_once('php/user_functions/inscription_fct.php') ?>
+
 
 <div class="inscription">
 
     <img src="ASSETS/logo_equides.png" alt="Logo">
     <h1>EQUIDES</h1>
 
-        <form name="form_inscription" id="form_inscription">
+        <form name="form_inscription" id="form_inscription" method="post">
+
+            <?php
+                // affiche message d'erreur   
+                if(isset($info)){ ?>
+                    <?php 
+
+                    for($i = 0; $i < count($info); ++$i) { ?>
+                    <p class="request_message" style ="color: red">
+                    <?= print_r($info[$i],true); ?>
+                    </p>
+                    
+                    <?php
+                    }
+                }
+            ?> 
+
 
             <h1>Inscription</h1>
 
-            <input type="text" name="name" id="name_inscription" placeholder="nom" required>
+            <input type="text" name="name" id="name_inscription" placeholder="nom" autofocus required>
             <input type="text" name="surname" id="surname_inscription" placeholder="prénom" required>
             <input type="mail" name="mail" id="mail_inscription" placeholder="Mail" required> 
             <!-- Les id doivent être les mêmes pour les input connexion ou inscription ? Pour l'instant je l'ai ai changé avec "_inscription" -->
@@ -28,4 +46,6 @@
     <p>Déjà un compte ? <a href="index.php"> Cliquez-ici !</a></p> 
 
 </div>
+
+<?php include("footer.php"); ?>
 

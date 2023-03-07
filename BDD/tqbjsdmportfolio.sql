@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : dim. 05 mars 2023 à 14:30
+-- Généré le : mar. 07 mars 2023 à 21:05
 -- Version du serveur : 5.7.24
 -- Version de PHP : 8.0.1
 
@@ -134,9 +134,8 @@ INSERT INTO `equide` (`numSIRE`, `numUELN`, `id_detenteur`, `nom_equide`, `dateN
 (1, 1, 0, 'equide1', '2023-02-24', 'France', 'Brun de Neully', 'Equitile_stud', 'Paname', 'Mâle', 'robe brune', 'Gilles le naisseur', 2, 3),
 (2, 2333443, 3, 'equide2', '2023-02-23', 'France', 'Blonde Heaven', 'Equitile_stud', 'Nancy', 'Mâle', 'robe blonde', 'Pierre le naisseur', 2, 3),
 (3, 34443, 3, 'equide3', '2023-02-22', 'France', 'Rousse de Tyse', 'Equitile_stud', 'Paris', 'Femelle', 'robe rousse', 'Edouard le naisseur', 2, 3),
-(446, 456, 3, 'test 2', '2023-03-05', 'Meta', 'ee', 'ee', 'ee', 'M', 'ee', 'ee', 1, 1),
-(123456, 123456, 4, 'Pedo', '2023-03-17', 'Mtz', 'Cheval', 'Pure', 'Paname', 'M', 'Bleu', 'Adolf H', 1, 1),
-(1234555, 132, 4, 'Jesus', '2023-03-03', 'Metz', 'Batard', 'bruh', 'Metz', 'M', 'Bleu', 'Jesus', 1, 1);
+(12346, 12346, 4, 'Test final', '2023-03-25', 'aaa', 'a', 'a', 'a', 'M', 'a', 'a', 1, 1),
+(653215, 654321, 4, 'Cheval différent', '2023-03-09', 'Metz', 'Pute', 'Je saiss po', 'Lille', 'M', 'Bleu', 'aighttt', 135468, 6454);
 
 -- --------------------------------------------------------
 
@@ -169,23 +168,17 @@ INSERT INTO `fiche_transport` (`id_deplacement`, `entree_transport`, `lieuEntree
 
 CREATE TABLE `image` (
   `id` int(11) NOT NULL,
-  `img` varchar(1000) NOT NULL
+  `img` varchar(1000) NOT NULL,
+  `id_equide` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `image`
 --
 
-INSERT INTO `image` (`id`, `img`) VALUES
-(1, '1678025078'),
-(7, '1678026123cheval-mustang.jpg'),
-(8, '1678026190cheval-mustang.jpg'),
-(9, '1678026286cheval-mustang.jpg'),
-(10, '1678026443cheval-mustang.jpg'),
-(11, '1678026484cheval-mustang.jpg'),
-(12, '1678026546cheval-mustang.jpg'),
-(13, '1678026549cheval-mustang.jpg'),
-(14, '1678026575cheval-mustang.jpg');
+INSERT INTO `image` (`id`, `img`, `id_equide`) VALUES
+(74, '1678219743cheval-mustang.jpg', 12346),
+(75, '1678221844870x489_origines-equides-cheval.jpg', 653215);
 
 -- --------------------------------------------------------
 
@@ -593,7 +586,7 @@ ALTER TABLE `fiche_transport`
 -- AUTO_INCREMENT pour la table `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT pour la table `lieudetention`

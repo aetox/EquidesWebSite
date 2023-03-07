@@ -3,6 +3,8 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
+$site_root = $_SERVER['DOCUMENT_ROOT'];
+
 ?>
 <?php require("connexion_bdd.php");?>
 

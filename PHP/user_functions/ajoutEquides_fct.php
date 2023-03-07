@@ -28,38 +28,38 @@ if (isset($_POST["ajouter"])) {
 
   //Pour l'image on définit un nom temporaire :
   
-  $tpm_nom = $_FILES['photo_equide']['name'];
+  $tpm_nom = $_FILES['photo_equide']['tmp_name'];
   $time = time();
 
   // On renome l'image avec le format : heure + nom de l'image 
   
   $new_img_name = $time.$img_equide;
   
-  $deplacer_img = move_uploaded_file($tpm_nom,"..\EquidesWebSite\ASSETS\img_bdd".$new_img_name);
+  move_uploaded_file($tpm_nom,"$site_root/EquidesWebSite/ASSETS/img_bdd/".$new_img_name);
 
 
   // Requette pour ajouter l'image dans la bdd
-  $sqlImg ="INSERT INTO image VALUES (NULL,'$new_img_name')";
+  $sqlImg ="INSERT INTO image VALUES (NULL,'$new_img_name','$numSire')";
   $result_img = mysqli_query($mysqli,$sqlImg) or die(mysqli_error($mysqli));
   
-  if(mysqli_num_rows($result_img) > 0){
-    while($data = mysqli_fetch_assoc($result_img)){
-        array_push($info, "img ajouté");    }
-  }else{
-    array_push($info, "Erreur");
+  if ($result_img !== false) {
+    $insert_id = mysqli_insert_id($mysqli);
+    array_push($info, "img ajouté avec l'ID : " . $insert_id);
+  } else {
+    array_push($info, "Erreur img");
   }
 
   // Prépare la requête SQL pour insérer les données dans la table "equide"
   $sql = "INSERT INTO equide (numSire, numUELN,id_detenteur, nom_equide, dateNaissance_equide, lieuNaissance_equide, race_equide, stud_equide, lieuElevage_equide, sexe_equide, robe_equide, naisseurVeterinaire_equide, pere_equide, mere_equide)
   VALUES ('$numSire', '$numUELN','$detenteur', '$nom_equide', '$dateNaissance_equide', '$lieuNaissance_equide', '$race_equide', '$stud_equide', '$lieuElevage_equide', '$sexe_equide', '$robe_equide', '$naisseurVeterinaire_equide', '$pere_equide', '$mere_equide')";
 
-  $result_info = mysqli_query($mysqli,$sql);
+  $result_info = mysqli_query($mysqli,$sql) or die (mysqli_error($mysqli));
   
-  if(mysqli_num_rows($result_info) > 0){
-    while($data = mysqli_fetch_assoc($result_info)){
-        array_push($info, "Equide ajouté");    }
-  }else{
-    array_push($info, "Erreur");
+  if ($result_info !== false) {
+    $insert_id = mysqli_insert_id($mysqli);
+    array_push($info, "img ajouté avec l'ID : " . $insert_id);
+  } else {
+    array_push($info, "Erreur img");
   }
 }
 

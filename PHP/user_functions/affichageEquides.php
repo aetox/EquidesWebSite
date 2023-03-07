@@ -11,14 +11,29 @@ $result = mysqli_query($mysqli,$sql) or die(mysqli_error($sql));
 
 
 
+
 if (mysqli_num_rows($result) > 0) {      
 
-    while($equides = mysqli_fetch_array($result)){?>
+    while($equides = mysqli_fetch_array($result)){
 
+    $idEquide = $equides['numSIRE'];
+        
+    $sqlImg = "SELECT * FROM `image` WHERE id_equide='$idEquide'";
+    $resulat_img = mysqli_query($mysqli,$sqlImg) or die (mysqli_error($mysqli));
+     
+    $lienPdp = '';
+    if(mysqli_num_rows($resulat_img) > 0) {
+        while($pdp = mysqli_fetch_array($resulat_img)){
+                $lienPdp = $pdp['img'];
+        }
+    }else {
+        
+    }
+    ?>
     
             <div class="Equide card" >
 
-                <img src="../EquidesWebSite/ASSETS/cheval-mustang.jpg" class="card-img-top" alt="Cheval">
+                <img src="../EquidesWebSite/ASSETS/img_bdd/<?php echo $lienPdp?>" class="card-img-top" alt="Equidé n°<?php echo $idEquide?>">
                     <div class="card-body">
                     
                         <h5 class="card-title"><?php echo $equides['nom_equide'] ?></h5>

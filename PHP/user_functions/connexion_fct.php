@@ -33,6 +33,7 @@ if(isset($_POST['mail'],$_POST['password'])){//l'utilisateur à cliqué sur "S'i
             // stock dans une variable SESSION ( session qui reste active avec session_start()) les infos de l'utlisateur 
                 $_SESSION['id_detenteur'] = $rowData['id_detenteur'];
                 $_SESSION['prenom_detenteur'] = $rowData['prenom_detenteur'];
+                $_SESSION['sire_detenteur'] = $rowData['sire'];
                 $_SESSION['nom_detenteur'] = $rowData['nom_detenteur'];
                 $_SESSION['mail_detenteur'] = $rowData['mail_detenteur'];
                 $_SESSION['password_detenteur'] = $rowData['password_detenteur'];

@@ -6,12 +6,26 @@ div#Equides {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 div.Equide {
 
-    width: 250px;
+    width: 300px;
     margin: 30px;
 
 
 }
+
+
+/* Permet d'afficher ou non le formulaire en css */
+
+#ajoutEquides {
+    display: none ;
+}
+
+#ajoutEquides.display {
+
+    display: flex ;
+}
+

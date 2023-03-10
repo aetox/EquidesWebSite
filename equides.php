@@ -18,16 +18,18 @@
             ?> 
 
 
+<h1>Mes Equidés</h1>
+
 <div id="Equides">
 
 	<?php include_once('php/user_functions/affichageEquides.php') ?>
 
 
 </div>
-			
-<div class="ajoutEquides">
-		<h1>Equides</h1>
-		<h1>Ajouter un equide</h1>
+		
+<h3 id="ajoutEquideH3">Ajouter un Equidés</h3>
+
+<div id="ajoutEquides" >
 
 		<form method="post" id="formAjoutEquides" name="formajoutEquides" enctype="multipart/form-data">
 

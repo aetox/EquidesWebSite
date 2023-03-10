@@ -32,24 +32,26 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
 <?php if(isset($_SESSION['logged_user'])) { ?>
 
     <header>
-        <nav class="navbar navbar-expand-lg justify-content-end">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="equides.php">
-                    <img src="ASSETS/logo_equides.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-right">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="equides.php">
+                <img src="ASSETS/logo_equides.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-right">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav text-right">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto justify-content-end"> <!-- Utilisation de la classe "justify-content-end" pour aligner à droite -->
                     <a class="nav-link text-uppercase active color-white" aria-current="page" href="equides.php">Accueil</a>
                     <a class="nav-link text-uppercase" href="equides.php">Equides</a>
                     <a class="nav-link text-uppercase" href="ecurie.php">Ecurie</a>
                     <a class="nav-link text-uppercase" href="profil.php">Mon profil</a>
                     <a class="nav-link text-uppercase" href="php/user_functions/deconnexion.php">Déconnexion</a>
                 </div>
-                </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
+
+
    <?php }else {}; ?>

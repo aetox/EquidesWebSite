@@ -17,15 +17,39 @@ div.Equide {
 
 }
 
-
 /* Permet d'afficher ou non le formulaire en css */
 
 #ajoutEquides {
     display: none ;
+    
 }
 
 #ajoutEquides.display {
 
+    padding: 20px;
     display: flex ;
 }
 
+
+h3#ajoutEquideH3:hover{
+    
+    letter-spacing: 1px;
+}
+
+
+/* Croix pour fermer le formulaire */
+
+#formAjoutEquides span {
+
+    position: relative;
+    right: -120px;
+    top : -20px;
+    transition: 0.5;
+}
+
+#formAjoutEquides span:hover{
+
+    transform: rotate(180deg);
+    transition: 0.5s;    
+
+}

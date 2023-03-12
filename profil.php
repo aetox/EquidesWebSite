@@ -18,6 +18,8 @@
 
 <!-- Styliser le profil -->
 
+<h1>Mon Profil</h1>
+
 <div class="Equide card" > 
 
 

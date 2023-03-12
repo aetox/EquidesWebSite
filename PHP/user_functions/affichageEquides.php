@@ -52,6 +52,8 @@ if (mysqli_num_rows($result) > 0) {
                                 <li class="list-group-item">Pere : <?php echo $equides['pere_equide'] ?> </li>
                                 <li class="list-group-item">Mere : <?php echo $equides['mere_equide'] ?> </li>
                                 <a href="PHP/user_functions/suppressionEquide.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Suppression</a>
+                                <a href="updateEquide.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Modification</a>
+
                         </ul> 
                     </div>
                 </div>

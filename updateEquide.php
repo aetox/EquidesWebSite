@@ -1,4 +1,6 @@
-<?php include("header.php");
+<?php
+$titre ="Modification";
+include("header.php");
 include_once('php/user_functions/updateEquide_fct.php');
 
 $info = array();
@@ -63,6 +65,6 @@ if (mysqli_num_rows($resultOld) > 0) {
 			<input type="text" id="mere_equide" name="mere_equide" value="<?php echo $oldequides['mere_equide']?>"  required><br>
 
 
-			<button type="submit" name="ajouter">Ajouter </button>
+			<button type="submit" name="ajouter">Mettre à jour </button>
     		</form>
 	</div>

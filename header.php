@@ -4,13 +4,8 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 $site_root = $_SERVER['DOCUMENT_ROOT'];
-
 ?>
 <?php require("connexion_bdd.php");?>
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -26,7 +21,8 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="icon" type="image/png" href="ASSETS/ico/ico.png" />
-    <title>Equides</title>
+    <!-- Permet d'avoir par défaut le titre Equide avec le ?? -->
+    <title><?= $titre ?? "Equides"?></title>
 </head>
 <body>
 
@@ -44,11 +40,12 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto justify-content-end"> <!-- Utilisation de la classe "justify-content-end" pour aligner à droite -->
-                    <a class="nav-link text-uppercase active color-white" aria-current="page" href="accueil.php">Accueil</a>
-                    <a class="nav-link text-uppercase" href="equides.php">Equides</a>
-                    <a class="nav-link text-uppercase" href="ecurie.php">Ecurie</a>
-                    <a class="nav-link text-uppercase" href="profil.php">Mon profil</a>
-                    <a class="nav-link text-uppercase" href="php/user_functions/deconnexion.php">Déconnexion</a>
+                    <a class="nav-link text-uppercase text-white" aria-current="page" href="accueil.php">Accueil</a>
+                    <a class="nav-link text-uppercase text-white" href="equides.php">Equides</a>
+                    <a class="nav-link text-uppercase text-white" href="ecurie.php">Ecurie</a>
+                    <a class="nav-link text-uppercase text-white" href="carnet_transport.php">Transport</a>
+                    <a class="nav-link text-uppercase text-white" href="profil.php">Mon profil</a>
+                    <a class="nav-link text-uppercase text-white" href="php/user_functions/deconnexion.php">Déconnexion</a>
                 </div>
             </div>
         </div>

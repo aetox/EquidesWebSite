@@ -47,7 +47,7 @@ if(isset($_POST['mail'],$_POST['password'])){//l'utilisateur à cliqué sur "S'i
                 $_SESSION['logged_user'] = true;
               }
              } 
-            header("Location: ../EquidesWebSite/profil.php");
+            header("Location: ../EquidesWebSite/accueil.php");
         }else{
           array_push($info, "L'email ou le mot de passe est incorrect");
         }

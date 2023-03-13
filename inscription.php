@@ -1,10 +1,13 @@
-<?php include("header.php"); ?>
+<?php
+$titre ="Inscription";
+include("header.php");
+?>
 <?php include_once('php/user_functions/inscription_fct.php') ?>
 
 
 <div class="inscription">
 
-    <img src="ASSETS/logo_equides.png" alt="Logo">
+    <img src="ASSETS/ico/logo_equides.png" alt="Logo">
     <h1>EQUIDES</h1>
 
         <form name="form_inscription" id="form_inscription" method="post" enctype="multipart/form-data">

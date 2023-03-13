@@ -1,8 +1,14 @@
-<?php include("header.php"); ?>
+<?php
+$titre ="Mes équides";
+include("header.php");
+?>
 <?php include_once('php/user_functions/ajoutEquides_fct.php') ?>
 
 
-            <?php
+
+<h1>Mes Equidés</h1>
+
+<?php
                 // affiche message d'erreur   
                 if(isset($info)){ ?>
                     <?php 
@@ -15,15 +21,13 @@
                     <?php
                     }
                 }
-            ?> 
-
-
-<h1>Mes Equidés</h1>
-
+            ?>
+			
 <div id="Equides">
 
-	<?php include_once('php/user_functions/affichageEquides.php') ?>
 
+	<?php include_once('php/user_functions/affichageEquides.php') ?>
+	
 
 </div>
 		

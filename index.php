@@ -4,9 +4,6 @@ include("header.php");
 ?>
 <?php include_once('php/user_functions/connexion_fct.php') ?>
 
-
-
-
     
 <div class="connexion">
 

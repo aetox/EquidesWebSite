@@ -1,8 +1,14 @@
-<?php include("header.php"); ?>
+<?php
+$titre ="Mes équides";
+include("header.php");
+?>
 <?php include_once('php/user_functions/ajoutEquides_fct.php') ?>
 
 
-            <?php
+
+<h1>Mes Equidés</h1>
+
+<?php
                 // affiche message d'erreur   
                 if(isset($info)){ ?>
                     <?php 
@@ -15,22 +21,22 @@
                     <?php
                     }
                 }
-            ?> 
-
-
+            ?>
+			
 <div id="Equides">
 
-	<?php include_once('php/user_functions/affichageEquides.php') ?>
 
+	<?php include_once('php/user_functions/affichageEquides.php') ?>
+	
 
 </div>
-			
-<div class="ajoutEquides">
-		<h1>Equides</h1>
-		<h1>Ajouter un equide</h1>
+		
+<h3 id="ajoutEquideH3">Ajouter un Equidés</h3>
+
+<div id="ajoutEquides" >
 
 		<form method="post" id="formAjoutEquides" name="formajoutEquides" enctype="multipart/form-data">
-
+		<span class="material-symbols-outlined" id="suppEquideSpan">close</span>
 			<label for="numSire">Numero de sire :</label>
 			<input type="number" id="numSire" name="numSire" required><br>
 

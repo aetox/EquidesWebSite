@@ -1,14 +1,14 @@
-<?php include("header.php"); ?>
+<?php
+$titre ="Connexion";
+include("header.php");
+?>
 <?php include_once('php/user_functions/connexion_fct.php') ?>
-
-
-
 
     
 <div class="connexion">
 
 
-    <img src="ASSETS/logo_equides.png" alt="Logo">
+    <img src="ASSETS/ico/logo_equides.png" alt="Logo">
     <h1>EQUIDES</h1>
 
         <form name="form_connexion" id="form_connexion" method="post">

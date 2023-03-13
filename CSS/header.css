@@ -2,47 +2,20 @@
 
 header {
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
     background-color: rgba(207, 113, 3, 1);
-
-
 }
 
 header img {
 
-    width: 50px;
-    height: 50px;
     margin-left: 20px;
-}
-
-header ul {
-
-    display: flex;
-    flex-direction: row;
-}
-
-header ul li {
-
-    list-style: none;
-    margin: 15px;
 }
 
 header ul li a {
     text-decoration: none;
-    color: white;
     font-family: 'Asap Condensed', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
    
-}
-
-nav {
-
-    background-color: rgba(207, 113, 3, 1);
 }
 
 nav a{
@@ -50,6 +23,20 @@ nav a{
     font-family: 'Asap Condensed', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    margin-right: 5px !important;
+    margin-left: 5px !important;
     font-weight: bold !important;
+    transition: 0.5s !important;
+    border-radius: 10px !important;
+
    
 }
+nav a:hover {
+
+    background-color: rgb(255, 255, 255,0.5 ) !important;
+    border-radius: 10px !important;
+}
+
+

@@ -3,14 +3,21 @@ $titre ="Accueil";
 include("header.php"); 
 ?>
 
-<h1>Bienvenue M.<?= $_SESSION['nom_detenteur'];?></h1>
+<div class="accueil">
+
+    <h1 class="accueil_titre">Bienvenue <?= $_SESSION['prenom_detenteur'];?>,</h1>
 
 
-<h3>Créez des formulaires détaillés pour chacun de vos chevaux en un rien de temps !  </h3>
+    <h3 class="accueil_soustitre">Tu vas voir, créer des formulaires détaillés pour chacun de tes chevaux n'a jamais été aussi facile.<br>
+    <br>Tu pourras ensuite télécharger ton formulaire de voyage en un rien de temps ! </h3>
 
-<h4><img src="#" alt="Logo equidé"><a href="equides.php">Mes équides</a></h4>
-<h4><img src="#" alt="Logo écurie"><a href="ecurie.php">Mon écurie</a></h4>
-<h4><img src="#" alt="Logo voyage"><a href="carnet_transport.php">Je voyage</a></h4>
+    <div class="accueil_bouttons">
 
+        <a href="equides.php" class="accueil_bouttons_mesequides"><img src="ASSETS\ico\ico-fer-a-cheval.png">Mes équidés</a>
+        <a href="ecurie.php" class="accueil_bouttons_monecurie"><img src="ASSETS\ico\ico-obstacle.png">Mon écurie</a>
+        <a href="carnet_transport.php" class="accueil_bouttons_jevoyage"><img src="ASSETS\ico\ico-panneau.png">Je voyage</a>         
+    </div>
+
+</div>
 
 <?php include("footer.php"); ?>

@@ -13,8 +13,16 @@ div.Equide {
 
     width: 300px;
     margin: 30px;
+    -webkit-box-shadow: 5px 5px 15px 5px #9d9d9d; 
+    box-shadow: 5px 5px 15px 1px #9d9d9d;
 
 
+}
+
+div.Equide img {
+
+    height: 300px;
+    object-fit: cover;
 }
 
 div.Equide li.modification {
@@ -77,5 +85,35 @@ h3#ajoutEquideH3:hover{
 
     transform: rotate(180deg);
     transition: 0.5s;    
+
+}
+
+div.tableau {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+table.affichageTable {
+
+    border: 5px solid black;
+}
+table.affichageTable tr th{
+
+    padding: 20px !important;
+    width: 30px;
+    border: 5px solid black;
+
+
+}
+table.affichageTable tr td{
+
+    padding: 20px !important;
+    width: 30px;
+    border: 2px solid black;
+
 
 }

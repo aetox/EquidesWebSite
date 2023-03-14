@@ -38,21 +38,7 @@ if (mysqli_num_rows($result) > 0) {
                                 <li class="list-group-item">Sire : <?php echo $equides['numSIRE'] ?></li>
                                 <li class="list-group-item">UELN : <?php echo $equides['numUELN'] ?></li>
                                 <li class="list-group-item">Date de naissancee : <?php echo $equides['dateNaissance_equide'] ?> </li>
-                                <li class="list-group-item">Lieu de naissancee : <?php echo $equides['lieuNaissance_equide'] ?> </li>
-                                <li class="list-group-item">Race : <?php echo $equides['race_equide'] ?> </li>
-                                <li class="list-group-item">Stud : <?php echo $equides['stud_equide'] ?> </li>
-                                <li class="list-group-item">Lieu elevage : <?php echo $equides['lieuElevage_equide'] ?> </li>
-                                <li class="list-group-item">Sexe : <?php echo $equides['sexe_equide'] ?> </li>
-                                <li class="list-group-item">Robe : <?php echo $equides['robe_equide'] ?> </li>
-                                <li class="list-group-item">Veterinaire Naisseur : <?php echo $equides['naisseurVeterinaire_equide'] ?> </li>
-                                <li class="list-group-item">Pere : <?php echo $equides['pere_equide'] ?> </li>
-                                <li class="list-group-item">Mere : <?php echo $equides['mere_equide'] ?> </li>
-                                <li class="modification list-group-item"><a href="carnet_traitement.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Carnet de traitement</a></li>
-                                <li class="modification list-group-item"><a href="carnet_vaccination.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Carnet de vaccination</a></li>
-                                <li class="modification list-group-item"><a href="updateEquide.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Modification</a></li>
-                                <li class="modification list-group-item"><a href="PHP/user_functions/suppressionEquide.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Suppression</a></li>
-    
-
+                                <li class="modification list-group-item"><a href="equide_des.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Plus d'information</a></li>
                         </ul> 
                     </div>
                 </div>

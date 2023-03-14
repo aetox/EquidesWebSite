@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 footer {
-
-    height: 100px;
-    background-color: rgba(207, 113, 3, 1);
-
+    background-color: rgb(109, 109, 109);
+    width:100%;
+    height: 50px;   /* Hauteur du pied de page */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

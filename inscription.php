@@ -38,8 +38,8 @@ include("header.php");
             <!-- Voir quels conditions mettre pour le mot de passe, max lenght etc -->
             <input type="text" name="sire" id="sire_inscription" placeholder="n°sire" required>
            <!-- Permet d'ajouter un pdp -->
-            <label for="photo_detenteur">Photo de l'equide :</label>
-			<input type="file" id="photo_detenteur" name="photo_detenteur" required><br>
+            <label for="photo_detenteur">Photo de profil :</label>
+			<input type="file" id="photo_detenteur" name="photo_detenteur" required>
 
             <!-- Vérifier en php que ce qui est saisit est bien un numéro sire -->
             <div>

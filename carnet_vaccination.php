@@ -30,5 +30,10 @@ include("header.php");
 </div> 
 
 
+    <!-- Lors du clic on appelle la fonction affichage_pdf -->
+    <button>Télécharger le PDF</button>
+
+
+
 
 <?php include("footer.php"); ?>

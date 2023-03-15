@@ -25,9 +25,14 @@ include("header.php");
             <hr> 
     <?php include_once('php/equide_functions/affichage/affichageTraitement_fct.php') ?>
     </table> 
+
 </div>
 
+    <!-- Lors du clic on appelle la fonction affichage_pdf -->
+    <button>Télécharger le PDF</button>
 
+    <!-- Lien temporaire pour le test du pdf  -->
 
+    <a href="PHP/pdf_functions/traitement_pdf.php?numSIRE=<?=$idSire;?>">PDF Test</a>
 
 <?php include("footer.php"); ?>

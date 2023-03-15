@@ -1,7 +1,7 @@
 <?php
 $titre ="Modification";
 include("header.php");
-include_once('php/user_functions/updateEquide_fct.php');
+include_once('php/equide_functions/modification/updateEquide_fct.php');
 
 $info = array();
 $idSire = $_GET['numSIRE'];

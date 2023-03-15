@@ -12,21 +12,7 @@ include("header.php");
 
         <form name="form_inscription" id="form_inscription" method="post" enctype="multipart/form-data">
 
-            <?php
-                // affiche message d'erreur   
-                if(isset($info)){ ?>
-                    <?php 
-
-                    for($i = 0; $i < count($info); ++$i) { ?>
-                    <p class="request_message" style ="color: red">
-                    <?= print_r($info[$i],true); ?>
-                    </p>
-                    
-                    <?php
-                    }
-                }
-            ?> 
-
+            <!-- Inclure l'affichage d'erreur -->
 
             <h1>Inscription</h1>
 

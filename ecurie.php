@@ -1,7 +1,6 @@
 <?php 
 $titre ="Mon écurie";
 include("header.php");
-
 ?>
 
 
@@ -9,7 +8,7 @@ include("header.php");
 
 <div id="AffichageEcurie">
 
-<?php include_once('php/user_functions/affichageEcurie_fct.php')?>
+<?php include_once('php/equide_functions/affichage/affichageEcurie_fct.php')?>
 
 </div>
 

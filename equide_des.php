@@ -4,6 +4,8 @@ $idSire = $_GET['numSIRE'];
 $titre ="Equidé n°$idSire";
 include("header.php");
 
+require('PHP/equide_functions/affichage/affichagePhoto_fct.php');
+
 $info = array();
 
 $sql = "SELECT * FROM `equide` WHERE numSIRE='$idSire'";
@@ -14,15 +16,9 @@ if (mysqli_num_rows($result) > 0) {
 
     while($equides = mysqli_fetch_array($result)){
         
-    $sqlImg = "SELECT * FROM `image` WHERE id_equide='$idSire'";
-    $resulat_img = mysqli_query($mysqli,$sqlImg) or die (mysqli_error($mysqli));
-     
-    $lienPdp = '';
-    if(mysqli_num_rows($resulat_img) > 0) {
-        while($pdp = mysqli_fetch_array($resulat_img)){
-                $lienPdp = $pdp['img'];
-        }
-    }
+        //Change le numSIRE pour l'équidé affiché et appelle la fonction Affichage photo avec les bons paramètres
+       $lienPdp = AffichagePhoto($mysqli,$idSire);
+      
     ?>
 
     <h1>Profil de <?php echo $equides['nom_equide'] ?>  </h1>
@@ -30,8 +26,8 @@ if (mysqli_num_rows($result) > 0) {
 
     <div class="card border-dark mb-3 " style="max-width: 80vw;">
         <div class="row g-0">
-            <div class="col-md-4">
-                <img src="../EquidesWebSite/ASSETS/img_bdd/<?php echo $lienPdp?>" class="img-fluid rounded-start" alt="Sire n°<?php echo $idEquide?>">
+            <div class="col-md-4">                                                                                                              
+                <img src="../EquidesWebSite/ASSETS/img_bdd/<?php echo $lienPdp?>" class="img-fluid rounded-start" alt="Sire n°<?php echo $idSire?>">
             </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -52,7 +48,7 @@ if (mysqli_num_rows($result) > 0) {
                                 <li class="modification list-group-item"><a href="carnet_traitement.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Carnet de traitement</a></li>
                                 <li class="modification list-group-item"><a href="carnet_vaccination.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Carnet de vaccination</a></li>
                                 <li class="modification list-group-item"><a href="updateEquide.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Modification</a></li>
-                                <li class="modification list-group-item"><a href="PHP/user_functions/suppressionEquide.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Suppression</a></li>
+                                <li class="modification list-group-item"><a href="PHP/equide_functions/modification/suppressionEquide.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Suppression</a></li>
     
                         </ul> 
                     </div>

@@ -1,12 +1,17 @@
-<?php session_start();?>
 <?php 
+
+//Demmare la session
+session_start();
+// Permet de se connecter à la BDD
+require("PHP/other_functions/connexion_bdd.php");
+
+// Active l'affichage des erreurs
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
+//Définie une variable qui sert de chemin d'accès pour n'importe quel fichier
 $site_root = $_SERVER['DOCUMENT_ROOT'];
 ?>
-<?php require("connexion_bdd.php");?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -27,7 +32,6 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
 </head>
 <body>
    
-
         <?php if(isset($_SESSION['logged_user'])) { ?>
 
             <header>

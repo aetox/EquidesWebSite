@@ -1,51 +1,41 @@
 /*     -----     EQUIDES    -----     */
 
-div#Equides,div#profil {
-
+#Equides, #profil {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-div.Equide {
-
+.Equide {
     width: 300px;
     margin: 30px;
     -webkit-box-shadow: 5px 5px 15px 5px #9d9d9d; 
     box-shadow: 5px 5px 15px 1px #9d9d9d;
-
-
 }
 
-div.Equide img {
-
+.Equide img {
     height: 300px;
     object-fit: cover;
 }
 
-div.Equide li.modification {
-
+.Equide li.modification {
     text-decoration: none;
     text-align: center;
 }
 
 
-div.Equide li.modification a {
-
+.Equide li.modification a {
     text-decoration: none;
     margin: 10px;
     color: black;
     font-size: 15px;
     text-transform: uppercase;
     font-weight: bold;
-    transition: 0.5s;
-
-    
+    transition: 0.5s;    
 }
 
-div.Equide li.modification a:hover {
-
+.Equide li.modification a:hover {
     letter-spacing: 1px;
 }
 
@@ -53,13 +43,13 @@ div.Equide li.modification a:hover {
 /* Permet d'afficher ou non le formulaire en css */
 
 #ajoutEquides {
+
     display: flex;
     
 }
 
 
-h3#ajoutEquideH3:hover{
-    
+h3#ajoutEquideH3:hover{  
     letter-spacing: 1px;
 }
 
@@ -67,7 +57,6 @@ h3#ajoutEquideH3:hover{
 /* Croix pour fermer le formulaire */
 
 #formAjoutEquides span {
-
     position: relative;
     right: -120px;
     top : -20px;
@@ -75,14 +64,12 @@ h3#ajoutEquideH3:hover{
 }
 
 #formAjoutEquides span:hover{
-
     transform: rotate(180deg);
     transition: 0.5s;    
 
 }
 
-div.tableau {
-
+.tableau {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -91,22 +78,17 @@ div.tableau {
 
 
 table.affichageTable {
-
     border: 5px solid black;
 }
-table.affichageTable tr th{
 
+table.affichageTable tr th{
     padding: 20px !important;
     width: 30px;
     border: 5px solid black;
-
-
 }
-table.affichageTable tr td{
 
+table.affichageTable tr td{
     padding: 20px !important;
     width: 30px;
     border: 2px solid black;
-
-
 }

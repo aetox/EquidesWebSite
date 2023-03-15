@@ -16,4 +16,5 @@ include("header.php");
 		
 <h3 id="ajoutEquideH3"><a href="ajout_equides.php">Ajouter un Equidés</a></h3>
 
+
 <?php include("footer.php"); ?>

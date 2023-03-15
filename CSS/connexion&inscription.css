@@ -1,4 +1,7 @@
 /*     -----     CLASSE CONNEXION & INSCRIPTION     -----     */
+.connexion {
+    min-height: 100vh;
+}
 
 .connexion, #form_connexion, .inscription, #form_inscription, #ajoutEquides, #formAjoutEquides {
     display: flex;

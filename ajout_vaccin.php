@@ -1,9 +1,9 @@
 <?php
-$idSire = $_GET['numSIRE'];
 
+$idSire = $_GET['numSIRE'];
 $titre ="Ajouter un vaccin";
 include("header.php");
-include_once('php/user_functions/AjoutVaccin_fct.php');
+include_once('php/equide_functions/modification/AjoutVaccin_fct.php');
 ?>
 
 

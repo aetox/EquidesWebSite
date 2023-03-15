@@ -5,7 +5,7 @@ include("header.php");
 
 <div class="accueil">
 
-    <h1 class="accueil_titre">Bienvenue <?= $_SESSION['prenom_detenteur'];?>,</h1>
+    <h1 class="accueil_titre">Bienvenue,<?= $_SESSION['prenom_detenteur'];?>,</h1>
 
 
     <h3 class="accueil_soustitre">Tu vas voir, créer des formulaires détaillés pour chacun de tes chevaux n'a jamais été aussi facile.<br>

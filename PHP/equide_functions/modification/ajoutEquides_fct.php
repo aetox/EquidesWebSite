@@ -58,6 +58,7 @@ if (isset($_POST["ajouter"])) {
   if ($result_info !== false) {
     $insert_id = mysqli_insert_id($mysqli);
     array_push($info, "img ajouté avec l'ID : " . $insert_id);
+    header("Location: ../../../EquidesWebSite/equides.php");
   } else {
     array_push($info, "Erreur img");
   }

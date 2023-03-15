@@ -85,6 +85,15 @@ $html = '
 
 		  	<img src="ico.png"/>
 			<h1>Carnet de vaccination de l\'équidé n°'.$idSire.'</h1>
+
+        <ul>
+          <li>Num Sire : 166513</li>
+          <li>Num UELN : 166564413</li>
+          <li>Detenteur: Jerome</li>
+          <li>Date : 25-05-2023</li>
+        </ul>
+
+        // Styliser la liste
 	
 		<div id="table">
 		<table border="1">

@@ -22,6 +22,14 @@ $mpdf->AddPage(''); // 'L' pour mettre le PDF en paysage
 $mpdf->SetTitle("Carnet de traitement de l'équidé n°$idSire");
 
 
+
+// Ajouter des infos tels :
+// -	Nom detenteur
+// -	Num SIRE
+// - 	Num UELN
+// ...
+
+
 // Génération du contenu du document
 $html = '
 
@@ -87,6 +95,18 @@ $html = '
 
 		  	<img src="ico.png"/>
 			<h1>Carnet de traitement de l\'équidé n°'.$idSire.'</h1>
+
+
+			
+			<ul>
+				<li>Num Sire : 166513</li>
+				<li>Num UELN : 166564413</li>
+				<li>Detenteur: Jerome</li>
+				<li>Date : 25-05-2023</li>
+			</ul>
+
+			// Styliser la liste 
+
 	
 		<div id="table">
 		<table border="1">

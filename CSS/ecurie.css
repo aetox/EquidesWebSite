@@ -1,7 +1,13 @@
 /*     -----     ECURIE    -----     */
 
-div#Ecurie {
+.ecurie {
+    padding: 10px 10px 80px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+#Ecurie {
     display: flex;
     flex-direction: row;
     justify-content: space-around;

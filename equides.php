@@ -4,17 +4,21 @@ include("header.php");
 ?>
 <?php include_once('PHP/equide_functions/modification/ajoutEquides_fct.php') ?>
 
-<h1>Mes Equidés</h1>
-			
-<div id="Equides">
+<div class="equides">
 
-<!-- faire un appel de la fonction affichage erreurs. -->
+	<h1 class="titre_1">Mes équidés</h1>
+				
+	<div id="Equides">
 
-	<?php include_once('PHP/equide_functions/affichage/affichageEquides_fct.php') ?>
-	
-</div>
+	<!-- faire un appel de la fonction affichage erreurs. -->
+
+		<?php include_once('PHP/equide_functions/affichage/affichageEquides_fct.php') ?>
 		
-<h3 id="ajoutEquideH3"><a href="ajout_equides.php">Ajouter un Equidés</a></h3>
+	</div>
+	
+	
+	<a href="ajout_equides.php" class="boutton_1">Ajouter un équidé</a>
 
+</div>
 
 <?php include("footer.php"); ?>

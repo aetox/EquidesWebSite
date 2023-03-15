@@ -22,3 +22,30 @@ h1,h3 {
     transition: 0.5s;
     width: auto;
 }
+
+.titre_1 {
+    color: rgba(207, 113, 3, 1);
+    font-size: 55px;
+}
+
+.boutton_1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 109, 31, 1);
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    border: solid 1px transparent;/*Pour que enlever le décalement lorsque on survole*/
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 24px;
+    height: 52px;
+    width: 300px;   
+    transition: 0.3s;   
+}
+
+.boutton_1:hover {
+    background-color: rgb(30, 179, 0);
+    color: white;
+}

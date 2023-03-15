@@ -1,44 +1,19 @@
-/*     -----     EQUIDES    -----     */
+/*     -----     EQUIDES & AJOUT EQUIDES   -----     */
 
-#Equides, #profil {
+.equides {
+    padding: 10px 10px 80px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#Equides {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
-.Equide {
-    width: 300px;
-    margin: 30px;
-    -webkit-box-shadow: 5px 5px 15px 5px #9d9d9d; 
-    box-shadow: 5px 5px 15px 1px #9d9d9d;
-}
-
-.Equide img {
-    height: 300px;
-    object-fit: cover;
-}
-
-.Equide li.modification {
-    text-decoration: none;
-    text-align: center;
-}
-
-
-.Equide li.modification a {
-    text-decoration: none;
-    margin: 10px;
-    color: black;
-    font-size: 15px;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: 0.5s;    
-}
-
-.Equide li.modification a:hover {
-    letter-spacing: 1px;
-}
-
 
 /* Permet d'afficher ou non le formulaire en css */
 
@@ -47,12 +22,6 @@
     display: flex;
     
 }
-
-
-h3#ajoutEquideH3:hover{  
-    letter-spacing: 1px;
-}
-
 
 /* Croix pour fermer le formulaire */
 
@@ -84,11 +53,69 @@ table.affichageTable {
 table.affichageTable tr th{
     padding: 20px !important;
     width: 30px;
-    border: 5px solid black;
+    border: 5px solid black;    
 }
 
 table.affichageTable tr td{
     padding: 20px !important;
     width: 30px;
     border: 2px solid black;
+    display: flex;
+    flex-direction: column  ;
 }
+
+/*     -----     EQUIDES DESCRIPTION   -----     */
+
+.equide_description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#equide_bootstrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.equide_bootstrap {
+    width: 300px;
+    margin: 30px;
+    -webkit-box-shadow: 5px 5px 15px 5px #9d9d9d; 
+    box-shadow: 5px 5px 15px 1px #9d9d9d;
+}
+
+.equide_bootstrap img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.equide_bootstrap li.modification {
+    text-decoration: none;
+    text-align: center;
+}
+
+
+.equide_bootstrap li.modification a {
+    text-decoration: none;
+    margin: 10px;
+    color: black;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.5s;    
+}
+
+.equide_bootstrap li.modification a:hover {
+    letter-spacing: 1px;
+}
+
+.equide_description {
+    margin: 40px 50px 40px 50px;
+}
+
+.equide_description img {
+    width: 400px;
+    object-fit: cover;
+}
+

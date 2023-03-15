@@ -15,7 +15,5 @@ if (mysqli_num_rows($result) > 0) {
     while($ecurie = mysqli_fetch_array($result)){
 
         }
-    }else {
-        echo("Vous n'avez pas d'écurie");
-    }
- ?>
+    }else {?>
+        <h3><?=("Vous n'avez pas d'écurie");}?></h3>

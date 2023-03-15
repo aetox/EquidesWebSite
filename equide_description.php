@@ -21,17 +21,16 @@ if (mysqli_num_rows($result) > 0) {
       
     ?>
 
-    <h1>Profil de <?php echo $equides['nom_equide'] ?>  </h1>
+    <div class="equide_description">
 
-
-    <div class="card border-dark mb-3 " style="max-width: 80vw;">
-        <div class="row g-0">
-            <div class="col-md-4">                                                                                                              
-                <img src="../EquidesWebSite/ASSETS/img_bdd/<?php echo $lienPdp?>" class="img-fluid rounded-start" alt="Sire n°<?php echo $idSire?>">
-            </div>
+    <div class="card " style="min-width: 300px ; max-width: 600px; ">
+        <div class="card"    >
+                                                                                                                         
+                <img src="../EquidesWebSite/ASSETS/img_bdd/<?php echo $lienPdp?>" class="card-img-top" alt="Sire n°<?php echo $idSire?>">
+            
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $equides['nom_equide'] ?></h5>
+                        <h5 class="card-title titre_1"><?php echo $equides['nom_equide'] ?></h5>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Sire : <?php echo $equides['numSIRE'] ?></li>
                                 <li class="list-group-item">UELN : <?php echo $equides['numUELN'] ?></li>
@@ -49,14 +48,17 @@ if (mysqli_num_rows($result) > 0) {
                                 <li class="modification list-group-item"><a href="carnet_vaccination.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Carnet de vaccination</a></li>
                                 <li class="modification list-group-item"><a href="updateEquide.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Modification</a></li>
                                 <li class="modification list-group-item"><a href="PHP/equide_functions/modification/suppressionEquide.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Suppression</a></li>
-    
-                        </ul> 
+                            </ul> 
                     </div>
                 </div>
             </div>
     </div>
     
-               <?php } ?>
+    </div>
+
+    <?php include("footer.php"); ?>
+
+    <?php } ?>
 
 <?php }else {
         echo("Vous n'avez pas d'equidés");

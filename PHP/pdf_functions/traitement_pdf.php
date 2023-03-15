@@ -1,6 +1,5 @@
 <?php
-// Connexion à la BDD (à personnaliser)
-require('../other_functions/connexion_bdd.php');
+
 
 // Appel de la librairie FPDF
 require("../fpdf/fpdf.php");

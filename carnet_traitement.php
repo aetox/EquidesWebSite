@@ -33,6 +33,6 @@ include("header.php");
 
     <!-- Lien temporaire pour le test du pdf  -->
 
-    <a href="PHP/pdf_functions/traitement_pdf.php?numSIRE=<?=$idSire;?>">PDF Test</a>
+    <a href="PHP/pdf_functions/test.php?numSIRE=<?=$idSire;?>">PDF Test</a> <!-- J'ai mis test.php pour tester, remettre traitement_pdf.php-->
 
 <?php include("footer.php"); ?>

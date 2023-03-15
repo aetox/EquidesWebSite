@@ -1,9 +1,8 @@
 <?php
 $idSire = $_GET['numSIRE'];
-
 $titre ="Ajouter un traitement";
 include("header.php");
-include_once('php/user_functions/AjoutTraitement_fct.php');
+include_once('php/equide_functions/modification/AjoutTraitement_fct.php');
 ?>
 
 

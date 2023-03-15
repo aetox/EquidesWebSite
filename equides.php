@@ -2,33 +2,16 @@
 $titre ="Mes équides";
 include("header.php");
 ?>
-<?php include_once('php/user_functions/ajoutEquides_fct.php') ?>
-
-
+<?php include_once('PHP/equide_functions/modification/ajoutEquides_fct.php') ?>
 
 <h1>Mes Equidés</h1>
-
-<?php
-                // affiche message d'erreur   
-                if(isset($info)){ ?>
-                    <?php 
-
-                    for($i = 0; $i < count($info); ++$i) { ?>
-                    <p class="request_message" style ="color: red">
-                    <?= print_r($info[$i],true); ?>
-                    </p>
-                    
-                    <?php
-                    }
-                }
-            ?>
 			
 <div id="Equides">
 
+<!-- faire un appel de la fonction affichage erreurs. -->
 
-	<?php include_once('php/user_functions/affichageEquides.php') ?>
+	<?php include_once('PHP/equide_functions/affichage/affichageEquides_fct.php') ?>
 	
-
 </div>
 		
 <h3 id="ajoutEquideH3">Ajouter un Equidés</h3>

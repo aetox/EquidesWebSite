@@ -15,7 +15,7 @@ include("header.php");
 <div class="tableau">
     <table class="affichageTable">
                 <tr>
-                    <th>ID tache</th>
+                    <th>ID traitement</th>
                     <th>Molécule traitement</th>
                     <th>Référence traitement</th>
                     <th>Date</th>
@@ -29,10 +29,12 @@ include("header.php");
 </div>
 
     <!-- Lors du clic on appelle la fonction affichage_pdf -->
-    <button>Télécharger le PDF</button>
+    
 
     <!-- Lien temporaire pour le test du pdf  -->
 
-    <a href="PHP/pdf_functions/test.php?numSIRE=<?=$idSire;?>">PDF Test</a> <!-- J'ai mis test.php pour tester, remettre traitement_pdf.php-->
+    <a href="PHP/pdf_functions/traitement_pdf.php?numSIRE=<?=$idSire;?>" target="_blank">
+    <button>Télécharger le PDF</button>    
+    </a> <!-- J'ai mis test.php pour tester, remettre traitement_pdf.php-->
 
 <?php include("footer.php"); ?>

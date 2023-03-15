@@ -30,9 +30,11 @@ include("header.php");
 </div> 
 
 
-    <!-- Lors du clic on appelle la fonction affichage_pdf -->
-    <button>Télécharger le PDF</button>
+    <!-- Télécharge le pdf -->
 
+    <a href="PHP/pdf_functions/vaccin_pdf.php?numSIRE=<?=$idSire;?>" target="_blank">
+    <button>Télécharger le PDF</button>
+    </a>
 
 
 

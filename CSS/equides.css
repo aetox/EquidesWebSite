@@ -53,14 +53,8 @@ div.Equide li.modification a:hover {
 /* Permet d'afficher ou non le formulaire en css */
 
 #ajoutEquides {
-    display: none ;
+    display: flex;
     
-}
-
-#ajoutEquides.display {
-
-    padding: 20px;
-    display: flex ;
 }
 
 

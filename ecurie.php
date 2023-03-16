@@ -3,15 +3,18 @@ $titre ="Mon écurie";
 include("header.php");
 ?>
 
+<div class="ecurie">
 
-<h1>Mon écurie</h1>
+    <h1 class="titre_1">Mon écurie</h1>
 
-<div id="AffichageEcurie">
+    <div id="AffichageEcurie">
 
-<?php include_once('php/equide_functions/affichage/affichageEcurie_fct.php')?>
+    <?php include_once('php/equide_functions/affichage/affichageEcurie_fct.php')?>
+
+    </div>
+
+    <a href="#" class="boutton_1">Ajouter une écurie</a>
 
 </div>
-
-
 
 <?php include("footer.php"); ?>

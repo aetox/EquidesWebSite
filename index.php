@@ -8,11 +8,8 @@ include("header.php");
 
     <img src="ASSETS/ico/logo_equides.png" alt="Logo">
     <h1>EQUIDES</h1>
-
         <form name="form_connexion" id="form_connexion" method="post">
-
             <h1>Connexion</h1>
-
             <input type="mail" name="mail" id="mail_connexion" placeholder="Mail" autofocus required >
             <input type="password" name="password" id="password_connexion"  placeholder="Mot de passe"required>
             <div>
@@ -21,14 +18,9 @@ include("header.php");
             </div>
             <button type="submit" name="submit_connexion" >Se Connecter</button>
             <a href="#">Mot de passe oublié ?</a>
-
         </form>
-
     <p>Pas de compte ? <a href="inscription.php">Créez-en un ici !</a></p> 
-
 </div>
-
-
 
 <?php include("footer.php"); ?>
  

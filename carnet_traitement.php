@@ -4,13 +4,14 @@ $titre ="Carnet de Traitement : $idSire";
 include("header.php");
 ?>
 
-<h1>Carnet de traitement pour l'équide n°<?php echo $idSire ?>  </h1>
+<div class="carnet_traitement">
+
+    <h1>Carnet de traitement pour l'équide n°<?php echo $idSire ?></h1>
 
 
-<!-- Ajouter un lien $GET et stiliser le button  -->
+    <!-- Ajouter un lien $GET et stiliser le button  -->
 
-<a href="ajout_traitement.php?numSIRE=<?=$idSire?>">Ajouter un traitement</a>
-
+    <a href="ajout_traitement.php?numSIRE=<?=$idSire?>" class="boutton_1">Ajouter un traitement</a>
 
 <div class="tableau">
     <table class="affichageTable">
@@ -36,5 +37,6 @@ include("header.php");
     <a href="PHP/pdf_functions/traitement_pdf.php?numSIRE=<?=$idSire;?>" target="_blank">
     <button>Télécharger le PDF</button>    
     </a> <!-- J'ai mis test.php pour tester, remettre traitement_pdf.php-->
+
 
 <?php include("footer.php"); ?>

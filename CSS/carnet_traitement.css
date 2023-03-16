@@ -1,1 +1,8 @@
 /*     -----     CARNET DE TRAITEMENT    -----     */
+
+.carnet_traitement {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

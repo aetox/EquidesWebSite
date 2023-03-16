@@ -40,6 +40,7 @@ $lienPdp = AffichagePhoto($mysqli,$sireDetenteur);
                 </ul> 
           </div>
         </div>
+
       </div>
   </div>
 </div>

@@ -5,11 +5,13 @@ include("header.php");
 
 <div class="accueil">
 
-    <h1 class="titre_1">Bienvenue <strong><?= $_SESSION['prenom_detenteur'];?>,</h1>
+    <h1 class="accueil_titre">Bienvenue <?= $_SESSION['prenom_detenteur'];?>,</h1>
 
 
-    <h3>Tu vas voir, créer des formulaires détaillés pour chacun de tes chevaux n'a jamais été aussi facile.<br>
-    <br>Tu pourras ensuite télécharger ton formulaire de voyage en un rien de temps ! </h3>
+    <h3 class="accueil_soustitre">Suivre vos chevaux n'a jamais été aussi simple.<br>
+    <br>Créer ou modifier leurs fiches en un rien de temps.<br>
+    <br>Visualiser et télécharger les fiches de transports en deux clics.<br>
+    <br></h3>
 
     <div class="accueil_bouttons">
         <a href="equides.php" class="accueil_bouttons_mesequides"><img src="ASSETS\ico\ico-fer-a-cheval.png">Mes équidés</a>

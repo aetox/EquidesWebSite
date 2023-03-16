@@ -13,6 +13,11 @@ require('../other_functions/connexion_bdd.php');
 $sql = "SELECT * FROM `traitement` WHERE sire ='$idSire'";
 $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 
+$sql2 = "SELECT * FROM `equide` WHERE numSIRE ='$idSire'"; 
+$result2 = mysqli_query($mysqli,$sql2) or die(mysqli_error($mysqli));
+
+$dateDuJour = date('j-m-y');
+
 // Créer un objet Mpdf
 $mpdf = new \Mpdf\Mpdf();
 $mpdf->debug = true;
@@ -63,10 +68,18 @@ $html = '
 			  	height: 40px;
 			  
             }
+
+			ul{
+				padding-top : 20px;
+				font-family: Arial, sans-serif;
+				font-weight: bold;
+				
+
+			}
             
 			div#table{
 
-				padding-top:80px;
+				padding-top:40px;
 			}
 
             table {
@@ -92,21 +105,24 @@ $html = '
             }
           </style>
 
-
 		  	<img src="ico.png"/>
 			<h1>Carnet de traitement de l\'équidé n°'.$idSire.'</h1>
 
+';
 
-			
-			<ul>
-				<li>Num Sire : 166513</li>
-				<li>Num UELN : 166564413</li>
-				<li>Detenteur: Jerome</li>
-				<li>Date : 25-05-2023</li>
-			</ul>
+while($row2 = mysqli_fetch_assoc($result2)) {
+	$html .= '
+	<ul>
+	   <li>Numéro SIRE :  '.$row2["numSIRE"].'</li>
+	   <li>Numéro UELN : '.$row2["numUELN"].'</li>
+	   <li>Date de naissance : '.$row2["dateNaissance_equide"].'</li>
+	   <li>Sexe : '.$row2["sexe_equide"].'</li>
+	   <li>Date du document : '.$dateDuJour.'</li>
+	</ul>';
+}
 
-			// Styliser la liste 
 
+$html .='
 	
 		<div id="table">
 		<table border="1">
@@ -120,6 +136,12 @@ $html = '
 
 
 ';
+
+
+// Génération des données du tableau en utilisant une boucle while
+
+
+
 
 // Génération des données du tableau en utilisant une boucle while
  while($row = mysqli_fetch_assoc($result)) {

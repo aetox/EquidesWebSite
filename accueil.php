@@ -14,7 +14,6 @@ include("header.php");
     <br></h3>
 
     <div class="accueil_bouttons">
-
         <a href="equides.php" class="accueil_bouttons_mesequides"><img src="ASSETS\ico\ico-fer-a-cheval.png">Mes équidés</a>
         <a href="ecurie.php" class="accueil_bouttons_monecurie"><img src="ASSETS\ico\ico-obstacle.png">Mon écurie</a>
         <a href="carnet_transport.php" class="accueil_bouttons_jevoyage"><img src="ASSETS\ico\ico-panneau.png">Je voyage</a>         

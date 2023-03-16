@@ -13,4 +13,11 @@ include("header.php");
 </div>
 
 
+    <!-- Télécharge le pdf -->
+
+    <a href="PHP/pdf_functions/carnet_transport_pdf.php" target="_blank">
+    <button>Télécharger le PDF</button>
+    </a>
+
+
 <?php include("footer.php"); ?>

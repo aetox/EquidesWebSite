@@ -1,7 +1,7 @@
 <?php 
     
     $site_root = $_SERVER['DOCUMENT_ROOT'];
-    require("$site_root/EquidesWebSite/PHP/other_functions/connexion_bdd.php");
+    require("$site_root/PHP/other_functions/connexion_bdd.php");
 
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
@@ -22,7 +22,7 @@
                 $lienPdp = $pdp['img'];
            }
         //Suppression de l'image dans le dossier image BDD
-        //unlink("../EquidesWebSite/ASSETS/img_bdd/.'$lienPdp'.");
+        //unlink("../ASSETS/img_bdd/.'$lienPdp'.");
     }
 
     $img_delete = "DELETE FROM `image` WHERE `numSIRE` = $get_sire";

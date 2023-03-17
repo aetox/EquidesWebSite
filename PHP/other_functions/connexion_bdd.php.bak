@@ -1,0 +1,13 @@
+<?php
+$BDD = array();
+$BDD['host'] = "db5012313725.hosting-data.io";
+$BDD['user'] = "dbu2625697";
+$BDD['pass'] = ".Equines@Register54!57?";
+$BDD['db'] = "dbs10358990";
+
+$mysqli = mysqli_connect($BDD['host'], $BDD['user'], $BDD['pass'], $BDD['db']);
+if(!$mysqli) {
+    echo "Connexion non établie.";
+    exit;
+}
+?>

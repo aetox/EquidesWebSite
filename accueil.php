@@ -1,6 +1,6 @@
 <?php
 $titre ="Accueil";
-include("header.php"); 
+include_once("header.php"); 
 ?>
 
 <div class="accueil">
@@ -21,4 +21,4 @@ include("header.php");
 
 </div>
 
-<?php include("footer.php"); ?>
+<?php include_once("footer.php"); ?>

@@ -35,7 +35,7 @@ if (isset($_POST["ajouter"])) {
   
   $new_img_name = $time.$img_equide;
   
-  move_uploaded_file($tpm_nom,"$site_root/EquidesWebSite/ASSETS/img_bdd/".$new_img_name);
+  move_uploaded_file($tpm_nom,"$site_root/ASSETS/img_bdd/".$new_img_name);
 
 
   // Requette pour ajouter l'image dans la bdd
@@ -58,7 +58,7 @@ if (isset($_POST["ajouter"])) {
   if ($result_info !== false) {
     $insert_id = mysqli_insert_id($mysqli);
     array_push($info, "img ajouté avec l'ID : " . $insert_id);
-    header("Location: ../../../EquidesWebSite/equides.php");
+    header("Location: ../../../equides.php");
   } else {
     array_push($info, "Erreur img");
   }

@@ -68,7 +68,7 @@ $html = '
 			  	height: 40px;
 			  
             }
-
+            
 			ul{
 				padding-top : 20px;
 				font-family: Arial, sans-serif;
@@ -112,7 +112,7 @@ $html = '
 
 while($row2 = mysqli_fetch_assoc($result2)) {
 	$html .= '
-	<ul>
+			<ul>
 	   <li>Numéro SIRE :  '.$row2["numSIRE"].'</li>
 	   <li>Numéro UELN : '.$row2["numUELN"].'</li>
 	   <li>Date de naissance : '.$row2["dateNaissance_equide"].'</li>

@@ -23,7 +23,7 @@ $sql = "UPDATE `equide` SET `numUELN`='$numUELN', `nom_equide`='$nomEquide', `da
 $result_info = mysqli_query($mysqli,$sql) or die (mysqli_error($mysqli));
   
 if ($result_info !== false) {
-  header("Location: ../EquidesWebSite/equides.php");
+  header("Location: ../equides.php");
 } else {
   array_push($info, "Erreur img");
 }

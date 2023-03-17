@@ -1,6 +1,6 @@
 <?php
 $titre ="Mes équides";
-include("header.php");
+include_once("header.php");
 ?>
 <?php include_once('PHP/equide_functions/modification/ajoutEquides_fct.php') ?>
 		
@@ -58,4 +58,4 @@ include("header.php");
 		</form>
 	</div>
 
-<?php include("footer.php"); ?>
+<?php include_once("footer.php"); ?>

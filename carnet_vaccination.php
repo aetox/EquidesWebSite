@@ -1,7 +1,7 @@
 <?php
 $idSire = $_GET['numSIRE'];
 $titre ="Carnet de Vaccination : $idSire";
-include("header.php");
+include_once("header.php");
 ?>
 
 <h1>Carnet de vaccination pour l'équide n°<?php echo $idSire ?>  </h1>
@@ -25,7 +25,7 @@ include("header.php");
                 <th>Supprimer</th>
             </tr>
         <hr>
-<?php include_once('php/equide_functions/affichage/affichageVaccin_fct.php') ?>
+<?php include_once('PHP/equide_functions/affichage/affichageVaccin_fct.php') ?>
     </table> 
 </div> 
 
@@ -38,4 +38,4 @@ include("header.php");
 
 
 
-<?php include("footer.php"); ?>
+<?php include_once("footer.php"); ?>

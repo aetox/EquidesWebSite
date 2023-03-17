@@ -1,10 +1,7 @@
-<?php 
-
-//Demmare la session
+<?php
 session_start();
 // Permet de se connecter à la BDD
-require("PHP/other_functions/connexion_bdd.php");
-
+include_once("PHP/other_functions/connexion_bdd.php");
 // Active l'affichage des erreurs
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
@@ -56,7 +53,7 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
                                 <a class="nav-link text-uppercase text-white" href="ecurie.php">Ecurie</a>
                                 <a class="nav-link text-uppercase text-white" href="carnet_transport.php">Transport</a>
                                 <a class="nav-link text-uppercase text-white" href="profil.php">Mon profil</a>
-                                <a class="nav-link text-uppercase text-white" href="php/user_functions/deconnexion.php">Déconnexion</a>
+                                <a class="nav-link text-uppercase text-white" href="PHP/user_functions/deconnexion.php">Déconnexion</a>
                             </div>
                         </div>
                     </div>

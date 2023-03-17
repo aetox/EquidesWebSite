@@ -1,8 +1,8 @@
 <?php
 $titre ="Inscription";
-include("header.php");
+include_once("header.php");
 ?>
-<?php include_once('php/user_functions/inscription_fct.php') ?>
+<?php include_once('PHP/user_functions/inscription_fct.php') ?>
 
 
 <div class="inscription">
@@ -40,5 +40,5 @@ include("header.php");
 
 </div>
 
-<?php include("footer.php"); ?>
+<?php include_once("footer.php"); ?>
 

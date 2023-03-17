@@ -1,6 +1,6 @@
 <?php 
 $titre ="Mon écurie";
-include("header.php");
+include_once("header.php");
 ?>
 
 <div class="ecurie">
@@ -9,7 +9,7 @@ include("header.php");
 
     <div id="AffichageEcurie">
 
-    <?php include_once('php/equide_functions/affichage/affichageEcurie_fct.php')?>
+    <?php include_once('PHP/equide_functions/affichage/affichageEcurie_fct.php')?>
 
     </div>
 
@@ -17,4 +17,4 @@ include("header.php");
 
 </div>
 
-<?php include("footer.php"); ?>
+<?php include_once("footer.php"); ?>

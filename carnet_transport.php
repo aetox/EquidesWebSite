@@ -1,6 +1,6 @@
 <?php
 $titre ="Carnet de transport";
-include("header.php");
+include_once("header.php");
 ?>
 
 
@@ -20,4 +20,4 @@ include("header.php");
     </a>
 
 
-<?php include("footer.php"); ?>
+<?php include_once("footer.php"); ?>

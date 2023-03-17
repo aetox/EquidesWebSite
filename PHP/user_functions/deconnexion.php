@@ -1,8 +1,3 @@
-<?php include_once('../EquidesWebSite/header.php') ?>
-
-
-
-  
 <?php
 session_start();
 unset($_SESSION);
@@ -11,3 +6,4 @@ session_write_close();
 header('Location: ../../index.php');
 die;
 ?>
+<?php include_once('../../header.php') ?>

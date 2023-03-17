@@ -29,7 +29,7 @@ if(isset($_POST['inscription'])){//l'utilisateur à cliqué sur "S'inscrire", on
     
     $new_img_name = $time.$img_detenteur;
     
-    move_uploaded_file($tpm_nom,"$site_root/EquidesWebSite/ASSETS/img_bdd/".$new_img_name);
+    move_uploaded_file($tpm_nom,"$site_root/ASSETS/img_bdd/".$new_img_name);
   
     $numSire = $_POST['sire'];
     // Requette pour ajouter l'image dans la bdd

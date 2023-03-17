@@ -11,47 +11,15 @@
     padding-top: 30px;
 }
 
-.accueil_bouttons {
+.accueil_div_bouttons {
     display: flex;
-    /* flex-wrap: wrap; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.accueil_bouttons a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+.accueil_div_bouttons a {
     margin-top: 20px;
-    border: solid 1px transparent;/*Pour que enlever le décalement lorsque on survole*/
-    background-color: rgba(207, 113, 3, 1) ;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 600;
-    border-radius: 10px;
-    font-size: 24px;
-    height: 52px;
-    width: 270px;
-    padding-left: 20px;
-    transition: 0.3s;   
 }
 
-.accueil_bouttons a img {
-    width: 30px;
-    margin-right: 25px;
-}
-
-.accueil_bouttons_jevoyage {
-    background-color: rgba(0, 109, 31, 1) !important;
-}
-
-.accueil_bouttons a:hover {
-    color: white;
-    background-color: rgb(255, 132, 1);
-}
-
-.accueil_bouttons_jevoyage:hover {
-    background-color: rgb(30, 179, 0) !important;
-}
 

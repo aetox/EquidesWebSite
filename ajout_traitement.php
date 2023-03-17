@@ -4,7 +4,7 @@ include_once("header.php");
 if(isset($_SESSION['logged_user'])) {
 $idSire = $_GET['numSIRE'];
 $titre ="Ajouter un traitement";
-include_once('PHP/equide_functions/modification/AjoutTraitement_fct.php');
+include_once('PHP/equide_functions/modification/ajoutTraitement_fct.php');
 ?>
 
 

@@ -13,7 +13,7 @@ include_once("header.php");
 		<?php include_once('PHP/equide_functions/affichage/affichageEquides_fct.php') ?>
 	</div>
 	
-	<a href="ajout_equides.php" class="boutton_vertV2"><img src="ASSET/ico/plus.png">équidé</a>
+	<a href="ajout_equides.php" class="boutton_vertV2"><img src="ASSET/ico/plus2.png">équidé</a>
 	
 </div>
 

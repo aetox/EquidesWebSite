@@ -13,7 +13,7 @@ $lienPdp = AffichagePhoto($mysqli,$sireDetenteur);
 <div class="profil">
   <h1 class="titre_1">Mon Profil</h1>   
   <div class="card" style="min-width: 250px ; max-width: 400px;">
-        <img src="../EquidesWebSite/ASSETS/img_bdd/<?php echo $lienPdp?>" class="card-img-top" alt="Sire n°<?php echo $sireDetenteur?>">
+        <img src="../ASSETS/img_bdd/<?php echo $lienPdp?>" class="card-img-top" alt="Sire n°<?php echo $sireDetenteur?>">
         <div class="card-body">
           <h5 class="card-title"><?php echo ($_SESSION['prenom_detenteur']); ?> <?php echo ($_SESSION['nom_detenteur']); ?></h5>
         </div>  

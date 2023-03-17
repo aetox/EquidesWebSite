@@ -16,20 +16,20 @@ if (mysqli_num_rows($result) > 0) {
 
         //Change le numSIRE pour l'équidé affiché et appelle la fonction Affichage photo avec les bons paramètres
         $numSIRE = $equides['numSIRE'];
-       $lienPdp = AffichagePhoto($mysqli,$numSIRE);
+        $lienPdp = AffichagePhoto($mysqli,$numSIRE);
       
     ?>
             <div class="equide_bootstrap card " >
                 <img src="../ASSETS/img_bdd/<?php echo $lienPdp?>" class="card-img-top" alt="Equidé n°<?php echo $numSIRE?>">
-                    <div class="card-body ">
-                        <h5 class="card-title"><?php echo $equides['nom_equide'] ?></h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Sire : <?php echo $equides['numSIRE'] ?></li>
-                                <li class="list-group-item">UELN : <?php echo $equides['numUELN'] ?></li>
-                                <li class="list-group-item">Date de naissancee : <?php echo $equides['dateNaissance_equide'] ?> </li>
-                                <li class="modification list-group-item"><a href="equide_description.php?numSIRE=<?php echo $equides['numSIRE'];?>"> Plus d'information</a></li>
-                            </ul> 
-                    </div>
+                <div class="card-body ">
+                    <h5 class="card-title"><strong><?php echo $equides['nom_equide'] ?></strong></h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Sire : <?php echo $equides['numSIRE'] ?></li>
+                            <li class="list-group-item">UELN : <?php echo $equides['numUELN'] ?></li>
+                            <li class="list-group-item">Date de naissancee : <?php echo $equides['dateNaissance_equide'] ?> </li>
+                            <li class="modification list-group-item"><a id="affichageEquides_info" href="equide_description.php?numSIRE=<?php echo $equides['numSIRE'];?>">plus d'info</a></li>
+                        </ul> 
+                </div>
             </div>
 <?php } ?>
 

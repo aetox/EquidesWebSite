@@ -12,14 +12,14 @@ include_once("header.php");
 
     <div></div>
 
-    <a href="#" class="boutton_vertV2"><img src="ASSETS\ico\plus2.png">voyage</a>
+    <a href="#" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">voyage</a>
 
     <div class="carnet_transport_pdf">
     <!-- Télécharge le pdf -->
     <!-- <a href="PHP/pdf_functions/carnet_transport_pdf.php" target="_blank">
     <button>Télécharger le PDF</button>
     </a> -->
-    <a href="PHP/pdf_functions/carnet_transport_pdf.php" target="_blank" class="boutton_pdf"><img src="ASSETS\ico\telecharger2.png">PDF</a>
+    <a href="PHP/pdf_functions/carnet_transport_pdf.php" target="_blank" class="boutton_pdf"><img src="ASSETS/ico/telecharger2.png">PDF</a>
     </div>
 </div>
 

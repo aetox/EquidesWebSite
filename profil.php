@@ -33,7 +33,7 @@ $lienPdp = AffichagePhoto($mysqli,$sireDetenteur);
           <li class="list-group-item"><strong>Signature Organisation : </strong><?php echo ($_SESSION['signatureOrganisation_detenteur'] ) ?></li>
         </ul>   
   </div>
-  <a href="accueil.php" class="boutton_orangeV2"><img src="ASSETS\ico\retour.png">retour</a>
+  <a href="accueil.php" class="boutton_orangeV2"><img src="ASSETS/ico/retour.png">retour</a>
 </div>
                 
 <?php include("footer.php"); ?>

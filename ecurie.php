@@ -13,7 +13,7 @@ include_once("header.php");
 
     </div>
 
-    <a href="#" class="boutton_vertV2"><img src="ASSETS\ico\plus2.png">écurie</a>
+    <a href="#" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">écurie</a>
     
 </div>
 

@@ -48,7 +48,7 @@ if (mysqli_num_rows($result) > 0) {
         </ul> 
     </div>
 
-    <a href="equides.php" class="boutton_orangeV2"><img src="ASSETS\ico\retour.png">retour</a>
+    <a href="equides.php" class="boutton_orangeV2"><img src="ASSET/ico/retour.png">retour</a>
 
     <?php include_once("footer.php"); ?>
 

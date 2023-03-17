@@ -21,6 +21,11 @@ $titre ="Carnet de Traitement : $idSire";
 
     
     <!-- Lors du clic on appelle la fonction affichage_pdf -->
+
+    <a href="PHP/pdf_functions/traitement_pdf.php?numSIRE=<?=$idSire;?>&amp;detenteurSIRE=<?=$_SESSION['sire_detenteur'];?>" target="_blank">
+    <button>Télécharger le PDF</button>    
+    </a> <!-- J'ai mis test.php pour tester, remettre traitement_pdf.php-->
+
     
 
 <?php include_once("footer.php"); ?>

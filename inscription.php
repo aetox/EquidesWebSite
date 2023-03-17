@@ -1,7 +1,7 @@
 <?php
 ob_start();
 include_once("header.php");
-if(isset($_SESSION['logged_user'])) {
+if(!isset($_SESSION['logged_user'])) {
 $titre ="Inscription";
 ?>
 <?php include_once('PHP/user_functions/inscription_fct.php') ?>
@@ -9,8 +9,7 @@ $titre ="Inscription";
 
 <div class="inscription">
 
-    <img src="ASSETS/ico/logo_equides.png" alt="Logo">
-    <h1>EQUIDES</h1>
+    <img src="ASSETS/ico/logotest.png" alt="Logo">
 
         <form name="form_inscription" id="form_inscription" method="post" enctype="multipart/form-data">
 

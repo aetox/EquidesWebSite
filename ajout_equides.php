@@ -6,11 +6,12 @@ $titre ="Mes équides";
 ?>
 <?php include_once('PHP/equide_functions/modification/ajoutEquides_fct.php') ?>
 		
-<div id="ajoutEquides" >
+<div id="ajoutEquides">
 
+		<h1 class="titre_1">ajout d'équidé</h1>
 		<form method="post" id="formAjoutEquides" name="formajoutEquides" enctype="multipart/form-data">
 
-		<a href="equides.php"><span class="material-symbols-outlined" id="suppEquideSpan">close</span></a>
+			<a href="equides.php"><span class="material-symbols-outlined">close</span></a>
 
 			<label for="numSire">Numero de sire :</label>
 			<input type="number" id="numSire" name="numSire" required><br>
@@ -60,7 +61,7 @@ $titre ="Mes équides";
 			<button type="submit" name="ajouter">Ajouter </button>
 
 		</form>
-	</div>
+</div>
 
 <?php include_once("footer.php"); ?>
 <?php }else {

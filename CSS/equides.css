@@ -19,6 +19,7 @@
 
 #ajoutEquides {
     display: flex;
+    background-color: white;
 }
 
 /* Croix pour fermer le formulaire */

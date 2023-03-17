@@ -24,7 +24,7 @@ if (mysqli_num_rows($result) > 0) {
     <div class="equide_description">
 
     <div class="card" style="min-width: 250px ; max-width: 400px;">                                                                                          
-        <img src="../EquidesWebSite/ASSETS/img_bdd/<?php echo $lienPdp?>" class="card-img-top" alt="Sire n°<?php echo $idSire?>">
+        <img src="../ASSETS/img_bdd/<?php echo $lienPdp?>" class="card-img-top" alt="Sire n°<?php echo $idSire?>">
         <div class="card-body">
             <h5 class="card-title titre_1"><?php echo $equides['nom_equide'] ?></h5>
         </div>

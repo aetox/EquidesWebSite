@@ -25,7 +25,7 @@ include_once("header.php");
                         <th>Supprimer</th>
                     </tr>
                 <hr> 
-        <?php include_once('php/equide_functions/affichage/affichageTraitement_fct.php') ?>
+        <?php include_once('PHP/equide_functions/affichage/affichageTraitement_fct.php') ?>
         </table> 
     </div>
 

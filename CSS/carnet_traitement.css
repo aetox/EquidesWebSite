@@ -6,3 +6,10 @@
     justify-content: center;
     align-items: center;
 }
+
+.carnet_traitement_affichage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

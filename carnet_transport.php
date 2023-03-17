@@ -23,11 +23,4 @@ include_once("header.php");
     </div>
 </div>
 
-    <!-- Télécharge le pdf -->
-
-    <a href="PHP/pdf_functions/carnet_transport_pdf.php" target="_blank">
-    <button>Télécharger le PDF</button>
-    </a>
-
-
 <?php include_once("footer.php"); ?>

@@ -13,7 +13,6 @@ html, body {
     min-height: 100vh;
 }
 
-
 h1,h3 {
     text-transform: uppercase;
     font-family: 'Asap Condensed', sans-serif;
@@ -23,36 +22,22 @@ h1,h3 {
     width: auto;
 }
 
+h5 {
+    font-family: 'Asap Condensed', sans-serif;
+    font-size: 35px !important;
+}
+
+
+
 .titre_1 {
     color: rgba(207, 113, 3, 1);
     font-size: 55px;
 }
 
-.boutton_1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 109, 31, 1);
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    border: solid 1px transparent;/*Pour que enlever le décalement lorsque on survole*/
-    font-weight: 600;
-    border-radius: 10px;
-    font-size: 24px;
-    height: 52px;
-    width: 300px;   
-    transition: 0.3s;   
-}
-
-.boutton_1:hover {
-    background-color: rgb(30, 179, 0);
-    color: white;
-}
-
 /* BOUTTON ORANGE */
 
 .boutton_orange {
+    font-family: 'Asap Condensed', sans-serif;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -62,9 +47,9 @@ h1,h3 {
     text-transform: uppercase;
     font-weight: 600;
     border-radius: 10px;
-    font-size: 24px;
+    font-size: 30px;
     height: 52px;
-    width: 270px;
+    width: 250px;
     padding-left: 20px;
     /* padding: 8px 20px 8px 20px; */
     transition: 0.3s;  
@@ -81,6 +66,7 @@ h1,h3 {
 }
 
 .boutton_orangeV2 {
+    font-family: 'Asap Condensed', sans-serif;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -98,7 +84,7 @@ h1,h3 {
 
 .boutton_orangeV2 img {
     width: 30px;
-    margin-right: 25px; 
+    margin-right: 15px; 
 }
 
 .boutton_orangeV2:hover {
@@ -109,6 +95,7 @@ h1,h3 {
 /* BOUTTON VERT */
 
 .boutton_vert {
+    font-family: 'Asap Condensed', sans-serif;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -118,9 +105,9 @@ h1,h3 {
     text-transform: uppercase;
     font-weight: 600;
     border-radius: 10px;
-    font-size: 24px;
+    font-size: 30px;
     height: 52px;
-    width: 270px;
+    width: 250px;
     padding-left: 20px;
     transition: 0.3s;   
 }
@@ -136,6 +123,7 @@ h1,h3 {
 }
 
 .boutton_vertV2 {
+    font-family: 'Asap Condensed', sans-serif;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -147,7 +135,7 @@ h1,h3 {
     border-radius: 10px;
     font-size: 24px;
     transition: 0.3s; 
-    padding: 8px 20px 8px 20px;  
+    padding: 8px 20px 8px 15px;  
 }
 
 .boutton_vertV2 img {
@@ -163,6 +151,7 @@ h1,h3 {
 /* BOUTTON PDF */
 
 .boutton_pdf {
+    font-family: 'Asap Condensed', sans-serif;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -174,12 +163,12 @@ h1,h3 {
     border-radius: 10px;
     font-size: 24px;
     transition: 0.3s; 
-    padding: 8px 20px 8px 20px;  
+    padding: 8px 20px 8px 20px  ;  
 }
 
 .boutton_pdf img {
-    width: 30px;
-    margin-right: 15px;
+    width: 30px !important;
+    margin-right: 15px !important;
 }
 
 .boutton_pdf:hover {

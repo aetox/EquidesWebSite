@@ -1,4 +1,5 @@
 <?php
+ob_start();
 $titre ="Mes équides";
 include_once("header.php");
 ?>
@@ -61,3 +62,4 @@ include_once("header.php");
 	</div>
 
 <?php include_once("footer.php"); ?>
+<?php ob_end_flush();?>

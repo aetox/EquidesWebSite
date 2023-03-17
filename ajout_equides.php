@@ -7,7 +7,9 @@ include_once("header.php");
 <div id="ajoutEquides" >
 
 		<form method="post" id="formAjoutEquides" name="formajoutEquides" enctype="multipart/form-data">
-		<span class="material-symbols-outlined" id="suppEquideSpan">close</span>
+
+		<a href="equides.php"><span class="material-symbols-outlined" id="suppEquideSpan">close</span></a>
+
 			<label for="numSire">Numero de sire :</label>
 			<input type="number" id="numSire" name="numSire" required><br>
 

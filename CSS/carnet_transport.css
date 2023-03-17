@@ -6,3 +6,7 @@
     flex-direction: column;
     align-items: center;
 }
+
+.carnet_transport_pdf {
+    margin-top: 20px;
+}

@@ -13,8 +13,8 @@ include_once("header.php");
 
     </div>
 
-    <a href="#" class="boutton_1">Ajouter une écurie</a>
-
+    <a href="#" class="boutton_vertV2"><img src="ASSETS\ico\plus2.png">écurie</a>
+    
 </div>
 
 <?php include_once("footer.php"); ?>

@@ -43,6 +43,7 @@ $lienPdp = AffichagePhoto($mysqli,$sireDetenteur);
 
       </div>
   </div>
+  <a href="accueil.php" class="boutton_orangeV2"><img src="ASSETS\ico\retour.png">retour</a>
 </div>
                 
 <?php include_once("footer.php"); ?>

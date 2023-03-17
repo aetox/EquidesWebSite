@@ -33,10 +33,11 @@ $titre ="Carnet de Vaccination : $idSire";
 
 
     <!-- Télécharge le pdf -->
-
-    <a href="PHP/pdf_functions/vaccin_pdf.php?numSIRE=<?=$idSire;?>" target="_blank">
+    <div class="carnet_transport_pdf">
+    <a href="PHP/pdf_functions/vaccin_pdf.php?numSIRE=<?=$idSire;?>&amp;detenteurSIRE=<?=$_SESSION['sire_detenteur'];?>" target="_blank">
     <button>Télécharger le PDF</button>
     </a>
+    </div>
 
 
 

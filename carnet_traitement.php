@@ -17,17 +17,13 @@ $titre ="Carnet de Traitement : $idSire";
     <?php include_once('PHP/equide_functions/affichage/affichageTraitement_fct.php') ?>
     </div>
 
-</div>
-
-    
     <!-- Lors du clic on appelle la fonction affichage_pdf -->
+    <div class="carnet_transport_pdf">
+    <a href="PHP/pdf_functions/traitement_pdf.php?numSIRE=<?=$idSire;?>&amp;detenteurSIRE=<?=$_SESSION['sire_detenteur'];?>" target="_blank" class="boutton_pdf">
+    <img src="ASSETS/ico/telecharger2.png">PDF</a>
+    </div>
 
-    <a href="PHP/pdf_functions/traitement_pdf.php?numSIRE=<?=$idSire;?>&amp;detenteurSIRE=<?=$_SESSION['sire_detenteur'];?>" target="_blank">
-    <button>Télécharger le PDF</button>    
-    </a> <!-- J'ai mis test.php pour tester, remettre traitement_pdf.php-->
-
-    
-
+</div>
 <?php include_once("footer.php"); ?>
 <?php }else {
     header("Location: index.php");

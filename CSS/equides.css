@@ -112,4 +112,7 @@ table.affichageTable tr td{
     align-items: center;
 }
 
+.equide_description a {
+    margin-top: 20px;
+}
 

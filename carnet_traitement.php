@@ -32,11 +32,11 @@ include("header.php");
     <!-- Lors du clic on appelle la fonction affichage_pdf -->
     
     <!-- Lien temporaire pour le test du pdf  -->
-    
-    <a href="PHP/pdf_functions/traitement_pdf.php?numSIRE=<?=$idSire;?>&amp;detenteurSIRE=<?=$_SESSION['sire_detenteur'];?>" target="_blank">
 
-    <button>Télécharger le PDF</button>    
-    </a> <!-- J'ai mis test.php pour tester, remettre traitement_pdf.php-->
+    <a href="PHP/pdf_functions/traitement_pdf.php?numSIRE=<?=$idSire;?>" target="_blank" class="boutton_pdf"><img src="ASSETS\ico\telecharger2.png">PDF</a> 
+    
+    <!-- J'ai mis test.php pour tester, remettre traitement_pdf.php-->
+
 
 </div>
 

@@ -16,9 +16,8 @@ include("header.php");
 		
 	</div>
 	
+	<a href="carnet_transport.php" class="boutton_vertV2"><img src="ASSETS\ico\plus2.png">équidé</a>
 	
-	<a href="ajout_equides.php" class="boutton_1">Ajouter un équidé</a>
-
 </div>
 
 <?php include("footer.php"); ?>

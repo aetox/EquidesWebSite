@@ -4,9 +4,6 @@ header {
     background-color: rgba(207, 113, 3, 1);
 }
 
-header img {
-    margin-left: 20px;
-}
 
 header ul li a {
     text-decoration: none;

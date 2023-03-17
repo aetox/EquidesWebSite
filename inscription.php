@@ -1,6 +1,8 @@
 <?php
-$titre ="Inscription";
+ob_start();
 include_once("header.php");
+if(isset($_SESSION['logged_user'])) {
+$titre ="Inscription";
 ?>
 <?php include_once('PHP/user_functions/inscription_fct.php') ?>
 
@@ -41,4 +43,6 @@ include_once("header.php");
 </div>
 
 <?php include_once("footer.php"); ?>
-
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

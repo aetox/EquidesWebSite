@@ -1,7 +1,9 @@
 <?php
+ob_start();
+include_once("header.php");
+if(isset($_SESSION['logged_user'])) {
 $idSire = $_GET['numSIRE'];
 $titre ="Carnet de Vaccination : $idSire";
-include_once("header.php");
 ?>
 
 <h1>Carnet de vaccination pour l'équide n°<?php echo $idSire ?>  </h1>
@@ -39,3 +41,6 @@ include_once("header.php");
 
 
 <?php include_once("footer.php"); ?>
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

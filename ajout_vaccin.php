@@ -1,8 +1,9 @@
 <?php
-
+ob_start();
+include_once("header.php");
+if(isset($_SESSION['logged_user'])) {
 $idSire = $_GET['numSIRE'];
 $titre ="Ajouter un vaccin";
-include_once("header.php");
 include_once('PHP/equide_functions/modification/AjoutVaccin_fct.php');
 ?>
 
@@ -39,3 +40,6 @@ include_once('PHP/equide_functions/modification/AjoutVaccin_fct.php');
 			<button type="submit" name="ajouter">Ajouter le vaccin</button>
     		</form>
 	</div>
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

@@ -1,7 +1,9 @@
 <?php
+ob_start();
+include_once("header.php");
+if(isset($_SESSION['logged_user'])) {
 $idSire = $_GET['numSIRE'];
 $titre ="Carnet de Traitement : $idSire";
-include_once("header.php");
 ?>
 
 <div class="carnet_traitement">
@@ -52,3 +54,6 @@ include_once("header.php");
 
 
 <?php include_once("footer.php"); ?>
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

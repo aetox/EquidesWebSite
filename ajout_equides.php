@@ -1,7 +1,8 @@
 <?php
 ob_start();
-$titre ="Mes équides";
 include_once("header.php");
+if(isset($_SESSION['logged_user'])) {
+$titre ="Mes équides";
 ?>
 <?php include_once('PHP/equide_functions/modification/ajoutEquides_fct.php') ?>
 		
@@ -62,4 +63,6 @@ include_once("header.php");
 	</div>
 
 <?php include_once("footer.php"); ?>
-<?php ob_end_flush();?>
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

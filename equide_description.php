@@ -1,9 +1,9 @@
 <?php
-
+ob_start();
+include_once("header.php");
+if(isset($_SESSION['logged_user'])) {
 $idSire = $_GET['numSIRE'];
 $titre ="Equidé n°$idSire";
-include_once("header.php");
-
 require('PHP/equide_functions/affichage/affichagePhoto_fct.php');
 
 $info = array();
@@ -57,4 +57,6 @@ if (mysqli_num_rows($result) > 0) {
 <?php }else {
         echo("Vous n'avez pas d'equidés");
 } ?>
-
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

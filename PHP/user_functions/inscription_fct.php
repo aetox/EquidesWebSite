@@ -2,7 +2,28 @@
 
 $info = array();
 
+//Fonction qui valide les données
+function valid_donnees($donnees){
+  $donnees = trim($donnees);// supprimes les espaces en debut et fin de chaines
+  $donnees = stripslashes($donnees); // suprime les \ d'une chaine de caractère
+  $donnees = htmlspecialchars($donnees); // convertie les caractères spéciaux en entitées HTML
+  return $donnees;
+}
+
+// Function pour les images uploud :
+
+
 if(isset($_POST['inscription'])){//l'utilisateur à cliqué sur "S'inscrire", on demande donc si les champs sont défini avec "isset"
+  
+  $prenom = valid_donnees($_POST['surname']);
+  $nom = valid_donnees($_POST['name']);
+  $mail =valid_donnees($_POST['mail']);
+  $password =valid_donnees($_POST['password']);
+  $sire =  valid_donnees($_POST['sire']);
+  $conditions = $_POST['inscription_accept_conditions'];
+  $photo = $_FILES['photo_detenteur'];
+  
+  
   if(empty($_POST['surname'])){//le champ pseudo est vide, on arrête l'exécution du script et on affiche un message d'erreur
     array_push($info, "Le champ Nom est vide");
   } elseif(empty($_POST['name'])){//le champ mot de passe est vide
@@ -17,7 +38,9 @@ if(isset($_POST['inscription'])){//l'utilisateur à cliqué sur "S'inscrire", on
     array_push($info, "Le champ Sire est vide");
   } elseif(empty($_POST['inscription_accept_conditions'])){
     array_push($info, "Vous devez accepter les conditions d'utilisations.");
-  } 
+  } elseif(empty($_FILES['photo_detenteur'])){
+    array_push($info,"Vous devez ajouter une photo de profil");
+  }
   else {
 
     $img_detenteur= $_FILES['photo_detenteur']['name']; 
@@ -29,7 +52,7 @@ if(isset($_POST['inscription'])){//l'utilisateur à cliqué sur "S'inscrire", on
     
     $new_img_name = $time.$img_detenteur;
     
-    move_uploaded_file($tpm_nom,"$site_root/ASSETS/img_bdd/".$new_img_name);
+    move_uploaded_file($tpm_nom,"../ASSETS/img_bdd/".$new_img_name);
   
     $numSire = $_POST['sire'];
     // Requette pour ajouter l'image dans la bdd
@@ -38,7 +61,6 @@ if(isset($_POST['inscription'])){//l'utilisateur à cliqué sur "S'inscrire", on
     
     if ($result_img !== false) {
       $insert_id = mysqli_insert_id($mysqli);
-      array_push($info, "img ajouté avec l'ID : " . $insert_id);
     } else {
       array_push($info, "Erreur img");
     }

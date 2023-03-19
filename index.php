@@ -8,10 +8,15 @@ include("header.php");
 <div class="connexion">
 
     <img src="ASSETS/ico/logotest.png" alt="Logo">
+
     <form name="form_connexion" id="form_connexion" method="post">
         <h1>Connexion</h1>
+
+        <!--Appelle la fonction affichageErreurs et affiche l'erreur sous forme de tableau  -->
+        <?php include_once('PHP/other_functions/affichageErreurs.php');?>
+        
         <input type="mail" name="mail" id="mail_connexion" placeholder="Mail" autofocus required >
-        <input type="password" name="password" id="password_connexion" placeholder="Mot de passe"required>
+        <input type="password" name="password" id="password_connexion" placeholder="Mot de passe" required>
         <div>
             <input type="checkbox" name="remember_me" id="remember_me" >
             <label for="remember_me">Se souvenir de moi</label>

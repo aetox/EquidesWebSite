@@ -17,6 +17,10 @@ $titre ="Inscription";
 
             <h1>Inscription</h1>
 
+            <!--Appelle la fonction affichageErreurs et affiche l'erreur sous forme de tableau  -->
+            <?php include_once('PHP/other_functions/affichageErreurs.php');?>
+       
+
             <input type="text" name="surname" id="surname_inscription" placeholder="prénom" autofocus required>
             <input type="text" name="name" id="name_inscription" placeholder="nom"  required>
             <input type="mail" name="mail" id="mail_inscription" placeholder="Mail" required> 

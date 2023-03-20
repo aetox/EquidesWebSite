@@ -1,6 +1,8 @@
 <?php
+ob_start();
+include_once("header.php");
+if(isset($_SESSION['logged_user'])) {
 $titre ="Accueil";
-include_once("header.php"); 
 ?>
 
 <div class="accueil">
@@ -22,3 +24,6 @@ include_once("header.php");
 </div>
 
 <?php include_once("footer.php"); ?>
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

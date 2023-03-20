@@ -1,9 +1,10 @@
 <?php
-
+ob_start();
+include_once("header.php");
+if(isset($_SESSION['logged_user'])) {
 $idSire = $_GET['numSIRE'];
 $titre ="Ajouter un vaccin";
-include_once("header.php");
-include_once('PHP/equide_functions/modification/AjoutVaccin_fct.php');
+include_once('PHP/equide_functions/modification/ajoutVaccin_fct.php');
 ?>
 
 <div class="ajout_vaccin">
@@ -40,5 +41,12 @@ include_once('PHP/equide_functions/modification/AjoutVaccin_fct.php');
         </form>
     </div>
 </div>
+        <label for="signatureVaccin">Signature :</label>
+        <input type="text" id="signatureVaccin" name="signatureVaccin" placeholder="Signature" required><br>
 
-<?php include_once("footer.php"); ?>
+			<button type="submit" name="ajouter">Ajouter le vaccin</button>
+    		</form>
+	</div>
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

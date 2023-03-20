@@ -1,7 +1,9 @@
 <?php
+ob_start();
+include_once("header.php");
+if(isset($_SESSION['logged_user'])) {
 $idSire = $_GET['numSIRE'];
 $titre ="Carnet de Vaccination : $idSire";
-include_once("header.php");
 ?>
 
 <div class="carnet_traitement">
@@ -13,11 +15,16 @@ include_once("header.php");
     <a href="equide_description.php?numSIRE=<?=$idSire?>" class="boutton_orangeV2"><img src="ASSET/ico/retour.png">retour</a>
 </div>
     <!-- Télécharge le pdf -->
-
-    <!-- <a href="PHP/pdf_functions/vaccin_pdf.php?numSIRE=<?=$idSire;?>" target="_blank">
+    <div class="carnet_transport_pdf">
+    <a href="PHP/pdf_functions/vaccin_pdf.php?numSIRE=<?=$idSire;?>&amp;detenteurSIRE=<?=$_SESSION['sire_detenteur'];?>" target="_blank">
     <button>Télécharger le PDF</button>
-    </a> -->
+    </a>
+    </div>
+
 
 
 
 <?php include_once("footer.php"); ?>
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

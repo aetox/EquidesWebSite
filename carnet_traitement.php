@@ -1,7 +1,9 @@
 <?php
+ob_start();
+include_once("header.php");
+if(isset($_SESSION['logged_user'])) {
 $idSire = $_GET['numSIRE'];
 $titre ="Carnet de Traitement : $idSire";
-include_once("header.php");
 ?>
 
 <div class="carnet_traitement">
@@ -12,10 +14,14 @@ include_once("header.php");
     </div>
     <a href="equide_description.php?numSIRE=<?=$idSire?>" class="boutton_orangeV2"><img src="ASSET/ico/retour.png">retour</a>
 </div>
-
-
-    
     <!-- Lors du clic on appelle la fonction affichage_pdf -->
-    
+    <div class="carnet_transport_pdf">
+    <a href="PHP/pdf_functions/traitement_pdf.php?numSIRE=<?=$idSire;?>&amp;detenteurSIRE=<?=$_SESSION['sire_detenteur'];?>" target="_blank" class="boutton_pdf">
+    <img src="ASSETS/ico/telecharger2.png">PDF</a>
+    </div>
 
+</div>
 <?php include_once("footer.php"); ?>
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

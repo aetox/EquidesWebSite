@@ -1,12 +1,16 @@
 <?php
-$titre ="Inscription";
+ob_start();
 include_once("header.php");
+if(!isset($_SESSION['logged_user'])) {
+$titre ="Inscription";
 ?>
 <?php include_once('PHP/user_functions/inscription_fct.php') ?>
 
-<div class="connexion-contenu">
-    <div class="inscription">
-        <img src="ASSETS/ico/logotest.png" alt="Logo">
+<div class="inscription">
+
+    <img src="ASSETS/ico/logotest.png" alt="Logo">
+
+
         <form name="form_inscription" id="form_inscription" method="post" enctype="multipart/form-data">
 
             <!-- Inclure l'affichage d'erreur -->
@@ -36,4 +40,6 @@ include_once("header.php");
     </div>
 </div>
 <?php include_once("footer.php"); ?>
-
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

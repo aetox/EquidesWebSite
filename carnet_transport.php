@@ -1,6 +1,8 @@
 <?php
-$titre ="Carnet de transport";
+ob_start();
 include_once("header.php");
+if(isset($_SESSION['logged_user'])) {
+$titre ="Carnet de transport";
 ?>
 
 
@@ -24,3 +26,6 @@ include_once("header.php");
 </div>
 
 <?php include_once("footer.php"); ?>
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

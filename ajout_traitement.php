@@ -1,8 +1,10 @@
 <?php
+ob_start();
+include_once("header.php");
+if(isset($_SESSION['logged_user'])) {
 $idSire = $_GET['numSIRE'];
 $titre ="Ajouter un traitement";
-include_once("header.php");
-include_once('PHP/equide_functions/modification/AjoutTraitement_fct.php');
+include_once('PHP/equide_functions/modification/ajoutTraitement_fct.php');
 ?>
 <div class="ajout_traitement">
     <h1>Ajouter un traitement pour l'équidé n°<?=$idSire?></h1>
@@ -27,5 +29,12 @@ include_once('PHP/equide_functions/modification/AjoutTraitement_fct.php');
         </form>
     </div>
 </div>
+        <label for="commentaireTraitement">Commentaire :</label>
+        <input type="text" id="commentaireTraitement" name="commentaireTraitement" placeholder="Commentaire" required><br>
 
-<?php include_once("footer.php"); ?>
+			<button type="submit" name="ajouter">Ajouter le traitement</button>
+    		</form>
+	</div>
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

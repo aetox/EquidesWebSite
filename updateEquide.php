@@ -1,6 +1,8 @@
 <?php
-$titre ="Modification";
+ob_start();
 include_once("header.php");
+if(isset($_SESSION['logged_user'])) {
+$titre ="Modification";
 include_once('PHP/equide_functions/modification/updateEquide_fct.php');
 
 $info = array();
@@ -67,7 +69,10 @@ if (mysqli_num_rows($resultOld) > 0) {
 		<button type="submit" name="ajouter">Mettre à jour </button>
     </form>
 	</div>
-
 </div>
-
-<?php include("footer.php"); ?>
+			<button type="submit" name="ajouter">Mettre à jour </button>
+    		</form>
+	</div>
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

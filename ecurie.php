@@ -1,6 +1,8 @@
-<?php 
-$titre ="Mon écurie";
+<?php
+ob_start();
 include_once("header.php");
+if(isset($_SESSION['logged_user'])) {
+$titre ="Mon écurie";
 ?>
 
 <div class="ecurie">
@@ -18,3 +20,6 @@ include_once("header.php");
 </div>
 
 <?php include_once("footer.php"); ?>
+<?php }else {
+    header("Location: index.php");
+}ob_end_flush(); ?>

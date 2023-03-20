@@ -26,6 +26,10 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
     <link rel="stylesheet" href="CSS/carnet_transport.css">
     <link rel="stylesheet" href="CSS/profil.css">
     <link rel="stylesheet" href="CSS/carnet_traitement.css">
+    <link rel="stylesheet" href="CSS/ajout_traitement.css">
+    <link rel="stylesheet" href="CSS/ajout_equides.css">
+    <link rel="stylesheet" href="CSS/ajout_vaccin.css">
+    <link rel="stylesheet" href="CSS/updateEquide.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="icon" type="image/png" href="ASSETS/ico/ico.png" />
@@ -33,7 +37,7 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
     <title><?= $titre ?? "Equides"?></title>
 </head>
 <body>
-    <div class="contenu"> <!-- Cette div sera fermée dans footer.php -->
+    <div class="contenu"> <!-- Cette div se ferme dans footer.php -->
 
         <?php if(isset($_SESSION['logged_user'])) { ?>
 
@@ -41,7 +45,7 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="container-fluid">
                         <a class="navbar-brand" id="nav_img" href="accueil.php">
-                            <img src="ASSETS/ico/logo_equides.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-right">
+                            <img src="ASSETS/ico/logo_horizontal.png" alt="Logo" height="40" class="d-inline-block align-text-right">
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>

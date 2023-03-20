@@ -28,11 +28,12 @@ h5 {
 }
 
 
-
 .titre_1 {
     color: rgba(207, 113, 3, 1);
     font-size: 55px;
 }
+
+    /*     -----     BOUTTONS    -----     */
 
 /* BOUTTON ORANGE */
 
@@ -174,4 +175,78 @@ h5 {
 .boutton_pdf:hover {
     color: rgba(207, 113, 3, 1);
     background-color: rgba(207, 112, 3, 0.153);
+}
+
+    /*     -----     FORMULAIRES    -----     */
+
+.formulaire_1 {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formulaire_2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(207, 113, 3, 1);
+    font-family: 'Asap Condensed', sans-serif;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.formulaire_2 input {
+    width: 209px;
+    height: 46px;
+    border-radius: 20px;
+    border: none;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Asap Condensed', sans-serif;
+}
+
+.formulaire_2 label {
+    margin-top: 5px;
+}
+
+.formulaire_2 span {
+    position: absolute;
+    margin-left: 115px;
+    transition: 0.5;
+    color: white;
+}
+
+.formulaire_2 span:hover {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+.formulaire_2 button {
+    width: 156px;
+    height: 46px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-family: 'Asap Condensed', sans-serif;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: rgba(0, 109, 31, 1);
+    transition: 0.5s;
+    margin-top: 15px;
+}
+
+.formulaire_2 button:hover {
+    color: white;
+    background-color: rgb(30, 179, 0);
+    letter-spacing: 3px;
+    border: 0px solid rgba(0, 109, 31, 1);
 }

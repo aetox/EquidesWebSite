@@ -4,10 +4,11 @@ include_once("header.php");
 ?>
 <?php include_once('PHP/equide_functions/modification/ajoutEquides_fct.php') ?>
 		
-<div id="ajoutEquides">
+<div class="ajout_equides">
 
-		<h1 class="titre_1">ajout d'équidé</h1>
-		<form method="post" id="formAjoutEquides" name="formajoutEquides" enctype="multipart/form-data">
+		<h1>ajouter un équidé</h1>
+		<div class="formulaire_1">
+		<form method="post" class="formulaire_2" name="formajoutEquides" enctype="multipart/form-data">
 
 			<a href="equides.php"><span class="material-symbols-outlined">close</span></a>
 
@@ -59,6 +60,7 @@ include_once("header.php");
 			<button type="submit" name="ajouter">Ajouter </button>
 
 		</form>
+		</div>
 </div>
 
 <?php include_once("footer.php"); ?>

@@ -247,6 +247,5 @@ h5 {
 .formulaire_2 button:hover {
     color: white;
     background-color: rgb(30, 179, 0);
-    letter-spacing: 3px;
     border: 0px solid rgba(0, 109, 31, 1);
 }

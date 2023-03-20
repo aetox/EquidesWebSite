@@ -11,6 +11,7 @@ include_once('PHP/equide_functions/modification/AjoutVaccin_fct.php');
     <div class="formulaire_1">
         <form method="post" class="formulaire_2" name="formajoutTraitement" enctype="multipart/form-data">
 
+            <a href="carnet_vaccination.php?numSIRE=<?=$idSire?>"><span class="material-symbols-outlined">close</span></a>
             <label for="idVaccin">ID Vaccin :</label>
             <input type="text" id="idVaccin" name="idVaccin" placeholder="XXXXXXX" required><br>
 

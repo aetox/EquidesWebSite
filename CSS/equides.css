@@ -70,7 +70,6 @@ table.affichageTable tr td{
 #affichageEquides_info {
     font-family: 'Asap Condensed', sans-serif;
     font-size: 25px;
-    border-radius: 10px;
     font-weight: bold;
     text-transform: uppercase;
     transition: 0.5s;
@@ -80,10 +79,12 @@ table.affichageTable tr td{
 #affichageEquides_info a {
     color: rgba(207, 113, 3, 1);
     text-decoration: none;
-    
+    padding: 8px 20px 8px 20px;
+    border-radius: 10px;
+    transition: 0.5s;
 }
 
-#affichageEquides_info:hover {
+#affichageEquides_info a:hover {
     background-color: rgba(207, 112, 3, 0.304);
     letter-spacing: normal;
 }

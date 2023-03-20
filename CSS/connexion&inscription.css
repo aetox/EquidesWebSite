@@ -1,6 +1,8 @@
 /*     -----     CLASSE CONNEXION & INSCRIPTION     -----     */
-.connexion {
+.connexion-contenu {
     min-height: 100vh;
+    background-color: rgba(207, 113, 3, 1);
+    padding-top: 40px;  
 }
 
 .connexion, #form_connexion, .inscription, #form_inscription {
@@ -66,7 +68,7 @@
 #form_connexion button:hover, #form_inscription button:hover {
     color: white;
     background-color: rgb(30, 179, 0);
-    letter-spacing: 3.5px;
+    letter-spacing: 3px;
     border: 0px solid rgba(0, 109, 31, 1);
 }
 

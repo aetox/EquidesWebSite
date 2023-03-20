@@ -4,12 +4,9 @@ include_once("header.php");
 ?>
 <?php include_once('PHP/user_functions/inscription_fct.php') ?>
 
-
-<div class="inscription">
-
-    <img src="ASSETS/ico/logo_equides.png" alt="Logo">
-    <h1>EQUIDES</h1>
-
+<div class="connexion-contenu">
+    <div class="inscription">
+        <img src="ASSETS/ico/logotest.png" alt="Logo">
         <form name="form_inscription" id="form_inscription" method="post" enctype="multipart/form-data">
 
             <!-- Inclure l'affichage d'erreur -->
@@ -32,13 +29,11 @@ include_once("header.php");
                 <input type="checkbox" name="inscription_accept_conditions" id="inscription_accept_conditions" required>
                 <label for="inscription_accept_conditions">J'accepte les conditions d'utilisation</label>
             </div>
-            <button type="submit" name="inscription" >S'inscrire</button>
-        
+            <button type="submit" name="inscription" >S'inscrire</button> 
         </form>
 
-    <p>Déjà un compte ? <a href="index.php"> Cliquez-ici !</a></p> 
-
+        <p>Déjà un compte ? <a href="index.php"> Cliquez-ici !</a></p> 
+    </div>
 </div>
-
 <?php include_once("footer.php"); ?>
 

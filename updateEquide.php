@@ -15,11 +15,11 @@ if (mysqli_num_rows($resultOld) > 0) {
     $oldequides = mysqli_fetch_array($resultOld);
 }
 ?>
-
-<div id="updateEquides">
-
-    <form method="post" id="formAjoutEquides" name="formajoutEquides" enctype="multipart/form-data">
-
+<div class="updateEquide">
+    <h1>Modification de l'équidé n°<?=$idSire?></h1>
+    <div class="formulaire_1">
+    <form method="post" class="formulaire_2" name="formajoutEquides" enctype="multipart/form-data">
+        <a href="equide_description.php?numSIRE=<?=$idSire?>"><span class="material-symbols-outlined">close</span></a>
         <label for="numSire">Numero de sire :</label>
         <input type="number" id="numSIRE" name="numSIRE" value="<?php echo $oldequides['numSIRE'] ?>" readonly required><br>
 
@@ -41,7 +41,7 @@ if (mysqli_num_rows($resultOld) > 0) {
         <label for="stud_equide">Stud :</label>
         <input type="text" id="stud_equide" name="stud_equide" value="<?php echo $oldequides['stud_equide'] ?>" required><br>
 
-        <label for="lieuElevage_equide">Lieu d'elevage :</label>
+        <label for="lieuElevage_equide">Lieu d'élevage :</label>
         <input type="text" id="lieuElevage_equide" name="lieuElevage_equide" value="<?php echo $oldequides['lieuElevage_equide'] ?>" required><br>
 
         <label for="sexe_equide">Sexe du cheval :</label>
@@ -57,18 +57,21 @@ if (mysqli_num_rows($resultOld) > 0) {
         </select>
 
         <label for="robe_equide">Robe :</label>
-			<input type="text" id="robe_equide" name="robe_equide" value="<?php echo $oldequides['robe_equide']?>"  required><br>
+		<input type="text" id="robe_equide" name="robe_equide" value="<?php echo $oldequides['robe_equide']?>"  required><br>
 
-			<label for="naisseurVeterinaire_equide">Veterinaire ayant assure la naissance :</label>
-			<input type="text" id="naisseurVeterinaire_equide" name="naisseurVeterinaire_equide" value="<?php echo $oldequides['naisseurVeterinaire_equide']?>"  required><br>
+		<label for="naisseurVeterinaire_equide">Veterinaire ayant assure la naissance :</label>
+		<input type="text" id="naisseurVeterinaire_equide" name="naisseurVeterinaire_equide" value="<?php echo $oldequides['naisseurVeterinaire_equide']?>"  required><br>
 
-			<label for="pere_equide">Pere :</label>
-			<input type="text" id="pere_equide" name="pere_equide" value="<?php echo $oldequides['pere_equide']?>"  required><br>
+		<label for="pere_equide">Père :</label>
+		<input type="text" id="pere_equide" name="pere_equide" value="<?php echo $oldequides['pere_equide']?>"  required><br>
 
-			<label for="mere_equide">Mere :</label>
-			<input type="text" id="mere_equide" name="mere_equide" value="<?php echo $oldequides['mere_equide']?>"  required><br>
+		<label for="mere_equide">Mère :</label>
+		<input type="text" id="mere_equide" name="mere_equide" value="<?php echo $oldequides['mere_equide']?>"  required><br>
 
-
+		<button type="submit" name="ajouter">Mettre à jour </button>
+    </form>
+	</div>
+</div>
 			<button type="submit" name="ajouter">Mettre à jour </button>
     		</form>
 	</div>

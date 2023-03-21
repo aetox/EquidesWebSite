@@ -1,7 +1,7 @@
 /*     -----     PROFIL    -----     */
 
 .profil {
-    padding: 20px 30px 20px 30px;
+    padding: 10px 30px 20px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;

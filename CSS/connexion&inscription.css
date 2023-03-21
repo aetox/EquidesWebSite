@@ -1,9 +1,11 @@
 /*     -----     CLASSE CONNEXION & INSCRIPTION     -----     */
-.connexion {
+.connexion-contenu {
     min-height: 100vh;
+    background-color: rgba(207, 113, 3, 1);
+    padding-top: 40px;  
 }
 
-.connexion, #form_connexion, .inscription, #form_inscription, #ajoutEquides, #formAjoutEquides {
+.connexion, #form_connexion, .inscription, #form_inscription {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,13 +16,13 @@
     color: white;
 }
 
-#form_connexion, #form_inscription, #formAjoutEquides{
+#form_connexion, #form_inscription {
     background-color: rgba(217, 217, 217, 0.8);
     border-radius: 20px;
     padding: 30px;
 }
 
-#form_connexion input, #form_inscription input, #formAjoutEquides input {
+#form_connexion input, #form_inscription input {
     width: 209px;
     height: 46px;
     border-radius: 20px;
@@ -36,7 +38,7 @@
     height: 15px ;   
 }
 
-#form_connexion label, #form_inscription label, #formAjoutEquides label {
+#form_connexion label, #form_inscription label {
     color: rgba(0, 0, 0, 0.5);
 }
 
@@ -47,7 +49,7 @@
     letter-spacing: 1px;
 }
 
-#form_connexion button, #form_inscription button, #formAjoutEquides button {
+#form_connexion button, #form_inscription button {
     width: 156px;
     height: 46px;
     margin-top: 9px;
@@ -63,10 +65,10 @@
     transition: 0.5s;
 }
 
-#form_connexion button:hover, #form_inscription button:hover, #formAjoutEquides button:hover {
+#form_connexion button:hover, #form_inscription button:hover {
     color: white;
     background-color: rgb(30, 179, 0);
-    letter-spacing: 3.5px;
+    letter-spacing: 3px;
     border: 0px solid rgba(0, 109, 31, 1);
 }
 
@@ -80,20 +82,20 @@
     text-decoration: underline;
 }
 
-.connexion img, .inscription img, #ajoutEquides img {
+.connexion img, .inscription img {
     width: 150px;
 }
 
-.connexion h1, .inscription h1, #ajoutEquides h1 {
+.connexion h1, .inscription h1 {
     font-style: italic;
     letter-spacing: 1px;
 }
 
-.connexion p, .inscription p, #ajoutEquides p {
+.connexion p, .inscription p {
     margin-top: 10px;
 }
 
-.connexion a, .inscription a, #ajoutEquides a {
+.connexion a, .inscription a {
     text-decoration: none;
     padding-top: 15px;
     font-weight:600;
@@ -103,16 +105,8 @@
     letter-spacing: 1px;
 }
 
-.connexion a:hover, .inscription a:hover, #ajoutEquides a:hover {
+.connexion a:hover, .inscription a:hover {
     color: rgba(0, 109, 31, 1);
 }
 
 
-h1,h3 {
-    text-transform: uppercase;
-    font-family: 'Asap Condensed', sans-serif;
-    text-align: center;
-    padding: 20px;
-    transition: 0.5s;
-    width: auto;
-}

@@ -26,8 +26,8 @@ if (mysqli_num_rows($result) > 0) {
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Sire : <?php echo $equides['numSIRE'] ?></li>
                             <li class="list-group-item">UELN : <?php echo $equides['numUELN'] ?></li>
-                            <li class="list-group-item">Date de naissancee : <?php echo $equides['dateNaissance_equide'] ?> </li>
-                            <li class="modification list-group-item"><a id="affichageEquides_info" href="equide_description.php?numSIRE=<?php echo $equides['numSIRE'];?>">plus d'info</a></li>
+                            <li class="modification list-group-item"><a href="#">PDF - Carnet de Santé</a></li>
+                            <li class="modification list-group-item" id="affichageEquides_info"><a  href="equide_description.php?numSIRE=<?php echo $equides['numSIRE'];?>">plus d'info</a></li>
                         </ul> 
                 </div>
             </div>

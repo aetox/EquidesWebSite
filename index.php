@@ -1,6 +1,6 @@
 <?php
-ob_start();
 $titre ="Connexion";
+ob_start();
 include("header.php");
 ?>
 <?php include_once('PHP/user_functions/connexion_fct.php') ?>

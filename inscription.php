@@ -1,8 +1,8 @@
 <?php
+$titre ="Inscription";
 ob_start();
 include_once("header.php");
 if(!isset($_SESSION['logged_user'])) {
-$titre ="Inscription";
 ?>
 <?php include_once('PHP/user_functions/inscription_fct.php') ?>
 

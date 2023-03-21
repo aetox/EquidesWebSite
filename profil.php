@@ -1,8 +1,8 @@
 <?php
+$titre ="Mon profil";
 ob_start();
 include("header.php");
 if(isset($_SESSION['logged_user'])) {
-$titre ="Mon profil";
 require('PHP/equide_functions/affichage/affichagePhoto_fct.php');
 
 //Permet de definir une variable qui affiche l'uilisateur connecté

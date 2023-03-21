@@ -1,8 +1,8 @@
 <?php
+$titre ="Modification";
 ob_start();
 include_once("header.php");
 if(isset($_SESSION['logged_user'])) {
-$titre ="Modification";
 include_once('PHP/equide_functions/modification/updateEquide_fct.php');
 
 $info_error = array();

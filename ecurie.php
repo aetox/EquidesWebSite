@@ -1,8 +1,8 @@
 <?php
+$titre ="Mon écurie";
 ob_start();
 include_once("header.php");
 if(isset($_SESSION['logged_user'])) {
-$titre ="Mon écurie";
 ?>
 
 <div class="ecurie">

@@ -1,9 +1,9 @@
 <?php
+$idSire = $_GET['numSIRE'];
+$titre ="Carnet de Vaccination : $idSire";
 ob_start();
 include_once("header.php");
 if(isset($_SESSION['logged_user'])) {
-$idSire = $_GET['numSIRE'];
-$titre ="Carnet de Vaccination : $idSire";
 ?>
 
 <div class="carnet_traitement">

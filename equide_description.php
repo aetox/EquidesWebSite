@@ -1,9 +1,9 @@
 <?php
+$idSire = $_GET['numSIRE'];
+$titre ="Equidé n°$idSire";
 ob_start();
 include_once("header.php");
 if(isset($_SESSION['logged_user'])) {
-$idSire = $_GET['numSIRE'];
-$titre ="Equidé n°$idSire";
 require('PHP/equide_functions/affichage/affichagePhoto_fct.php');
 
 $info_error_error_error = array();

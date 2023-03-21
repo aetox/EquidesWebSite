@@ -1,8 +1,8 @@
 <?php
+$titre ="Carnet de transport";
 ob_start();
 include_once("header.php");
 if(isset($_SESSION['logged_user'])) {
-$titre ="Carnet de transport";
 ?>
 
 

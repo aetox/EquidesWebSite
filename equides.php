@@ -1,8 +1,8 @@
 <?php
+$titre ="Mes équides";
 ob_start();
 include_once("header.php");
 if(isset($_SESSION['logged_user'])) {
-$titre ="Mes équides";
 ?>
 <?php include_once('PHP/equide_functions/modification/ajoutEquides_fct.php') ?>
 

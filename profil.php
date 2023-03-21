@@ -3,13 +3,13 @@ $titre ="Mon profil";
 ob_start();
 include("header.php");
 if(isset($_SESSION['logged_user'])) {
-require('PHP/equide_functions/affichage/affichagePhoto_fct.php');
+//require('PHP/equide_functions/affichage/affichagePhoto_fct.php');
 
 //Permet de definir une variable qui affiche l'uilisateur connecté
 $sireDetenteur = $_SESSION['sire_detenteur'];
 
 //Affiche la photo de l'utilisateur connecté
-$lienPdp = AffichagePhoto($mysqli,$sireDetenteur);
+//$lienPdp = AffichagePhoto($mysqli,$sireDetenteur);
 ?>
 
 <div class="profil">

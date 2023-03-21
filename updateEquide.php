@@ -5,7 +5,9 @@ if(isset($_SESSION['logged_user'])) {
 $titre ="Modification";
 include_once('PHP/equide_functions/modification/updateEquide_fct.php');
 
-$info = array();
+$info_error = array();
+$info_succes = array();
+
 $idSire = $_GET['numSIRE'];
 $sqlOld = "SELECT * FROM `equide` WHERE numSIRE='$idSire'";
 $resultOld = mysqli_query($mysqli, $sqlOld) or die(mysqli_error($mysqli));

@@ -14,10 +14,10 @@ $titre ="Mes équides";
 			<a href="equides.php"><span class="material-symbols-outlined">close</span></a>
 
 			<label for="numSire">Numero de sire :</label>
-			<input type="number" id="numSire" name="numSire" required><br>
+			<input type="text" id="numSire" name="numSire" required pattern="[0-9]{9}" maxlength="9"><br>
 
 			<label for="numUELN">Numero de UELN :</label>
-			<input type="number" id="numUELN" name="numUELN" required><br>
+			<input type="text" id="numUELN" name="numUELN" required maxlength="13"><br>
 
 			<label for="nom_equide">Nom de l'equide :</label>
 			<input type="text" id="nom_equide" name="nom_equide" required><br>

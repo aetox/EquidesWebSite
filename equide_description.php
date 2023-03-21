@@ -6,7 +6,7 @@ $idSire = $_GET['numSIRE'];
 $titre ="Equidé n°$idSire";
 require('PHP/equide_functions/affichage/affichagePhoto_fct.php');
 
-$info = array();
+$info_error_error_error = array();
 
 $sql = "SELECT * FROM `equide` WHERE numSIRE='$idSire'";
 $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));

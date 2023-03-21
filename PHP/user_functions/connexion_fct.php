@@ -1,6 +1,6 @@
 <?php
 
-$info = array();
+$info_error = array();
 
 if(isset($_POST['mail'],$_POST['password'])){//l'utilisateur à cliqué sur "S'inscrire", on demande donc si les champs sont défini avec "isset"
 
@@ -15,11 +15,11 @@ if(isset($_POST['mail'],$_POST['password'])){//l'utilisateur à cliqué sur "S'i
 
 
       if(empty($mail)){//le champ pseudo est vide, on arrête l'exécution du script et on affiche un message d'erreur
-        array_push($info, "Le champ mail est vide");
+        array_push($info_error, "Le champ mail est vide");
       } elseif(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM detenteur WHERE mail_detenteur='".$mail."'"))==0){//on vérifie que ce mail n'est pas déjà utilisé par un autre membre
-        array_push($info, "Aucun compte avec cette adresse mail");
+        array_push($info_error, "Aucun compte avec cette adresse mail");
       } elseif(empty($password)){//le champ mot de passe est vide
-        array_push($info, "Le champ Mot de passe est vide");
+        array_push($info_error, "Le champ Mot de passe est vide");
       } else {
 
             //toutes les vérifications sont faites, on passe à la connexion
@@ -58,7 +58,7 @@ if(isset($_POST['mail'],$_POST['password'])){//l'utilisateur à cliqué sur "S'i
               }
               header('Location: ../../accueil.php');
           }else{
-            array_push($info, "L'email ou le mot de passe est incorrect");
+            array_push($info_error, "L'email ou le mot de passe est incorrect");
           }
       }   
 }

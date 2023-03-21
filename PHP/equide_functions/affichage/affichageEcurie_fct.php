@@ -1,6 +1,6 @@
 <?php 
 
-$info = array();
+$info_error = array();
 
 // Affichage taches en cours :
 $idDetenteur = $_SESSION['id_detenteur'];

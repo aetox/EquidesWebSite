@@ -2,7 +2,7 @@
 $idSire = $_GET['numSIRE'];
 
 
-$sql = "SELECT * FROM `traitement` WHERE sire ='$idSire'";
+$sql = "SELECT * FROM `traitement` WHERE sire ='$idSire' ORDER BY `date_traitement` DESC"; //
 $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 
 

@@ -2,7 +2,7 @@
   //Appel la fonction affichage pour afficher la photo
   require('affichagePhoto_fct.php');
 
-$info = array();
+$info_error = array();
 
 // Affichage taches en cours :
 $idDetenteur = $_SESSION['id_detenteur'];

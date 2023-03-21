@@ -1,0 +1,21 @@
+#resultats {
+	position: absolute;
+	top: 30px;
+	left: 0;
+	right: 0;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+#resultats select {
+	width: 100%;
+	border: none;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+#resultats option:hover {
+	background-color: #f2f2f2;
+}

@@ -2,7 +2,7 @@
 $idSire = $_GET['numSIRE'];
 
 
-$sql = "SELECT * FROM `vaccin` WHERE numUELN ='$idSire'";
+$sql = "SELECT * FROM `vaccin` WHERE numUELN ='$idSire' ORDER BY `dateInjection_vaccin` DESC";
 $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 
 

@@ -17,13 +17,17 @@ $titre ="Inscription";
 
             <h1>Inscription</h1>
 
+            <!--Appelle la fonction affichageErreurs et affiche l'erreur sous forme de tableau  -->
+            <?php include_once('PHP/other_functions/affichageErreurs.php');?>
+       
+
             <input type="text" name="surname" id="surname_inscription" placeholder="prénom" autofocus required>
             <input type="text" name="name" id="name_inscription" placeholder="nom"  required>
             <input type="mail" name="mail" id="mail_inscription" placeholder="Mail" required> 
             <!-- Les id doivent être les mêmes pour les input connexion ou inscription ? Pour l'instant je l'ai ai changé avec "_inscription" -->
             <input type="password" name="password" id="password_inscription"  placeholder="créez un mot de passe" required>  
             <!-- Voir quels conditions mettre pour le mot de passe, max lenght etc -->
-            <input type="text" name="sire" id="sire_inscription" placeholder="n°sire" required>
+            <input type="text" name="sire" id="sire_inscription" placeholder="n°sire" required maxlength="9">
             <!-- Permet d'ajouter un pdp -->
             <label for="photo_detenteur">Photo de profil :</label>
 			<input type="file" id="photo_detenteur" name="photo_detenteur" required>

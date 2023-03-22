@@ -10,6 +10,8 @@ if(isset($_SESSION['logged_user'])) {
 
 	<h1 class="titre_1">Mes équidés</h1>
 
+	<!-- Ajouter la bouton recherche -->
+
 	<a href="ajout_equides.php" class="boutton_vertV2"><img src="ASSET/ico/plus2.png">équidé</a>
 
 				

@@ -21,51 +21,53 @@ if(isset($_POST['mail'],$_POST['password'])){//l'utilisateur à cliqué sur "S'i
   } elseif(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM `login` WHERE email='".$mail."'"))==0){//on vérifie que ce mail n'est pas déjà utilisé par un autre membre
     array_push($info_error, "Aucun compte avec cette adresse mail");
   } elseif(empty($password)){//le champ mot de passe est vide
-    array_push($info_error, "Le champ Mot de passe est vide");
-    // elseif(){}
-        
+    array_push($info_error, "Le champ Mot de passe est vide");        
   } else {
-      //toutes les vérifications sont faites, on passe à la connexion
-        
-            $query = "SELECT * FROM `login` WHERE email='$mail' and mot_de_passe='".hash('sha256', $password)."'"; //".hash('sha256', $password)." ajouter le hash
-            $result = mysqli_query($mysqli,$query) or die(mysqli_error($mysqli));
-            $rows = mysqli_num_rows($result);
-        if($rows == 1){
-            // Requete qui recupere les info de l'utilisateur connecté et le stock dans un tableau
-            while($rows = mysqli_fetch_array($result)){
-
-            $id_login = $rows['id_login'];
-            $_SESSION['logged_user'] = true;
-            }
-
-            $query_info = "SELECT * FROM `detenteur` WHERE id_login=$id_login"; //".hash('sha256', $password)." ajouter le hash
-            $result_info = mysqli_query($mysqli,$query_info) or die(mysqli_error($mysqli));
             
-             if(mysqli_num_rows($result_info) > 0){
-              
-              while($rowData = mysqli_fetch_array($result_info)){
-            // stock dans une variable SESSION ( session qui reste active avec session_start()) les infos de l'utlisateur 
+            //toutes les vérifications sont faites, on passe à la connexion
+            $query = "SELECT * FROM `login` WHERE email='$mail' and mot_de_passe='".hash('sha256', $password)."'";
+            $result = mysqli_query($mysqli,$query) or die(mysqli_error($mysqli));
+            
+            //Récupere l'id_login de la personne connecté
+            if(mysqli_num_rows($result) > 0){
+                while($rows = mysqli_fetch_array($result)){
+                $id_login = $rows['id_login'];
+                }
 
-                $_SESSION['type_profil'] = "proprietaire";    
-                $_SESSION['id_detenteur'] = $rowData['id_detenteur'];
-                $_SESSION['sire_detenteur'] = $rowData['sire'];
-                $_SESSION['prenom_detenteur'] = $rowData['prenom'];
-                $_SESSION['nom_detenteur'] = $rowData['nom_detenteur'];
-                $_SESSION['mail_detenteur'] = $rowData['mail_detenteur'];
-                $_SESSION['password_detenteur'] = $rowData['password_detenteur'];
-                $_SESSION['nbEquide_detenteur'] = $rowData['nbEquide_detenteur'];
-                $_SESSION['adresse_detenteur'] = $rowData['adresse_detenteur'];
-                $_SESSION['nationalite_detenteur'] = $rowData['nationalite_detenteur'];
-                $_SESSION['signature_detenteur'] = $rowData['signature_detenteur'];
-                $_SESSION['dateEnregistrement_detenteur'] = $rowData['dateEnregistrement_detenteur'];
-                $_SESSION['cachetOrganisation_detenteur'] = $rowData['cachetOrganisation_detenteur'];
-                $_SESSION['signatureOrganisation_detenteur'] = $rowData['signatureOrganisation_detenteur'];
-              }
-             }
-            header('Location: ../../accueil.php');
-        }else{
-          array_push($info_error, "L'email ou le mot de passe est incorrect");
-        }
-    }
+                //Vérifie si la personne connecté est un détenteur 
+                $queryDetenteur = "SELECT * FROM `detenteur` WHERE id_login=$id_login"; 
+                $resultDetenteur = mysqli_query($mysqli,$queryDetenteur) or die(mysqli_error($mysqli));
+                
+                if(mysqli_num_rows($resultDetenteur) > 0){
+                  
+                  while($rowData = mysqli_fetch_array($resultDetenteur)){
+
+                    // stock dans une variable SESSION ( session qui reste active avec session_start()) les infos de l'utlisateur 
+                    $_SESSION['type_profil'] = "detenteur";    
+                    $_SESSION['id_detenteur'] = $rowData['id_detenteur'];
+                    $_SESSION['logged_user'] = true;
+                    header('Location: ../../accueil.php');
+                  }
+                }else{
+
+                  $queryProprietaire = "SELECT * FROM `proprietaire` WHERE id_login=$id_login"; 
+                  $resultProprietaire = mysqli_query($mysqli,$queryProprietaire) or die(mysqli_error($mysqli));
+
+                  if(mysqli_num_rows($resultProprietaire) > 0){
+                    while($rowData = mysqli_fetch_array($resultProprietaire)){
+
+                      // stock dans une variable SESSION ( session qui reste active avec session_start()) les infos de l'utlisateur 
+                      $_SESSION['type_profil'] = "proprietaire";    
+                      $_SESSION['id_proprietaire'] = $rowData['id_proprietaire'];
+                      $_SESSION['logged_user'] = true;
+                      header('Location: ../../accueil.php');
+                    }
+                  }
+                }
+
+            }else{
+              array_push($info_error, "L'email ou le mot de passe est incorrect");
+      }
+  }
 }
 ?>

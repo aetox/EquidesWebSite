@@ -114,10 +114,8 @@ if(isset($_POST['inscription'])){//l'utilisateur à cliqué sur "S'inscrire", on
   
                         if($type_profil == "proprietaire"){
                           //La personne qui s'inscrit est un propriétaire d'équidé
-                          
-                          $id_login = 15;
   
-                          $sqlLoginProprio ="INSERT INTO login (id_login,email, mot_de_passe) VALUES ('".$id_login."','".$mail."', '".hash('sha256', $password)."')";
+                          $sqlLoginProprio ="INSERT INTO `login` (email, mot_de_passe) VALUES ('".$mail."', '".hash('sha256', $password)."')";
                           $resultLoginProprio = mysqli_query($mysqli,$sqlLoginProprio) or die(mysqli_error($mysqli));
                           
                           $id_login = mysqli_insert_id($mysqli); // Recupere l'id généré lors de l'insertion
@@ -126,8 +124,8 @@ if(isset($_POST['inscription'])){//l'utilisateur à cliqué sur "S'inscrire", on
                           //   $id_login = $rows['id_login'];
                           //   }
                           
-                          $sqlProprio = "INSERT INTO `proprietaire` (id_proprietaire, id_login, nom, prenom, rue, commune, code_postal) 
-                          VALUES ('$id_login', '$id_login', '$nom', '$prenom', '$rue', '$commune', '$code_postal')";
+                          $sqlProprio = "INSERT INTO `proprietaire` (id_login, nom, prenom, rue, commune, code_postal) 
+                          VALUES ('$id_login', '$nom', '$prenom', '$rue', '$commune', '$code_postal')";
                            $resultProprio = mysqli_query($mysqli,$sqlProprio) or die(mysqli_error($mysqli));
   
                           array_push($info_succes, "Vous êtes inscrit !");
@@ -136,14 +134,13 @@ if(isset($_POST['inscription'])){//l'utilisateur à cliqué sur "S'inscrire", on
                         }elseif($type_profil =="detenteur"){
                           //La personne qui s'inscrit est un détenteur d'écurie
 
-  
-                          $id_login = 8;
-
-                          $sqlLoginDetenteur ="INSERT INTO login (id_login,email, mot_de_passe) VALUES ('".$id_login."','".$mail."', '".hash('sha256', $password)."')";
+                          $sqlLoginDetenteur ="INSERT INTO `login` (email, mot_de_passe) VALUES ('".$mail."', '".hash('sha256', $password)."')";
                           $resultLoginDetenteur = mysqli_query($mysqli,$sqlLoginDetenteur) or die(mysqli_error($mysqli));
 
-                          $sqlDetenteur = "INSERT INTO `detenteur` (`id_detenteur`, `id_login`, `sire`, `nom`, `prenom`, `nombre_equides`, `rue`, `commune`, `code_postal`, `signature_detenteur`, `date_enregistrement`, `nationalite`) 
-                          VALUES ('$id_login', '$id_login', NULL, '$nom', '$prenom', NULL, '$rue', '$commune', '$code_postal', NULL, NULL, NULL)";
+                          $id_login = mysqli_insert_id($mysqli); // Recupere l'id généré lors de l'insertion
+
+                          $sqlDetenteur = "INSERT INTO `detenteur` (`id_login`, `sire`, `nom`, `prenom`, `nombre_equides`, `rue`, `commune`, `code_postal`, `signature_detenteur`, `date_enregistrement`, `nationalite`) 
+                          VALUES ('$id_login', NULL, '$nom', '$prenom', NULL, '$rue', '$commune', '$code_postal', NULL, NULL, NULL)";
                           
                           $resultDetenteur = mysqli_query($mysqli,$sqlDetenteur) or die(mysqli_error($mysqli));
   

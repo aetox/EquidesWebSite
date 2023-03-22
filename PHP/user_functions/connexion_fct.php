@@ -45,6 +45,8 @@ if(isset($_POST['mail'],$_POST['password'])){//l'utilisateur à cliqué sur "S'i
               
               while($rowData = mysqli_fetch_array($result_info)){
             // stock dans une variable SESSION ( session qui reste active avec session_start()) les infos de l'utlisateur 
+
+                $_SESSION['type_profil'] = "proprietaire";    
                 $_SESSION['id_detenteur'] = $rowData['id_detenteur'];
                 $_SESSION['sire_detenteur'] = $rowData['sire'];
                 $_SESSION['prenom_detenteur'] = $rowData['prenom'];

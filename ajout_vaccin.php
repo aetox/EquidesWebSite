@@ -40,13 +40,9 @@ include_once('PHP/equide_functions/modification/ajoutVaccin_fct.php');
             <button type="submit" name="ajouter">Ajouter</button>
         </form>
     </div>
-</div>
-        <label for="signatureVaccin">Signature :</label>
-        <input type="text" id="signatureVaccin" name="signatureVaccin" placeholder="Signature" required><br>
 
-			<button type="submit" name="ajouter">Ajouter le vaccin</button>
-    		</form>
-	</div>
+
+<?php include_once("footer.php"); ?>
 <?php }else {
     header("Location: index.php");
 }ob_end_flush(); ?>

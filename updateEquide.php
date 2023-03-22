@@ -71,10 +71,8 @@ if (mysqli_num_rows($resultOld) > 0) {
 		<button type="submit" name="ajouter">Mettre à jour </button>
     </form>
 	</div>
-</div>
-			<button type="submit" name="ajouter">Mettre à jour </button>
-    		</form>
-	</div>
+
+<?php include_once("footer.php"); ?>
 <?php }else {
     header("Location: index.php");
 }ob_end_flush(); ?>

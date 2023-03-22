@@ -27,14 +27,11 @@ include_once('PHP/equide_functions/modification/ajoutTraitement_fct.php');
             <button type="submit" name="ajouter">Ajouter</button>
 
         </form>
-    </div>
+    </div>	
 </div>
-        <label for="commentaireTraitement">Commentaire :</label>
-        <input type="text" id="commentaireTraitement" name="commentaireTraitement" placeholder="Commentaire" required><br>
+        
+<?php include_once("footer.php"); ?>
 
-			<button type="submit" name="ajouter">Ajouter le traitement</button>
-    		</form>
-	</div>
 <?php }else {
     header("Location: index.php");
 }ob_end_flush(); ?>

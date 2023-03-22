@@ -2,7 +2,7 @@
 // Connexion à la base de données MySQL
 $host = 'localhost';
 $username = 'root';
-$password = 'Sonic14b#';
+$password = 'jeteste';
 $dbname = 'registre_equides';
 $conn = mysqli_connect($host, $username, $password, $dbname);
 

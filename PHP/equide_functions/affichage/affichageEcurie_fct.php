@@ -1,21 +1,16 @@
 <?php 
 
-$info_error = array();
-
-// Affichage taches en cours :
-
 $id_login = $_SESSION['id_login'];
 $type_profil = $_SESSION['type_profil'];
 
-
-
 if($_SESSION['type_profil'] == "detenteur") {
+
 
     $sql = "SELECT * FROM `registre_equide` WHERE id_detenteur='$id_login'";
     $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 
 
-    
+
 
 }elseif($_SESSION['type_profil'] == "proprietaire"){
 

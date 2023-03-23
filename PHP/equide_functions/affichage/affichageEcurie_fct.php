@@ -3,17 +3,21 @@
 $info_error = array();
 
 // Affichage taches en cours :
-$idDetenteur = $_SESSION['id_detenteur'];
+
+$id_login = $_SESSION['id_login'];
+$type_profil = $_SESSION['type_profil'];
 
 
-$sql = "SELECT * FROM `lieudetention` WHERE detenteur='$idDetenteur'";
-$result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 
+if($_SESSION['type_profil'] == "detenteur") {
 
-if (mysqli_num_rows($result) > 0) {      
+    $sql = "SELECT * FROM ` WHERE detenteur='$id_login'";
+    $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 
-    while($ecurie = mysqli_fetch_array($result)){
+}elseif($_SESSION['type_profil'] == "proprietaire"){
 
-        }
-    }else {?>
-        <h3><?=("Vous n'avez pas d'écurie");}?></h3>
+    $sql = "SELECT * FROM lieudetention` WHERE proprietaire='$id_login'";
+    $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
+
+}else {?>
+        <h3><?=("Vous n'avez pas d'écurie");}?></h3> */

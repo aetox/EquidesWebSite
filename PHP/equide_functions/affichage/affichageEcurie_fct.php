@@ -25,6 +25,14 @@ if(isset($_SESSION['id_detenteur'])){
                     <div class="card-body ">
                         <h5 class="card-title"><strong><?php echo $idEquide ?></strong></h5>
                             <ul class="list-group list-group-flush">
+                                <?php
+                                    $sql2 = "SELECT * FROM `registre_equide` JOIN `en_pension` ON registre_equide.id_registre = en_pension.id_registre JOIN `equide` ON equide.id_equide = en_pension.id_equide WHERE id_detenteur='$idDetenteur'";
+                                    $result2 = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
+                                    if (mysqli_num_rows($result2) > 0) {
+                            
+                                    }else{?>
+                                        <li class="list-group-item">Vous n'avez pas d'équidés</li>
+                                    <?php }?>
                                 <li class="list-group-item">Sire : <?php echo $rowData['SIRE'] ?></li>
                                 <li class="list-group-item">UELN : <?php echo $rowData['UELN'] ?></li>
                                 <li class="modification list-group-item"><a href="#">PDF - Carnet de Santé</a></li>

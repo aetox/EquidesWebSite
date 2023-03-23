@@ -20,15 +20,16 @@ if(!isset($_SESSION['logged_user'])) {
             <!--Appelle la fonction affichageErreurs et affiche l'erreur sous forme de tableau  -->
             <?php include_once('PHP/other_functions/affichageErreurs.php');?>
        
-            <label for="radio_type_profil">Vous êtes ?</label>
+            <label for="radio_type_profil"><strong>Vous êtes ?</strong></label>
                 <div id="radio_type_profil">
-                    <input type="radio" id="type_profil1"
-                    name="type_profil" value="proprietaire">
-                    <label for="type_profil1">Propriétaire d'équidés</label>
-
-                    <input type="radio" id="type_profil2"
-                    name="type_profil" value="detenteur">
-                    <label for="type_profil2">Détenteur d'écurie</label>
+                    <div class="radio_type_profil_proprietaire">
+                        <input type="radio" id="type_profil" name="type_profil" value="proprietaire">
+                        <label for="type_profil1">Propriétaire d'équidés</label>
+                    </div>
+                    <div class="radio_type_profil_proprietaire">
+                        <input type="radio" id="type_profil" name="type_profil" value="detenteur">
+                        <label for="type_profil2">Détenteur d'écurie</label>
+                    </div>
                 </div>
 
             <input type="text" name="surname" id="surname_inscription" placeholder="prénom" autofocus required>

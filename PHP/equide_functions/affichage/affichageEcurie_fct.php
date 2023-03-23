@@ -6,8 +6,8 @@ $typeProfil = $_SESSION['type_profil'];
 
 if(isset($_SESSION['id_detenteur'])){
 
-    $idDetenteur = $_SESSION['id_detenteur']
-    $sql = "SELECT * FROM `registre_equide` WHERE id_detenteur="$idDetenteur" FULL JOIN `en_pension` registre_equide.id_registre = en_pension.id_registre ";
+    $idDetenteur = $_SESSION['id_detenteur'];
+    $sql = "SELECT * FROM `registre_equide` WHERE id_detenteur='$idDetenteur'";
     $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 
     if (mysqli_num_rows($result) > 0) {      
@@ -30,11 +30,11 @@ if(isset($_SESSION['id_detenteur'])){
                             </ul> 
                     </div>
                 </div>
-    <?php }
+    <?php }}
 
-}elseif(isset($_SESSION['id_proprietaire']){
+}elseif(isset($_SESSION['id_proprietaire'])) {
 
-    $idProprietaire = $_SESSION['id_proprietaire']
+    $idProprietaire = $_SESSION['id_proprietaire'];
     $sql = "SELECT * FROM `registre_equide` WHERE proprietaire='$id_login'";
     $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
     
@@ -60,5 +60,5 @@ if(isset($_SESSION['id_detenteur'])){
                 </div>
     <?php }
 
-}else {?>
+}}else {?>
         <h3><?=("Vous n'avez pas d'écurie");}?></h3>

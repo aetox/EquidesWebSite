@@ -48,6 +48,7 @@ if(isset($_SESSION['id_detenteur'])){
                 <li class="list-group-item"><strong>Nationalité : </strong><?=$nationalite?></li>
                 <li class="list-group-item"><strong>Signature : </strong><?=$signature_detenteur?></li>
                 <li class="list-group-item"><strong>Date d'enregistrement : </strong><?=$date_enregistrement?></li>
+                <li class="modification list-group-item"><a href="updateProfil.php">Modification</a></li>
             </ul>   
     </div>
     <a href="accueil.php" class="boutton_orangeV2"><img src="ASSETS/ico/retour.png">retour</a>
@@ -89,6 +90,7 @@ if(isset($_SESSION['id_detenteur'])){
                 <li class="list-group-item"><strong>Adresse : </strong><?=$rue?></li>
                 <li class="list-group-item"><strong>Commune : </strong><?=$commune?></li>
                 <li class="list-group-item"><strong>Code Postal : </strong><?=$code_postal?></li>
+                <li class="modification list-group-item"><a href="updateProfil.php"> Modification</a></li>
             </ul>    
     </div>
     <a href="accueil.php" class="boutton_orangeV2"><img src="ASSETS/ico/retour.png">retour</a>

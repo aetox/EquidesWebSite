@@ -9,12 +9,11 @@ if(isset($_SESSION['id_detenteur'])){
     $idDetenteur = $_SESSION['id_detenteur'];
     $ecuriesql =
     "SELECT detenteur.nom AS detenteurNom, detenteur.prenom AS detenteurPrenom, detenteur.nombre_equides,
-    registre_equide.nom_ecurie, registre_equide.rue, registre_equide.commune, registre_equide.departement, registre_equide.code_postal, registre_equide.siret,
+    registre_equide.nom_ecurie, registre_equide.rue AS registreRue, registre_equide.commune AS registreCommune, registre_equide.code_postal AS registreCodePostal, registre_equide.siret,
     affectation_marechal.date_debut AS amdb, affectation_marechal.date_fin AS amdf,
-    marechal.nom AS marechalNom, marechal.prenom AS marechalPrenom, marechal.rue AS marechalRue, marechal.commune AS marechalCommune, marechal.code_postal AS marechalCodePostal
+    marechal.nom AS marechalNom, marechal.prenom AS marechalPrenom,
     affectation_veterinaire.type_veterinaire, affectation_veterinaire.date_debut AS avdb, affectation_veterinaire.date_fin AS avdf,
-    groupement_veterinaire.nom_groupement, groupement_veterinaire.rue
-    veterinaire.nom AS veterinaireNom, 
+    veterinaire.nom AS veterinaireNom, veterinaire.prenom AS veterinairePrenom
     FROM `registre_equide`
     JOIN `detenteur`
     ON registre_equide.id_detenteur = detenteur.id_detenteur
@@ -24,10 +23,10 @@ if(isset($_SESSION['id_detenteur'])){
     ON affectation_marechal.id_marechal = marechal.id_marechal
     JOIN `affectation_veterinaire`
     ON registre_equide.id_registre = affectation_veterinaire.id_registre
-    JOIN `groupement_veterinaire`
-    ON affectation_veterinaire.id_groupement_veterinaire = groupement_veterinaire.id_groupement_veterinaire
     JOIN `veterinaire`
-    ON groupement_veterinaire.id_groupement_veterinaire = veterinaire.id_groupement_veterinaire
+    ON affectation_veterinaire.id_veterinaire = veterinaire.id_veterinaire
+    JOIN `groupement_veterinaire`
+    ON veterinaire.id_groupement_veterinaire = groupement_veterinaire.id_groupement_veterinaire
     WHERE registre_equide.id_detenteur='$idDetenteur'";
     $results = mysqli_query($mysqli,$ecuriesql) or die(mysqli_error($mysqli));
     
@@ -39,29 +38,39 @@ if(isset($_SESSION['id_detenteur'])){
             $detenteurNom = $rowData['detenteurNom'];
             $detenteurPrenom = $rowData['detenteurPrenom'];
             $nombreEquides = $rowData['nombre_equides'];
-            $departement = $rowData['id_registre'];
-            $codePostal = $rowData['id_registre'];
-            $siret = $rowData['id_registre'];
-            $marechalAffecte = $rowData['id_registre'];
-            $veterinaireAffecte = $rowData['id_registre']; ?>
+            $registreRue = $rowData['registreRue'];
+            $registreCommune = $rowData['registreCommune'];
+            $registreCodePostal = $rowData['registreCodePostal'];
+            $siret = $rowData['siret'];
+            $amdb = $rowData['amdb'];
+            $amdb1 = date("d/m/y", strtotime($amdb));
+            $amdf = $rowData['amdf'];
+            $amdf1 = date("d/m/y", strtotime($amdf));
+            $marechalNom = $rowData['marechalNom'];
+            $marechalPrenom = $rowData['marechalPrenom'];
+            $veterinaireNom = $rowData['veterinaireNom'];
+            $veterinairePrenom = $rowData['veterinairePrenom'];
+            $type_veterinaire = $rowData['type_veterinaire'];
+            $avdb = $rowData['avdb'];
+            $avdb1 = date("d/m/y", strtotime($avdb));
+            $avdf = $rowData['avdf'];
+            $avdf1 = date("d/m/y", strtotime($avdf));?>
              
             <ul class="list-group list-group-flush">
-            <li class="list-group-item"><u>Nom de l'écurie :</u> <?php echo $nomEcurie; ?></li>
             <li class="list-group-item"><u>Détenteur :</u> <?php echo $detenteurNom;?> <?php echo $detenteurPrenom ?></li>
             <li class="list-group-item"><u>Nombres d'équides dans l'écurie :</u> <?php echo $nombreEquides; ?></li>
-            <li class="list-group-item"><u>UELN :</u> <?php echo $commune; ?></li>
-            <li class="list-group-item"><u>UELN :</u> <?php echo $commune; ?></li>
-            <li class="list-group-item"><u>UELN :</u> <?php echo $commune; ?></li>
-            <li class="list-group-item"><u>UELN :</u> <?php echo $departement; }?></li>
+            <li class="list-group-item"><u>Adresse de l'écurie :</u> <?php echo $registreRue;?> <?php echo $registreCommune ?> <?php echo $registreCodePostal ?></li>
+            <li class="list-group-item"><u>SIRET :</u> <?php echo $siret; ?></li>
+            <li class="list-group-item"><u>Vétérinaire sanitaire :</u> <?php echo $veterinaireNom;?> <?php echo $veterinairePrenom ?> du <?php echo $avdb1;?> au <?php echo $avdf1 ?></li>
+            <li class="list-group-item"><u>Maréchal :</u> <?php echo $marechalNom;?> du <?php echo $amdb1;?> au <?php echo $amdf1 ?></li>
         
     <?php
-    }else{?>
+    }}else{?>
             <li class="list-group-item">Vous n'avez pas d'équidés</li>
             </ul>
-    <?php }?>
+    <?php }
 
-    <?php
-    $sql = "SELECT *
+    $sql = "SELECT equide.nom, equide.id_equide
     FROM `registre_equide`
     JOIN `en_pension` ON registre_equide.id_registre = en_pension.id_registre
     JOIN `equide` ON equide.id_equide = en_pension.id_equide
@@ -72,33 +81,31 @@ if(isset($_SESSION['id_detenteur'])){
 
         while($rowData = mysqli_fetch_array($result)){
     
-            $idRegistre = $rowData['id_registre'];
             $idEquide = $rowData['id_equide'];
+            $nom = $rowData['nom'];
             // $lienPdp = AffichagePhoto($mysqli,$photo);
           
-        ?>
-                <div class="equide_bootstrap card " >
-                    <img src="../ASSETS/img_bdd/" class="card-img-top" alt="Ecurie n°<?php echo $idRegistre?>">
-                    <div class="card-body ">
-                        <h5 class="card-title"><strong><?php echo $idEquide ?></strong></h5>
-                            <ul class="list-group list-group-flush">
-                                <?php
-                                    $sql2 = "SELECT * FROM `registre_equide` JOIN `en_pension` ON registre_equide.id_registre = en_pension.id_registre JOIN `equide` ON equide.id_equide = en_pension.id_equide WHERE id_detenteur='$idDetenteur'";
-                                    $result2 = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
-                                    if (mysqli_num_rows($result2) > 0) { ?>
-                                        <li class="list-group-item">Sire : <?php echo $rue ?></li>
-                                        <li class="list-group-item">UELN : <?php echo $rue ?></li>
-                                        <li class="modification list-group-item"><a href="#">PDF - Carnet de Santé</a></li>
-                                        <li class="modification list-group-item"><a href="#">PDF - Fiche de Transport</a></li>
-                                        <li class="modification list-group-item" id="affichageEquides_info"><a  href="equide_description.php?SIRE=<?php echo $rue;?>">plus d'info</a></li>
-                                <?php
-                                    }else{?>
-                                        <li class="list-group-item">Vous n'avez pas d'équidés</li>
-                                    <?php }?>
-                                </ul> 
-                    </div>
+    ?>
+            <div class="equide_bootstrap card " >
+                <img src="../ASSETS/img_bdd/" class="card-img-top" alt="Nom du cheval : <?php echo $nom?>">
+                <div class="card-body ">
+                    <h5 class="card-title"><strong><?php echo $idEquide ?></strong></h5>
+                        <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Nom : <?php echo $nom ?></li>
+                                    <li class="list-group-item">SIRE : <?php echo $sire ?></li>
+                                    <li class="list-group-item">UELN : <?php echo $ueln ?></li>
+                                    <li class="modification list-group-item"><a href="#">PDF - Carnet de Santé</a></li>
+                                    <li class="modification list-group-item"><a href="#">PDF - Fiche de Transport</a></li>
+                                    <li class="modification list-group-item" id="affichageEquides_info"><a  href="equide_description.php?SIRE=<?php echo $rue;?>">plus d'info</a></li>
+
+                        </ul> 
                 </div>
+            </div>
     <?php }}
+    else{ ?>
+        <h3>Vous n'avez pas d'équidés.</h3>
+
+<?php   }}
 
 elseif(isset($_SESSION['id_proprietaire'])) {
 
@@ -134,7 +141,7 @@ elseif(isset($_SESSION['id_proprietaire'])) {
                         </ul> 
                 </div>
             </div>
-<?php }
+<?php }}}
 
-}}else {?>
-        <h3><?=("Vous n'avez pas d'écurie");}}?></h3>
+else {?>
+        <h3>"Vous n'avez pas d'écurie"</h3><?php }?>

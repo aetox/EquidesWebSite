@@ -6,17 +6,9 @@ $info_succes = array();
 $site_root = $_SERVER['DOCUMENT_ROOT'];
 
 
-
-// Function pour les images uploud :
-
-
-if(isset($_POST['inscription'])){//l'utilisateur à cliqué sur "S'inscrire", on demande donc si les champs sont défini avec "isset"
+if(isset($_POST['inscription_proprietaire'])){//l'utilisateur à cliqué sur "S'inscrire", on demande donc si les champs sont défini avec "isset"
   
 //Même procédure quee pour la connexion
-
-  $type_profil =$_POST['type_profil'];
-  $type_profil = stripslashes($_REQUEST['type_profil']);
-  $type_profil = mysqli_real_escape_string($mysqli, $type_profil);
 
   $prenom = $_POST['surname'];
   $prenom = stripslashes($_REQUEST['surname']);
@@ -46,16 +38,8 @@ if(isset($_POST['inscription'])){//l'utilisateur à cliqué sur "S'inscrire", on
   $code_postal = stripslashes($_REQUEST['code_postal']);
   $code_postal = mysqli_real_escape_string($mysqli, $code_postal);
 
-  // $sire = $_POST['sire'];
-  // $sire = stripslashes($_REQUEST['sire']);
-  // $sire = mysqli_real_escape_string($mysqli, $sire);
-
-  $conditions = $_POST['inscription_accept_conditions'];
-
   
-    if(empty($type_profil)){
-      array_push($info_error,"Veuillez indiquer votre type de profil !");
-    }elseif(empty($prenom)){
+    if(empty($prenom)){
       array_push($info_error,"Le champ Nom est vide");
     } elseif(empty($nom)){//le champ mot de passe est vide
       array_push($info_error,"Le champ Prénom est vide");
@@ -65,9 +49,7 @@ if(isset($_POST['inscription'])){//l'utilisateur à cliqué sur "S'inscrire", on
       array_push($info_error,"Ce mail est déjà utilisé");
     } elseif(empty($password)){//le champ mot de passe est vide
       array_push($info_error,"Le champ Mot de passe est vide");
-    // } elseif(empty($sire)){
-      // array_push($info_error,"Le champ Sire est vide");
-    } elseif(empty($conditions)){
+    } elseif(empty($_POST['inscription_accept_conditions'])){
       array_push($info_error, "Vous devez accepter les conditions d'utilisations.");
     } elseif(empty($_FILES['photo_detenteur'])){
       array_push($info_error,"Vous devez ajouter une photo de profil");
@@ -110,9 +92,7 @@ if(isset($_POST['inscription'])){//l'utilisateur à cliqué sur "S'inscrire", on
                       //toutes les vérifications sont faites, on passe à l'enregistrement dans la base de données:
                       //Bien évidement il s'agit là d'un script simplifié au maximum, libre à vous de rajouter des conditions avant l'enregistrement comme la longueur minimum du mot de passe par exemple
                       
-                        //Vérification du type de profil
-  
-                        if($type_profil == "proprietaire"){
+                      
                           //La personne qui s'inscrit est un propriétaire d'équidé
   
                           $sqlLoginProprio ="INSERT INTO `login` (email, mot_de_passe) VALUES ('".$mail."', '".hash('sha256', $password)."')";
@@ -131,24 +111,7 @@ if(isset($_POST['inscription'])){//l'utilisateur à cliqué sur "S'inscrire", on
                           array_push($info_succes, "Vous êtes inscrit !");
   
   
-                        }elseif($type_profil =="detenteur"){
-                          //La personne qui s'inscrit est un détenteur d'écurie
-
-                          $sqlLoginDetenteur ="INSERT INTO `login` (email, mot_de_passe) VALUES ('".$mail."', '".hash('sha256', $password)."')";
-                          $resultLoginDetenteur = mysqli_query($mysqli,$sqlLoginDetenteur) or die(mysqli_error($mysqli));
-
-                          $id_login = mysqli_insert_id($mysqli); // Recupere l'id généré lors de l'insertion
-
-                          $sqlDetenteur = "INSERT INTO `detenteur` (`id_login`, `sire`, `nom`, `prenom`, `nombre_equides`, `rue`, `commune`, `code_postal`, `signature_detenteur`, `date_enregistrement`, `nationalite`) 
-                          VALUES ('$id_login', NULL, '$nom', '$prenom', NULL, '$rue', '$commune', '$code_postal', NULL, NULL, NULL)";
-                          
-                          $resultDetenteur = mysqli_query($mysqli,$sqlDetenteur) or die(mysqli_error($mysqli));
-  
-                          array_push($info_succes, "Vous êtes inscrit !");
-  
-                        }else{
-                          array_push($info_error,"Erreur Type de profil");
-                        }
+                        
               }else{
                 array_push($info_error,"Veuillez choisir une image inférieur à 5Mo !");
               }

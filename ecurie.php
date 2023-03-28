@@ -10,24 +10,29 @@ if(isset($_SESSION['logged_user']) && isset($_SESSION['id_detenteur'])){
     if (mysqli_num_rows($result) > 0) {
 
         while($rowData = mysqli_fetch_array($result)){
-            $nomEcurie = $rowData['nom_ecurie'];}
-?>
+            $nomEcurie = $rowData['nom_ecurie'];}?>
 
-<div class="ecurie">
+    <div class="ecurie">
 
-    <h1 class="titre_1"><?php echo $nomEcurie ?></h1>
+        <h1 class="titre_1"><?php echo $nomEcurie ?></h1>
 
-    <div id="AffichageEcurie">
+        <div id="AffichageEcurie">
 
-    <?php include_once('PHP/equide_functions/affichage/affichageEcurie_fct.php')?>
+        <?php include_once('PHP/equide_functions/affichage/affichageEcurie_fct.php')?>
+
+        </div>
+
+        <a href="#" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">écurie</a>
 
     </div>
+    <?php
+    }else {?>
+        <h3>Vous n'avez pas d'Ecurie</h3>
+<?php    }}
+elseif(isset($_SESSION['logged_user']) && isset($_SESSION['id_proprietaire'])){?>
+        <h3>Vous n'avez pas d'équidés</h3>
 
-    <a href="#" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">écurie</a>
-    
-</div>
-
-<?php include_once("footer.php"); ?>
-<?php }}else {
+<?php include_once("footer.php");
+}else {
     header("Location: index.php");
 }ob_end_flush(); ?>

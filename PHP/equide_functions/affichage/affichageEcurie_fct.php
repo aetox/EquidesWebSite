@@ -112,7 +112,6 @@ if(isset($_SESSION['id_detenteur'])){
                                     <li class="list-group-item"><u>UELN :</u> <?php echo $uelnEquide ?></li>
                                     <li class="list-group-item"><u>Propriétaire :</u> <?php echo $nomProprietaire;?> <?php echo $prenomProprietaire ?></li>
                                     <li class="list-group-item">En pension depuis le <?php echo $epdd1;?> jusqu'au <?php echo $epdf1 ?></li>
-
                                     <li class="modification list-group-item"><a href="#">PDF - Carnet de Santé</a></li>
                                     <li class="modification list-group-item"><a href="#">PDF - Fiche de Transport</a></li>
                                     <li class="modification list-group-item" id="affichageEquides_info"><a  href="equide_description.php?SIRE=<?php echo $rue;?>">plus d'info</a></li>

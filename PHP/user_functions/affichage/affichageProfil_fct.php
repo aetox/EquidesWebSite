@@ -5,7 +5,14 @@ $type_profil = $_SESSION['type_profil'];
 if(isset($_SESSION['id_detenteur'])){ 
 
     $id_detenteur = $_SESSION['id_detenteur'];
-    $queryDetenteur = "SELECT * FROM `detenteur` JOIN `login` ON detenteur.id_login=login.id_login WHERE id_detenteur=$id_detenteur"; 
+    $queryDetenteur =
+    "SELECT *
+    FROM `detenteur`
+    JOIN `login`
+    ON detenteur.id_login=login.id_login
+    JOIN `registre_equide`
+    ON detenteur.id_detenteur = registre_equide.id_detenteur
+    WHERE detenteur.id_detenteur=$id_detenteur";  
     $resultDetenteur = mysqli_query($mysqli,$queryDetenteur) or die(mysqli_error($mysqli));
     
     if(mysqli_num_rows($resultDetenteur) > 0){
@@ -23,6 +30,7 @@ if(isset($_SESSION['id_detenteur'])){
             $signature_detenteur = $rowData['signature_detenteur'];
             $date_enregistrement = $rowData['date_enregistrement'];
             $nationalite = $rowData['nationalite'];
+            $nomEcurie = $rowData['nom_ecurie'];
         }
     }
 ?>
@@ -44,7 +52,7 @@ if(isset($_SESSION['id_detenteur'])){
                 <li class="list-group-item"><strong>Commune : </strong><?=$commune?></li>
                 <li class="list-group-item"><strong>Code Postal : </strong><?=$code_postal?></li>
                 <li class="list-group-item"><strong>Nombre d'équides : </strong><?=$nombre_equides?></li>
-                <li class="list-group-item"><strong>Ecurie : </strong><?=$prenom?></li> <!-- Faire une requette pour afficher le lieen dee l'écurie avec le lien-->
+                <li class="list-group-item"><strong>Ecurie : </strong><a href="ecurie.php"><?=$nomEcurie?></a></li>
                 <li class="list-group-item"><strong>Nationalité : </strong><?=$nationalite?></li>
                 <li class="list-group-item"><strong>Signature : </strong><?=$signature_detenteur?></li>
                 <li class="list-group-item"><strong>Date d'enregistrement : </strong><?=$date_enregistrement?></li>

@@ -32,7 +32,7 @@ if(isset($_SESSION['id_detenteur'])){
     }
 ?>
 
-    <form name="form_inscription" id="form_inscription" method="post" enctype="multipart/form-data">
+    <form name="form_inscription" class="form_inscription" method="post" enctype="multipart/form-data">
 
 
         <h1>Modifier mes informations</h1>
@@ -82,7 +82,7 @@ if(isset($_SESSION['id_detenteur'])){
         }    
     ?>
 
-        <form name="form_inscription" id="form_inscription" method="post" enctype="multipart/form-data">
+        <form name="form_inscription" class="form_inscription" method="post" enctype="multipart/form-data">
 
             <h1>Modifier mes informations</h1>
 

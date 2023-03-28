@@ -4,7 +4,7 @@
 
 $info_error = array();
 
-// Affichage taches en cours :
+if(isset($_SESSION['id_detenteur'])){
 $idDetenteur = $_SESSION['id_detenteur'];
 
 $sql =
@@ -60,6 +60,6 @@ if (mysqli_num_rows($result) > 0) {
             </div>
 <?php } ?>
 
-<?php }else { ?>
+<?php }}else { ?>
         <h3><?php echo("Vous n'avez pas d'équidés");}?></h3>
 

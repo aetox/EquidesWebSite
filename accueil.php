@@ -7,7 +7,7 @@ if(isset($_SESSION['logged_user'])) {
 
 <div class="accueil">
 
-    <h1 class="accueil_titre">Bienvenue <?= $_SESSION['prenom_detenteur'];?>,</h1>
+    <h1 class="accueil_titre">Bienvenue <?= $_SESSION['prenom'];?>,</h1>
 
 
     <h3 class="accueil_soustitre">Suivre vos chevaux n'a jamais été aussi simple.<br>

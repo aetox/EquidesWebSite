@@ -46,6 +46,7 @@ if(isset($_POST['mail'],$_POST['password'])){//l'utilisateur à cliqué sur "S'i
                     $_SESSION['type_profil'] = "detenteur"; 
                     $_SESSION['id_login'] = $rowData['id_login'];  
                     $_SESSION['id_detenteur'] = $rowData['id_detenteur'];
+                    $_SESSION['prenom'] = $rowData['prenom'];
                     $_SESSION['logged_user'] = true;
                     header('Location: ../../accueil.php');
                   }
@@ -61,6 +62,7 @@ if(isset($_POST['mail'],$_POST['password'])){//l'utilisateur à cliqué sur "S'i
                       $_SESSION['type_profil'] = "proprietaire";    
                       $_SESSION['id_login'] = $rowData['id_login'];  
                       $_SESSION['id_proprietaire'] = $rowData['id_proprietaire'];
+                      $_SESSION['prenom'] = $rowData['prenom'];
                       $_SESSION['logged_user'] = true;
                       header('Location: ../../accueil.php');
                     }

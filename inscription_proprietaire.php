@@ -15,7 +15,7 @@ if(!isset($_SESSION['logged_user'])) {
 
             <!-- Inclure l'affichage d'erreur -->
 
-            <h1>Inscription proprietaire</h1>
+            <h1>Inscription <br>proprietaire</h1>
 
             <!--Appelle la fonction affichageErreurs et affiche l'erreur sous forme de tableau  -->
             <?php include_once('PHP/other_functions/affichageErreurs.php');?>

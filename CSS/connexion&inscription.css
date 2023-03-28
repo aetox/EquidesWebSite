@@ -74,7 +74,7 @@
 
 #form_connexion a {
     text-decoration: none;
-    padding-top: 15px;
+    margin-top: 15px;
     color: rgba(0, 0, 0, 0.5);
 }
 
@@ -98,20 +98,86 @@
 .connexion a, .inscription a {
     text-decoration: none;
     padding-top: 15px;
-    font-weight:600;
-    text-transform: uppercase;
+    font-weight:600; 
+    text-transform: uppercase; 
     color: white;
-    text-decoration: underline;
-    letter-spacing: 1px;
+    letter-spacing: 1px; 
 }
 
 .connexion a:hover, .inscription a:hover {
-    color: rgba(0, 109, 31, 1);
+    text-decoration: underline;
+    color: white;
 }
 
 
+/*inscription 1*/
 
-/* Affichage du form en fonction du profil */
+.inscription-1 {
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(207, 113, 3, 1);
+    font-family: 'Asap Condensed', sans-serif;
+    color: white;
+}
 
+.inscription-1 h2 {
+    margin-top: 20px;
+}
+
+.inscription-1 img {
+    width: 150px;
+}
+
+.inscription-1 a {
+    color: white;
+    text-decoration: none;
+    margin-top: 25px;
+    border: 2px transparent solid;
+    border-radius: 20px;
+    padding: 7px 15px 7px 15px;
+    background-color: rgba(217, 217, 217, 0.43);
+    transition: 0.5s;
+    width: 280px;
+    text-align: center;
+}
+
+.inscription-1 a:hover {
+    /* border: 2px solid white; */
+    background-color: rgba(217, 217, 217, 0.608);
+    color: white;
+}
+
+.inscription-1 p {
+    margin-bottom: 1px;
+}
+
+.inscription h3 {
+    padding: 0px !important;
+}
+
+.redirection-compte {
+    margin-top: 50px;
+}
+
+.redirection-compte a {
+    background-color: rgba(207, 113, 3, 1);
+    font-weight:600; 
+    text-transform: uppercase; 
+    color: white;
+    letter-spacing: 1px; 
+    padding: 0px;
+}
+
+.redirection-compte a:hover {
+    background-color: rgba(207, 113, 3, 1);
+    font-weight:600; 
+    text-transform: uppercase; 
+    color: white;
+    text-decoration: underline; 
+    letter-spacing: 1px; 
+}
 
 

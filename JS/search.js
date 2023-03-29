@@ -30,8 +30,6 @@ $(function(){
         $('#search_keyword_id').val(decoded);
     });
 
-
-
     $(document).live("click", function(e) {
         var $clicked = $(e.target);
         if (! $clicked.hasClass("search_keyword")){

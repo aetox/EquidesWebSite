@@ -1,9 +1,22 @@
 <?php
-include('../../other_functions/connexion_bdd.php');
-if(isset($_POST['search_keyword'])) {
 
+include_once('../../other_functions/connexion_bdd.php');
+session_start();
+
+if(isset($_POST['search_keyword'])){
+
+    $idDetenteur = $_SESSION['id_detenteur'];
     $search_keyword = $mysqli->real_escape_string($_POST['search_keyword']);
-    $query = "SELECT nom, sire FROM equide WHERE nom LIKE '%$search_keyword%'";
+    $query =
+    "SELECT equide.nom AS nom, equide.sire AS sire
+    FROM equide
+    JOIN `en_pension`
+    ON en_pension.id_equide = equide.id_equide
+    JOIN `registre_equide`
+    ON registre_equide.id_registre = en_pension.id_registre
+    JOIN `detenteur`
+    ON detenteur.id_detenteur = registre_equide.id_detenteur
+    WHERE equide.nom LIKE '%$search_keyword%' AND detenteur.id_detenteur='$idDetenteur'";
     $result = $mysqli->query($query);
 
     if ($result === false) {

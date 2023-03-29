@@ -30,9 +30,12 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
     <link rel="stylesheet" href="CSS/ajout_equides.css">
     <link rel="stylesheet" href="CSS/ajout_vaccin.css">
     <link rel="stylesheet" href="CSS/updateEquide.css">
+    <link rel="stylesheet" href="CSS/website.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="icon" type="image/png" href="ASSETS/ico/ico.png" />
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <!-- Permet d'avoir par défaut le titre Equide avec le ?? -->
     <title><?= $titre ?? "Equides"?></title>
 </head>

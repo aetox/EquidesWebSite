@@ -1,8 +1,6 @@
 <?php 
 
 $info_error = array();
-$idLogin = $_SESSION['id_login'];
-$typeProfil = $_SESSION['type_profil'];
 
 if(isset($_SESSION['id_detenteur'])){
 
@@ -124,34 +122,34 @@ if(isset($_SESSION['id_detenteur'])){
 <?php
     }}
 
-// elseif(isset($_SESSION['id_proprietaire'])) {
+elseif(isset($_SESSION['id_proprietaire'])) {
 
-//     $idProprietaire = $_SESSION['id_proprietaire'];
-//     $sqlproprio =
-//     "SELECT *
-//     FROM `registre_equide`
-//     WHERE proprietaire='$id_login'";
+    $idProprietaire = $_SESSION['id_proprietaire'];
+    $sqlproprio =
+    "SELECT *
+    FROM `registre_equide`
+    WHERE proprietaire='$id_login'";
 
-//     $resultproprio = mysqli_query($mysqli,$sqlproprio) or die(mysqli_error($mysqli));
+    $resultproprio = mysqli_query($mysqli,$sqlproprio) or die(mysqli_error($mysqli));
     
-//     if (mysqli_num_rows($resultproprio) > 0) {      
+    if (mysqli_num_rows($resultproprio) > 0) {      
 
-//         while($equides = mysqli_fetch_array($resultproprio)){
+        while($equides = mysqli_fetch_array($resultproprio)){
     
-//             $numSIRE = $equides['numSIRE'];
-//             $lienPdp = AffichagePhoto($mysqli,$numSIRE);?>
+        $numSIRE = $equides['numSIRE'];
+        $lienPdp = AffichagePhoto($mysqli,$numSIRE);?>
             
-<!-- //             <div class="equide_bootstrap card " >
-//                 <img src="../ASSETS/img_bdd/" class="card-img-top" alt="Ecurie n°<?php echo $idRegistre?>">
-//                 <div class="card-body ">
-//                     <h5 class="card-title"><strong><?php echo $idEquide ?></strong></h5>
-//                         <ul class="list-group list-group-flush">
-//                             <li class="list-group-item">Sire : <?php echo $rowData['SIRE'] ?></li>
-//                             <li class="list-group-item">UELN : <?php echo $rowData['UELN'] ?></li>
-//                             <li class="modification list-group-item"><a href="#">PDF - Carnet de Santé</a></li>
-//                             <li class="modification list-group-item" id="affichageEquides_info"><a  href="equide_description.php?SIRE=<?php echo $rowData['SIRE'];?>">plus d'info</a></li>
-//                         </ul> 
-//                 </div>
-//             </div>
-// <?php
-// }}}
+        <div class="equide_bootstrap card " >
+            <img src="../ASSETS/img_bdd/" class="card-img-top" alt="Ecurie n°<?php echo $idRegistre?>">
+                <div class="card-body ">
+                <h5 class="card-title"><strong><?php echo $idEquide ?></strong></h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Sire : <?php echo $rowData['SIRE'] ?></li>
+                        <li class="list-group-item">UELN : <?php echo $rowData['UELN'] ?></li>
+                        <li class="modification list-group-item"><a href="#">PDF - Carnet de Santé</a></li>
+                        <li class="modification list-group-item" id="affichageEquides_info"><a  href="equide_description.php?SIRE=<?php echo $rowData['SIRE'];?>">plus d'info</a></li>
+                    </ul> 
+                </div>
+        </div>
+<?php
+}}}

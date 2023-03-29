@@ -15,8 +15,8 @@ if(isset($_POST['search_keyword'])) {
     $bold_search_keyword = '<strong>' . $search_keyword . '</strong>';
     if ($rows_returned > 0) {
         while ($rows = $result->fetch_assoc()) {
-            echo '<div class="show" align="left"><span class="nom">' . str_ireplace
-                ($search_keyword, $bold_search_keyword, $rows['nom']) . '</span></div>';
+            echo '<div class="show" align="left"><span class="nom"><a href="equide_description.php?sireEquide=' . $rows['sire'] . '">' . str_ireplace($search_keyword, $bold_search_keyword, $rows['nom']) . '</a></span></div>';
+
         }
     } else {
         echo '<div class="show" align="left">No matching records.</div>';

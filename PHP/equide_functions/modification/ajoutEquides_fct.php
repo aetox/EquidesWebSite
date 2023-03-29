@@ -10,6 +10,7 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
 if (isset($_POST["ajouter"])) {
 
   // Récupère les données du formulaire
+  $id_propriétaire = $_POST["id_propriétaire"];
   $numSire = $_POST["numSire"];
   $numUELN = $_POST["numUELN"];
   $nom_equide = $_POST["nom_equide"];
@@ -25,6 +26,13 @@ if (isset($_POST["ajouter"])) {
   $mere_equide = $_POST["mere_equide"];
   $img_equide = $_FILES['photo_equide']['name']; 
   $detenteur = $_SESSION["id_detenteur"];
+  /*Rajout par Noé, je ne les ai pas mit en required, donc je ne les vérifie pas juste en dessous, c'est facultatif*/
+  $tete = $_POST["tête_equide"];
+  $antg = $_POST["antg_equide"];
+  $antd = $_POST["antd_equide"];
+  $postg = $_POST["postg_equide"];
+  $postd = $_POST["postd_equide"];
+  $marques = $_POST["marques_equide"];
 
 
   if(empty($numSire)){
@@ -59,7 +67,7 @@ if (isset($_POST["ajouter"])) {
 
   if(strlen($numSire)  == 9){
 
-    if(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM equides WHERE numSIRE='".$numSire."'"))==0){ //Vérifie si le numéro de sire existe déjà
+    if(mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM equide WHERE sire='".$numSire."'"))==0){ //Vérifie si le numéro de sire existe déjà
 
       if (strlen($numUELN) == 13) {
 
@@ -68,36 +76,40 @@ if (isset($_POST["ajouter"])) {
         $extension  = pathinfo($_FILES['photo_equide']['name'], PATHINFO_EXTENSION); // Recupère l'extention de l'image
 
         if(in_array(strtolower($extension),$imgExtensions)){ // verifie l'extension du fichier
+
+          //******************************************************************************************* */
+                              // AJout d'image
+  
               
               $maxsize=5000000; // Poids de 5Mo maximum pour la photo
           
               if($_FILES['photo_equide']['size'] <= $maxsize){
 
-                  //Pour l'image on définit un nom temporaire :
+                  // //Pour l'image on définit un nom temporaire :
   
-                  $tpm_nom = $_FILES['photo_equide']['tmp_name'];
-                  $time = time();
+                  // $tpm_nom = $_FILES['photo_equide']['tmp_name'];
+                  // $time = time();
 
-                  // On renome l'image avec le format : heure + nom de l'image 
+                  // // On renome l'image avec le format : heure + nom de l'image 
                   
-                  $new_img_name = $time.$img_equide;
+                  // $new_img_name = $time.$img_equide;
                   
-                  move_uploaded_file($tpm_nom,"$site_root/ASSETS/img_bdd/".$new_img_name);
+                  // move_uploaded_file($tpm_nom,"$site_root/ASSETS/img_bdd/".$new_img_name);
 
-                  // Requette pour ajouter l'image dans la bdd
-                  $sqlImg ="INSERT INTO image VALUES (NULL,'$new_img_name','$numSire')";
-                  $result_img = mysqli_query($mysqli,$sqlImg) or die(mysqli_error($mysqli));
+                  // // Requette pour ajouter l'image dans la bdd
+                  // $sqlImg ="INSERT INTO image VALUES (NULL,'$new_img_name','$numSire')";
+                  // $result_img = mysqli_query($mysqli,$sqlImg) or die(mysqli_error($mysqli));
                   
-                    if ($result_img !== false) {
-                      $insert_id_img = mysqli_insert_id($mysqli); // Récupère l'id AUTO-INCREMENT
-                      array_push($info_succes, "Image ajouté");
-                    } else {
-                      array_push($info_error, "Erreur img");
-                    }
+                  //   if ($result_img !== false) {
+                  //     $insert_id_img = mysqli_insert_id($mysqli); // Récupère l'id AUTO-INCREMENT
+                  //     array_push($info_succes, "Image ajouté");
+                  //   } else {
+                  //     array_push($info_error, "Erreur img");
+                  //   }
 
                     // Prépare la requête SQL pour insérer les données dans la table "equide"
-                    $sql = "INSERT INTO equide (numSire, numUELN,id_detenteur, nom_equide, dateNaissance_equide, lieuNaissance_equide, race_equide, stud_equide, lieuElevage_equide, sexe_equide, robe_equide, naisseurVeterinaire_equide, pere_equide, mere_equide)
-                    VALUES ('$numSire', '$numUELN','$detenteur', '$nom_equide', '$dateNaissance_equide', '$lieuNaissance_equide', '$race_equide', '$stud_equide', '$lieuElevage_equide', '$sexe_equide', '$robe_equide', '$naisseurVeterinaire_equide', '$pere_equide', '$mere_equide')";
+                    $sql = "INSERT INTO equide (id_proprietaire, sire, ueln, nom, date_naissance, stud, lieu_naissance, sexe, robe, tete, antg, antd, postg, postd, marques, lieu_elevage, naisseur)
+                    VALUES ('$id_propriétaire', '$numSire', '$numUELN', '$nom_equide', '$dateNaissance_equide', '$stud_equide', '$lieuNaissance_equide', '$sexe_equide', '$robe_equide', '$tete', '$antg', '$antd', '$postg', '$postd', '$marques', '$lieuElevage_equide', '$naisseurVeterinaire_equide')";
 
                     $result_info = mysqli_query($mysqli,$sql) or die (mysqli_error($mysqli));
                     
@@ -121,6 +133,8 @@ if (isset($_POST["ajouter"])) {
   }else{
     array_push($info_error, "Equidé déjà ajouté.");
   }
+
+
 
 
 

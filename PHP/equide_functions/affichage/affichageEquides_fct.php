@@ -47,10 +47,10 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="card-body ">
                     <h5 class="card-title"><strong><?php echo $nomEquide ?></strong></h5>
                         <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><u>Race :</u> <?php echo $nom_race ?></li>
-                                    <li class="list-group-item"><u>SIRE :</u> <?php echo $sireEquide ?></li>
-                                    <li class="list-group-item"><u>UELN :</u> <?php echo $uelnEquide ?></li>
-                                    <li class="list-group-item"><u>Propriétaire :</u> <?php echo $nomProprietaire;?> <?php echo $prenomProprietaire ?></li>
+                                    <li class="list-group-item">Race : <?php echo $nom_race ?></li>
+                                    <li class="list-group-item">SIRE : <?php echo $sireEquide ?></li>
+                                    <li class="list-group-item">UELN : <?php echo $uelnEquide ?></li>
+                                    <li class="list-group-item">Propriétaire : <?php echo $nomProprietaire;?> <?php echo $prenomProprietaire ?></li>
                                     <li class="list-group-item">En pension depuis le <?php echo $epdd1;?> jusqu'au <?php echo $epdf1 ?></li>
                                     <li class="modification list-group-item"><a href="#">PDF - Carnet de Santé</a></li>
                                     <li class="modification list-group-item"><a href="#">PDF - Fiche de Transport</a></li>

@@ -14,6 +14,9 @@ if(isset($_SESSION['logged_user'])) {
 
 			<a href="equides.php"><span class="material-symbols-outlined">close</span></a>
 
+			<label for="id_propriétaire">ID du propriétaire :</label>
+			<input type="text" id="id_propriétaire" name="id_propriétaire" required><br>
+
 			<label for="numSire">Numero de sire :</label>
 			<input type="text" id="numSire" name="numSire" required pattern="[0-9]{9}" maxlength="9"><br>
 
@@ -61,8 +64,8 @@ if(isset($_SESSION['logged_user'])) {
 
 			<label for="sexe_equide">Sexe du cheval :</label>
 			<select id="sexe_equide" name="sexe_equide" required>
-				<option value="M">Mâle</option>
-				<option value="F">Femelle</option>
+				<option value="Mâle">Mâle</option>
+				<option value="Femelle">Femelle</option>
 			</select><br>
 
 			<label for="robe_equide">Robe :</label>
@@ -77,7 +80,7 @@ if(isset($_SESSION['logged_user'])) {
 			<label for="mere_equide">Nom de la mère :</label>
 			<input type="text" id="mere_equide" name="mere_equide" required><br>
 
-			<label for="photo_equides">Photo de l'equide :</label>
+			<label for="photo_equide">Photo de l'equide :</label>
 			<input type="file" id="photo_equide" name="photo_equide" required><br>
 			
 			<p>Attributs physiques</p>
@@ -97,8 +100,8 @@ if(isset($_SESSION['logged_user'])) {
 			<label for="postd_equide">Côté postérieur droit :</label>
 			<textarea type="text" id="postd_equide" name="postd_equide"></textarea><br>
 
-			<label for="marqes_equide">Marque(s) :</label>
-			<textarea type="text" id="marqes_equide" name="marqes_equide"></textarea><br>
+			<label for="marques_equide">Marque(s) :</label>
+			<textarea type="text" id="marques_equide" name="marques_equide"></textarea><br>
 
 			<button type="submit" name="ajouter">Ajouter </button>
 

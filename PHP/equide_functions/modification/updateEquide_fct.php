@@ -10,29 +10,27 @@ if (isset($_POST["ajouter"])) {
   $raceEquide = $_POST['race_equide'];
   $studEquide = $_POST['stud_equide'];
   $lieuElevage = $_POST['lieuElevage_equide'];
-  $sexeEquide = $_POST['sexe_equide'];
+  $sexeEquide = $_POST['sexe'];
   $robeEquide = $_POST['robe_equide'];
   $naisseurVeterinaire = $_POST['naisseurVeterinaire_equide'];
-  $pereEquide = $_POST['pere_equide'];
-  $mereEquide = $_POST['mere_equide'];
+  // $pereEquide = $_POST['pere_equide'];
+  // $mereEquide = $_POST['mere_equide'];
 
 
   // Requête SQL pour mettre à jour les informations du cheval
-  $sql = "UPDATE `equide` SET
-  `numUELN`='$numUELN',
-  `nom_equide`='$nomEquide',
-  `dateNaissance_equide`='$dateNaissance',
-  `lieuNaissance_equide`='$lieuNaissance',
-  `race_equide`='$raceEquide',
-  `stud_equide`='$studEquide',
-  `lieuElevage_equide`='$lieuElevage',
-  `sexe_equide`='$sexeEquide', 
-  `robe_equide`='$robeEquide',
-  `naisseurVeterinaire_equide`='$naisseurVeterinaire',
-  `pere_equide`='$pereEquide',
-  `mere_equide`='$mereEquide'
+  //************************************** *//
+  // Ajouter RACE,LIEU D'ELEVAGE,VETERINAIRE,PERE,MERE
 
-  WHERE `numSIRE`='$numSIRE'";
+  $sql = "UPDATE `equide` SET
+  `ueln`='$numUELN',
+  `nom`='$nomEquide',
+  `date_naissance`='$dateNaissance',
+  `lieu_naissance`='$lieuNaissance',
+  `stud`='$studEquide',
+  `sexe`='$sexeEquide', 
+  `robe`='$robeEquide'
+
+  WHERE `sire`='$numSIRE'";
 
   $result_info = mysqli_query($mysqli,$sql) or die (mysqli_error($mysqli));
   

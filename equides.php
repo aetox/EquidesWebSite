@@ -5,7 +5,6 @@ include_once("header.php");
 if(isset($_SESSION['logged_user'])) {
 ?>
 <?php include_once('PHP/equide_functions/modification/ajoutEquides_fct.php') ?>
-<?php include_once('PHP/equide_functions/recherche/rechercheGet.php')?>
 
 <div class="equides">
 

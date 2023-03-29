@@ -15,6 +15,10 @@ JOIN  `en_pension`
 ON equide.id_equide=en_pension.id_equide
 JOIN `registre_equide`
 ON en_pension.id_registre=registre_equide.id_registre
+JOIN `affectation_veterinaire`
+ON registre_equide.id_affectation_veterinaire=affectation_veterinaire.id_affectation_veterinaire
+JOIN `veterinaire`
+ON affectation_veterinaire.id_veterinaire=veterinaire.id_veterinaire
 
 WHERE sire='$sire'";
 $resultOld = mysqli_query($mysqli, $sqlOld) or die(mysqli_error($mysqli));
@@ -42,22 +46,22 @@ if (mysqli_num_rows($resultOld) > 0) {
         <label for="lieuNaissance_equide">Lieu de naissance :</label>
         <input type="text" id="lieuNaissance_equide" name="lieuNaissance_equide" value="<?php echo $oldequides['lieu_naissance'] ?>" required><br>
 
-        <label for="race_equide">Race :</label>
+        <label for="race_equide">Race : NE PAS MODIFIER</label>
         <input type="text" id="race_equide" name="race_equide" value="<?php echo $oldequides['id_race'] ?>" required><br>
 
         <label for="stud_equide">Stud :</label>
         <input type="text" id="stud_equide" name="stud_equide" value="<?php echo $oldequides['stud'] ?>" required><br>
 
         <label for="lieuElevage_equide">Lieu d'élevage :</label>
-        <input type="text" id="lieuElevage_equide" name="lieuElevage_equide" value="<?php echo $oldequides['nom_ecurie'] ?>" required><br>
+        <input type="text" id="lieuElevage_equide" name="lieuElevage_equide" value="<?php echo $oldequides['nom_ecurie'] ?>" readonly required><br>
 
         <label for="sexe">Sexe du cheval :</label>
         <select id="sexe" name="sexe" required>
-            <option value="M" <?php if ($oldequides['sexe'] == 'M') {
+            <option value="Mâle" <?php if ($oldequides['sexe'] == 'Mâle') {
                 echo 'selected="selected"';
             } ?>>Mâle
             </option>
-            <option value="F" <?php if ($oldequides['sexe'] == 'F') {
+            <option value="Femelle" <?php if ($oldequides['sexe'] == 'Femelle') {
                 echo 'selected="selected"';
             } ?>>Femelle
             </option>
@@ -65,10 +69,9 @@ if (mysqli_num_rows($resultOld) > 0) {
 
         <label for="robe_equide">Robe :</label>
 		<input type="text" id="robe_equide" name="robe_equide" value="<?php echo $oldequides['robe']?>"  required><br>
-<!-- 
-		<label for="naisseurVeterinaire_equide">Veterinaire ayant assure la naissance :</label>
-		<input type="text" id="naisseurVeterinaire_equide" name="naisseurVeterinaire_equide" value="<?php echo $oldequides['naisseurVeterinaire_equide']?>"  required><br> -->
 
+		<label for="naisseurVeterinaire_equide">Veterinaire ayant assure la naissance : NE PAS MODIFIER</label>
+		<input type="text" id="naisseurVeterinaire_equide" name="naisseurVeterinaire_equide" value="<?php echo $oldequides['id_veterinaire']?>"  required><br> 
 		<!-- <label for="pere_equide">Père :</label>
 		<input type="text" id="pere_equide" name="pere_equide" value="<?php echo $oldequides['pere_equide']?>"  required><br>
 

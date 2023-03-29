@@ -14,13 +14,6 @@ if(isset($_SESSION['logged_user'])) {
 	<!-- Ajouter la bouton recherche -->
 	
 	<h1>Recherche d'équidés</h1>
-	<form action="PHP/equide_functions/recherche/rechercheEquideParNom.php" method="get">
-		<label for="nom">Nom :</label>
-		<input type="text" id="nom" name="nom" autocomplete="off"><br>
-		<label for="sire">Sire :</label>
-		<input type="text" id="sire" name="sire"><br>
-		<ul id="result"></ul>
-	</form>
 
 
 	<a href="ajout_equides.php" class="boutton_vertV2"><img src="ASSET/ico/plus2.png">équidé</a>

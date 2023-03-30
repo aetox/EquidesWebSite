@@ -43,9 +43,15 @@ if (mysqli_num_rows($result) > 0) {
                 <li class="list-group-item">Lieu elevage : <?php echo $equides['lieu_elevage'] ?> </li>
                 <li class="list-group-item">Sexe : <?php echo $equides['sexe'] ?> </li>
                 <li class="list-group-item">Robe : <?php echo $equides['robe'] ?> </li>
-                <li class="list-group-item">Veterinaire Naisseur : <?php echo $equides['naisseur'] ?> </li>
+                <li class="list-group-item">Vétérinaire Naissance : <?php echo $equides['naisseur'] ?> </li>
                 <!-- <li class="list-group-item">Pere : <?php echo $equides['pere_equide'] ?> </li>
                 <li class="list-group-item">Mere : <?php echo $equides['mere_equide'] ?> </li> -->
+            </ul>
+                <div class="card-body">
+                    <h4 class="card-title">Attributs physique</h5>
+                    <p class="card-text">Tête : </p>
+                </div>
+            <ul class="list-group list-group-flush">
                 <li class="modification list-group-item"><a href="carnet_traitement.php?sire=<?php echo $equides['sire'];?>"> Carnet de traitement</a></li>
                 <li class="modification list-group-item"><a href="carnet_vaccination.php?sire=<?php echo $equides['sire'];?>"> Carnet de vaccination</a></li>
                 <li class="modification list-group-item"><a href="updateEquide.php?sire=<?php echo $equides['sire'];?>"> Modification</a></li>

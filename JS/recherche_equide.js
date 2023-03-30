@@ -7,7 +7,7 @@ $(function(){
         {
             $.ajax({
                 type: "POST",
-                url: "../EquidesWebSite/PHP/equide_functions/recherche/search.php",
+                url: "../EquidesWebSite/PHP/equide_functions/recherche/recherche_equide.php",
                 data: dataString,
                 cache: false,
                 success: function(html)

@@ -14,7 +14,7 @@ if(isset($_SESSION['logged_user'])) {
 
     <div></div>
 
-    <a href="#" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">voyage</a>
+    <a href="ajout_voyage.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">voyage</a>
 
     <div class="carnet_transport_pdf">
     <!-- Télécharge le pdf -->

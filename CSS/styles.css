@@ -203,7 +203,7 @@ h5 {
     padding-bottom: 20px;
 }
 
-.formulaire_2 input {
+.formulaire_2 input, select {
     width: 209px;
     height: 46px;
     border-radius: 20px;
@@ -214,8 +214,28 @@ h5 {
     font-family: 'Asap Condensed', sans-serif;
 }
 
+.formulaire_2 textarea {
+    border-radius: 20px;
+    width: 209px;
+    height: 66px;
+    border: none;
+    padding-left: 15px;
+    padding-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    resize: none;
+}
+
 .formulaire_2 label {
     margin-top: 5px;
+}
+
+.formulaire_2 p {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 0px !important;
 }
 
 .formulaire_2 span {

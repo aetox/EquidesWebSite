@@ -1,5 +1,5 @@
 <?php
-$idSire = $_GET['numSIRE'];
+$idSire = $_GET['sire'];
 $titre ="Carnet de Vaccination : $idSire";
 ob_start();
 include_once("header.php");

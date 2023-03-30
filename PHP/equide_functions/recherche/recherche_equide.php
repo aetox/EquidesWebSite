@@ -32,7 +32,7 @@ if(isset($_POST['search_keyword'])){
 
         }
     } else {
-        echo '<div class="show" align="left">No matching records.</div>';
+        echo '<div class="show" align="left">Aucun équidé.</div>';
     }
 }
 ?>

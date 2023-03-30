@@ -12,10 +12,11 @@ if(isset($_SESSION['logged_user'])) {
 
 		<h1 class="titre_1">Mes équidés</h1>
 
-</div>
+
 	<div class='web'>
-    	<input type="text" class="search_keyword" id="search_keyword_id" placeholder="Search" />
-    <div id="result"></div>
+    	<input type="text" class="search_keyword" id="search_keyword_id" placeholder="Rechercher un équidé" />
+    	<div id="result"></div>
+	</div>
 
 	<div class="equides">
 
@@ -28,7 +29,7 @@ if(isset($_SESSION['logged_user'])) {
 			<?php include_once('PHP/equide_functions/affichage/affichageEquides_fct.php') ?>
 		</div>
 		
-		
+		</div>
 	</div>
 
 <?php }elseif(isset($_SESSION['id_proprietaire'])){
@@ -40,7 +41,6 @@ if(isset($_SESSION['logged_user'])) {
 	<div id="Equides">
 			<!-- faire un appel de la fonction affichage erreurs. -->
 			<?php include_once('PHP/equide_functions/affichage/affichageEquides_fct.php') ?>
-	</div>
 	</div>
 
 <?php };

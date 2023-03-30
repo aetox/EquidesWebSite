@@ -12,7 +12,13 @@ if(isset($_SESSION['logged_user'])) {
 
 		<h1 class="titre_1">Mes équidés</h1>
 
-		<!-- Ajouter la bouton recherche -->
+</div>
+	<div class='web'>
+    	<input type="text" class="search_keyword" id="search_keyword_id" placeholder="Search" />
+    <div id="result"></div>
+
+	<div class="equides">
+
 
 		<a href="ajout_equides.php" class="boutton_vertV2"><img src="ASSET/ico/plus2.png">équidé</a>
 
@@ -35,7 +41,6 @@ if(isset($_SESSION['logged_user'])) {
 			<!-- faire un appel de la fonction affichage erreurs. -->
 			<?php include_once('PHP/equide_functions/affichage/affichageEquides_fct.php') ?>
 	</div>
-
 	</div>
 
 <?php };

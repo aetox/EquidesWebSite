@@ -8,12 +8,12 @@
 
 
 
-    $get_sire = $_GET['numSIRE'];
+    $get_sire = $_GET['sire'];
     
-    $sql_delete = "DELETE FROM `equide` WHERE `numSIRE` = $get_sire";
+    $sql_delete = "DELETE FROM `equide` WHERE `sire` = $get_sire";
     $resulat_delete = mysqli_query($mysqli,$sql_delete) or die (mysqli_error($mysqli));
 
-    $imglink ="SELECT img FROM `image` WHERE `numSIRE` = $get_sire";
+    $imglink ="SELECT img FROM `image` WHERE `sire` = $get_sire";
     $resulat_link = mysqli_query($mysqli,$imglink) or die (mysqli_error($mysqli));
     
     $lienPdp = '';
@@ -25,7 +25,7 @@
         //unlink("../ASSETS/img_bdd/.'$lienPdp'.");
     }
 
-    $img_delete = "DELETE FROM `image` WHERE `numSIRE` = $get_sire";
+    $img_delete = "DELETE FROM `image` WHERE `sire` = $get_sire";
     $resulat_img_delete = mysqli_query($mysqli,$img_delete) or die (mysqli_error($mysqli));
 
 

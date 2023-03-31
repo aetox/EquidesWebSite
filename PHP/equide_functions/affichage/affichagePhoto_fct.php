@@ -3,9 +3,9 @@
     // Definition de la fonction Affichage de la photo avec en parametre la variable pour la connexion à la bdd et
     // le numéro SIRE, la function return le lien pdp
     
-function AffichagePhoto($mysqli,$numSIRE){
+function AffichagePhoto($mysqli,$sire){
 
-    $sqlImg = "SELECT * FROM `image` WHERE numSIRE='$numSIRE'";
+    $sqlImg = "SELECT * FROM `image` WHERE sire='$sire'";
     $resulat_img = mysqli_query($mysqli,$sqlImg) or die (mysqli_error($mysqli));
      
     $lienPdp = '';

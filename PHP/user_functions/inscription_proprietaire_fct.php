@@ -5,6 +5,8 @@ $info_succes = array();
 
 $site_root = $_SERVER['DOCUMENT_ROOT'];
 
+include_once('PHP/other_functions/functions.php');
+
 
 if(isset($_POST['inscription_proprietaire'])){//l'utilisateur à cliqué sur "S'inscrire", on demande donc si les champs sont défini avec "isset"
   
@@ -104,8 +106,11 @@ if(isset($_POST['inscription_proprietaire'])){//l'utilisateur à cliqué sur "S'
                           //   $id_login = $rows['id_login'];
                           //   }
                           
+
+                          $idGenerate = randomProprietaireIdentifiant();
+
                           $sqlProprio = "INSERT INTO `proprietaire` (id_login, nom, prenom, rue, commune, code_postal) 
-                          VALUES ('$id_login', '$nom', '$prenom', '$rue', '$commune', '$code_postal')";
+                          VALUES ('$id_login','$nom', '$prenom', '$rue', '$commune', '$code_postal')";
                            $resultProprio = mysqli_query($mysqli,$sqlProprio) or die(mysqli_error($mysqli));
   
                           array_push($info_succes, "Vous êtes inscrit !");

@@ -1,19 +1,30 @@
 <?php
 
 //Permet d'avoir le numéro de l'equidé séléctionné
-$idSire = $_GET['numSIRE'];
+$idSire = $_GET['sire'];
 
 require_once '../../INCLUDES/vendor/autoload.php'; // chemin d'accès au fichier Mpdf autoload.php
 
-// Connexion à la BDD (à personnaliser)
 require('../other_functions/connexion_bdd.php');
 
-//Requete SQL pour les traitements
+$sql = "SELECT traitement.id_traitement AS id_traitement, traitement.nom AS nom_traitement, acte.date AS date_acte, acte.details AS detail_acte
+FROM `equide`
+JOIN `en_pension`
+ON equide.id_equide=en_pension.id_equide
+JOIN `registre_equide`
+ON en_pension.id_registre=registre_equide.id_registre
+JOIN `acte`
+ON registre_equide.id_registre=acte.id_registre
+JOIN `type_acte`
+ON acte.id_type_acte=type_acte.id_type_acte
+JOIN `traitement`
+ON type_acte.id_traitement=traitement.id_traitement
 
-$sql = "SELECT * FROM `traitement` WHERE sire ='$idSire'";
+WHERE sire ='$idSire' "; //ORDER BY `date_traitement` DESC
+
 $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 
-$sql2 = "SELECT * FROM `equide` WHERE numSIRE ='$idSire'"; 
+$sql2 = "SELECT * FROM `equide` WHERE sire ='$idSire'"; 
 $result2 = mysqli_query($mysqli,$sql2) or die(mysqli_error($mysqli));
 
 $dateDuJour = date('j-m-y');
@@ -113,10 +124,10 @@ $html = '
 while($row2 = mysqli_fetch_assoc($result2)) {
 	$html .= '
 			<ul>
-	   <li>Numéro SIRE :  '.$row2["numSIRE"].'</li>
-	   <li>Numéro UELN : '.$row2["numUELN"].'</li>
-	   <li>Date de naissance : '.$row2["dateNaissance_equide"].'</li>
-	   <li>Sexe : '.$row2["sexe_equide"].'</li>
+	   <li>Numéro SIRE :  '.$row2["sire"].'</li>
+	   <li>Numéro UELN : '.$row2["ueln"].'</li>
+	   <li>Date de naissance : '.$row2["date_naissance"].'</li>
+	   <li>Sexe : '.$row2["sexe"].'</li>
 	   <li>Date du document : '.$dateDuJour.'</li>
 	</ul>';
 }
@@ -148,10 +159,10 @@ $html .='
 	$html .= '
 	<tr>
 	   <td>'.$row["id_traitement"].'</td>
-	   <td>'.$row["molecule_traitement"].'</td>
-	   <td>'.$row["reference_traitement"].'</td>
-	   <td>'.$row["date_traitement"].'</td>
-	   <td>'.$row["commentaire_traitement"].'</td>
+	   <td>'.$row["nom_traitement"].'</td>
+	   <td>'.$row["id_traitement"].'</td>
+	   <td>'.date("d/m/y", strtotime($row['date_acte'])).'</td>
+	   <td>'.$row["detail_acte"].'</td>
 	</tr>';
 }
 $html .= '</table> </div>';

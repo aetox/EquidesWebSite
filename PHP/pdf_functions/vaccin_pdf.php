@@ -1,7 +1,7 @@
 <?php
 
 //Permet d'avoir le numéro de l'equidé séléctionné
-$idSire = $_GET['numSIRE'];
+$idSire = $_GET['sire'];
 
 require_once '../../INCLUDES/vendor/autoload.php'; // chemin d'accès au fichier Mpdf autoload.php
 
@@ -10,10 +10,26 @@ require('../other_functions/connexion_bdd.php');
 
 //Requete SQL pour les traitements
 
-$sql = "SELECT * FROM `vaccin` WHERE numUELN ='$idSire'";
+$sql = "SELECT vaccin.id_vaccin AS id_vaccin, vaccin.nom AS nom_vaccin, vaccin.maladie AS maladie_vaccin, acte.date AS date_acte, acte.details AS detail_acte
+FROM `equide`
+JOIN `en_pension`
+ON equide.id_equide=en_pension.id_equide
+JOIN `registre_equide`
+ON en_pension.id_registre=registre_equide.id_registre
+JOIN `acte`
+ON registre_equide.id_registre=acte.id_registre
+JOIN `type_acte`
+ON acte.id_type_acte=type_acte.id_type_acte
+JOIN `vaccin`
+ON type_acte.id_vaccin=vaccin.id_vaccin
+
+
+WHERE sire ='$idSire' "; //ORDER BY `date_traitement` DESC
 $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 
-$sql2 = "SELECT * FROM `equide` WHERE numSIRE ='$idSire'"; 
+$result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
+
+$sql2 = "SELECT * FROM `equide` WHERE sire ='$idSire'"; 
 $result2 = mysqli_query($mysqli,$sql2) or die(mysqli_error($mysqli));
 
 $dateDuJour = date('j-m-y');
@@ -99,17 +115,17 @@ $html = '
 
 
 		  	<img src="ico.png"/>
-			<h1>Carnet de traitement de l\'équidé n°'.$idSire.'</h1>
+			<h1>Carnet de vaccination de l\'équidé n°'.$idSire.'</h1>
 
 ';
 
 while($row2 = mysqli_fetch_assoc($result2)) {
 	$html .= '
         <ul>
-	   <li>Numéro SIRE :  '.$row2["numSIRE"].'</li>
-	   <li>Numéro UELN : '.$row2["numUELN"].'</li>
-	   <li>Date de naissance : '.$row2["dateNaissance_equide"].'</li>
-	   <li>Sexe : '.$row2["sexe_equide"].'</li>
+	   <li>Numéro SIRE :  '.$row2["sire"].'</li>
+	   <li>Numéro UELN : '.$row2["ueln"].'</li>
+	   <li>Date de naissance : '.$row2["date_naissance"].'</li>
+	   <li>Sexe : '.$row2["sexe"].'</li>
 	   <li>Date du document : '.$dateDuJour.'</li>
 	</ul>';
 }
@@ -127,7 +143,6 @@ $html .='
             <th>Date</th>
             <th>Lieu de vaccination</th>
             <th>Vétérinaire</th>
-            <th>Signature</th>
         </tr>
 
 ';
@@ -139,12 +154,11 @@ $html .='
      <tr>
         <td>'.$row["id_vaccin"].'</td>
         <td>'.$row["nom_vaccin"].'</td>
-        <td>'.$row["numLot_vaccin"].'</td>
-        <td>'.$row["maladieConcernees_vaccin"].'</td>
-        <td>'.$row["dateInjection_vaccin"].'</td>
-        <td>'.$row["lieu_vaccin"].'</td>
-        <td>'.$row["veterinaire"].'</td>
-        <td>'.$row["signature_vaccin"].'</td>
+        <td>'.$row["id_vaccin"].'</td>
+        <td>'.$row["maladie_vaccin"].'</td>
+        <td>'.$row["date_acte"].'</td>
+        <td>'.$row["nom_vaccin"].'</td>
+        <td>'.$row["nom_vaccin"].'</td>
     </tr>';
  }
 $html .= '</table> </div>';

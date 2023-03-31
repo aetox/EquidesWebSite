@@ -12,24 +12,21 @@ if(isset($_SESSION['logged_user'])) {
 
 		<h1 class="titre_1">Mes équidés</h1>
 
-
-	<div class='web'>
-    	<input type="text" class="search_keyword" id="search_keyword_id" placeholder="Rechercher un équidé" />
-    	<div id="result"></div>
-	</div>
-
-	<div class="equides">
-
-
-		<a href="ajout_equides.php" class="boutton_vertV2"><img src="ASSET/ico/plus2.png">équidé</a>
-
-					
+		<div class='web'>
+			<div class = "recherche">
+				<img src="ASSETS/ico/recherche.png" alt="">
+				<input type="text" class="search_keyword" id="search_keyword_id" placeholder="Rechercher un équidé" />
+			</div>
+			<div id="result"></div>
+		</div>
+	
+		<a href="ajout_equides.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">équidé</a>
+			
 		<div id="Equides">
 			<!-- faire un appel de la fonction affichage erreurs. -->
 			<?php include_once('PHP/equide_functions/affichage/affichageEquides_fct.php') ?>
 		</div>
 		
-		</div>
 	</div>
 
 <?php }elseif(isset($_SESSION['id_proprietaire'])){

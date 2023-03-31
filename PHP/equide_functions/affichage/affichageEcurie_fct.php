@@ -112,7 +112,7 @@ if(isset($_SESSION['id_detenteur'])){
                                     <li class="list-group-item">En pension depuis le <?php echo $epdd1;?> jusqu'au <?php echo $epdf1 ?></li>
                                     <li class="modification list-group-item"><a href="#">PDF - Carnet de Santé</a></li>
                                     <li class="modification list-group-item"><a href="#">PDF - Fiche de Transport</a></li>
-                                    <li class="modification list-group-item" id="affichageEquides_info"><a  href="equide_description.php?SIRE=<?php echo $rue;?>">plus d'info</a></li>
+                                    <li class="modification list-group-item" id="affichageEquides_info"><a  href="equide_description.php?sireEquide=<?php echo $sireEquide;?>">plus d'info</a></li>
                         </ul> 
                 </div>
             </div>

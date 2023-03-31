@@ -13,12 +13,12 @@ if(isset($_SESSION['logged_user'])) {
         <?php include_once('PHP/equide_functions/affichage/affichageVaccin_fct.php') ?>
     </div>
     <a href="equide_description.php?sireEquide=<?=$idSire?>" class="boutton_orangeV2"><img src="ASSETS/ico/retour.png">retour</a>
-</div>
-    <div class="carnet_transport_pdf">
-    <a href="PHP/pdf_functions/vaccin_pdf.php?sire=<?=$idSire;?>&amp;detenteurSIRE=<?=$_SESSION['id_detenteur'];?>" target="_blank" class="boutton_pdf">
-    <img src="ASSETS/ico/telecharger2.png">PDF</a>
-    </div> 
 
+    <div class="carnet_transport_pdf">
+        <a href="PHP/pdf_functions/vaccin_pdf.php?sire=<?=$idSire;?>&amp;detenteurSIRE=<?=$_SESSION['id_detenteur'];?>" target="_blank" class="boutton_pdf">
+        <img src="ASSETS/ico/telecharger2.png">PDF</a>
+    </div> 
+    </div>
 
 <?php include_once("footer.php"); ?>
 <?php }else {

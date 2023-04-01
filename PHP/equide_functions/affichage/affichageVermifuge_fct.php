@@ -2,7 +2,7 @@
 $idSire = $_GET['sire'];
 
 
-$sql = "SELECT type_acte.nom_acte AS nom_vermifuge, vermifuge.nom AS reference_vermifuge, acte.date AS date_acte, acte.details AS detail_acte
+$sql = "SELECT vermifuge.id_vermifuge AS id_vermifuge, type_acte.nom_acte AS nom_vermifuge, vermifuge.nom AS reference_vermifuge, acte.date AS date_acte, acte.details AS detail_acte
 FROM `equide`
 JOIN `en_pension`
 ON equide.id_equide=en_pension.id_equide
@@ -33,7 +33,7 @@ if (mysqli_num_rows($result) > 0) {
                     <li class="list-group-item">Référence vermifuge : <?=$vermifuge['reference_vermifuge'] ?></li>
                     <li class="list-group-item">Date : <?=date("d/m/y", strtotime($vermifuge['date_acte'])) ?></li>
                     <li class="list-group-item">Commentaire : <?=$vermifuge['detail_acte'] ?></li>
-                    <li class="modification list-group-item"><a href="">Supprimer</a></li>
+                    <li class="modification list-group-item"><a href="PHP/equide_functions/modification/suppressionVermifuge_fct.php?idVermifuge=<?=$vermifuge['id_vermifuge']?>&amp;sire=<?=$idSire;?>">Supprimer</a></li>
                 </ul>
             </div>  
 

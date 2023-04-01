@@ -2,7 +2,7 @@
 $idSire = $_GET['sire'];
 
 
-$sql = "SELECT traitement.id_traitement AS id_traitement, traitement.nom AS nom_traitement, acte.date AS date_acte, acte.details AS detail_acte
+$sql = "SELECT type_acte.nom_acte AS nom_traitement, traitement.nom AS reference_traitement, acte.date AS date_acte, acte.details AS detail_acte
 FROM `equide`
 JOIN `en_pension`
 ON equide.id_equide=en_pension.id_equide
@@ -26,11 +26,11 @@ if (mysqli_num_rows($result) > 0) {
     
             <div class="equide_bootstrap card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">ID : <?=$traitement['id_traitement']?></h5>
+                    <h5 class="card-title"><?=$traitement['nom_traitement']?></h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Molécule traitement : <?=$traitement['nom_traitement'] ?></li>
-                    <li class="list-group-item">Référence traitement : <?=$traitement['id_traitement'] ?></li>
+                    <li class="list-group-item">Nom du traitement : <?=$traitement['nom_traitement'] ?></li>
+                    <li class="list-group-item">Référence traitement : <?=$traitement['reference_traitement'] ?></li>
                     <li class="list-group-item">Date : <?=date("d/m/y", strtotime($traitement['date_acte'])) ?></li>
                     <li class="list-group-item">Commentaire : <?=$traitement['detail_acte'] ?></li>
                     <li class="modification list-group-item"><a href="">Supprimer</a></li>

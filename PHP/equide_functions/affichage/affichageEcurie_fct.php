@@ -6,8 +6,8 @@ if(isset($_SESSION['id_detenteur'])){
 
     $idDetenteur = $_SESSION['id_detenteur'];
     $ecuriesql =
-    "SELECT detenteur.nom AS detenteurNom, detenteur.prenom AS detenteurPrenom, detenteur.nombre_equides,
-    registre_equide.nom_ecurie, registre_equide.rue AS registreRue, registre_equide.commune AS registreCommune, registre_equide.code_postal AS registreCodePostal, registre_equide.siret,
+    "SELECT detenteur.nom AS detenteurNom, detenteur.prenom AS detenteurPrenom,
+    registre_equide.id_registre AS idRegistre, registre_equide.nom_ecurie, registre_equide.rue AS registreRue, registre_equide.commune AS registreCommune, registre_equide.code_postal AS registreCodePostal, registre_equide.siret,
     affectation_marechal.date_debut AS amdb, affectation_marechal.date_fin AS amdf,
     marechal.nom AS marechalNom, marechal.prenom AS marechalPrenom,
     affectation_veterinaire.type_veterinaire, affectation_veterinaire.date_debut AS avdb, affectation_veterinaire.date_fin AS avdf,
@@ -36,7 +36,6 @@ if(isset($_SESSION['id_detenteur'])){
             $nomEcurie = $rowData['nom_ecurie'];
             $detenteurNom = $rowData['detenteurNom'];
             $detenteurPrenom = $rowData['detenteurPrenom'];
-            $nombreEquides = $rowData['nombre_equides'];
             $registreRue = $rowData['registreRue'];
             $registreCommune = $rowData['registreCommune'];
             $registreCodePostal = $rowData['registreCodePostal'];
@@ -56,12 +55,13 @@ if(isset($_SESSION['id_detenteur'])){
             $avdf1 = date("d/m/y", strtotime($avdf));?>
              
             <ul class="list-group list-group-flush">
-            <li class="list-group-item"><u>Détenteur :</u> <?php echo $detenteurNom;?> <?php echo $detenteurPrenom ?></li>
-            <li class="list-group-item"><u>Nombres d'équides dans l'écurie :</u> <?php echo $nombreEquides; ?></li>
-            <li class="list-group-item"><u>Adresse de l'écurie :</u> <?php echo $registreRue;?> <?php echo $registreCommune ?> <?php echo $registreCodePostal ?></li>
-            <li class="list-group-item"><u>SIRET :</u> <?php echo $siret; ?></li>
-            <li class="list-group-item"><u>Vétérinaire sanitaire :</u> <?php echo $veterinaireNom;?> <?php echo $veterinairePrenom ?> du <?php echo $avdb1;?> au <?php echo $avdf1 ?></li>
-            <li class="list-group-item"><u>Maréchal :</u> <?php echo $marechalNom;?> du <?php echo $amdb1;?> au <?php echo $amdf1 ?></li>
+                <li class="list-group-item"><u>Détenteur :</u> <?php echo $detenteurNom;?> <?php echo $detenteurPrenom ?></li>
+                <li class="list-group-item"><u>Adresse de l'écurie :</u> <?php echo $registreRue;?> <?php echo $registreCommune ?> <?php echo $registreCodePostal ?></li>
+                <li class="list-group-item"><u>SIRET :</u> <?php echo $siret; ?></li>
+                <li class="list-group-item"><u>Vétérinaire sanitaire :</u> <?php echo $veterinaireNom;?> <?php echo $veterinairePrenom ?> du <?php echo $avdb1;?> au <?php echo $avdf1 ?></li>
+                <li class="list-group-item"><u>Maréchal :</u> <?php echo $marechalNom;?> du <?php echo $amdb1;?> au <?php echo $amdf1 ?></li>
+                <li class="modification list-group-item" id="affichageEquides_info"><a href="ecurie_description.php?idRegistre=<?php echo $rowData['idRegistre'];?>">plus d'info</a></li>
+
             </ul>
     <?php
 }}  else{

@@ -1,13 +1,14 @@
 <?php
+$titre ="Accueil";
 ob_start();
 include_once("header.php");
-if(isset($_SESSION['logged_user'])) {
-$titre ="Accueil";
+if(isset($_SESSION['logged_user']) || isset($_COOKIE['user_id_login'])){ 
+
 ?>
 
 <div class="accueil">
 
-    <h1 class="accueil_titre">Bienvenue <?= $_SESSION['prenom_detenteur'];?>,</h1>
+    <h1 class="accueil_titre">Bienvenue <?= $_SESSION['prenom'];?>,</h1>
 
 
     <h3 class="accueil_soustitre">Suivre vos chevaux n'a jamais été aussi simple.<br>
@@ -27,3 +28,4 @@ $titre ="Accueil";
 <?php }else {
     header("Location: index.php");
 }ob_end_flush(); ?>
+

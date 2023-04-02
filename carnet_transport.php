@@ -1,8 +1,8 @@
 <?php
+$titre ="Carnet de transport";
 ob_start();
 include_once("header.php");
-if(isset($_SESSION['logged_user'])) {
-$titre ="Carnet de transport";
+if(isset($_SESSION['logged_user']) || isset($_COOKIE['user_id_login'])){ 
 ?>
 
 
@@ -14,7 +14,7 @@ $titre ="Carnet de transport";
 
     <div></div>
 
-    <a href="#" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">voyage</a>
+    <a href="ajout_voyage.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">voyage</a>
 
     <div class="carnet_transport_pdf">
     <!-- Télécharge le pdf -->

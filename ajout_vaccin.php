@@ -1,9 +1,10 @@
 <?php
+$titre ="Ajouter un vaccin";
 ob_start();
 include_once("header.php");
-if(isset($_SESSION['logged_user'])) {
-$idSire = $_GET['numSIRE'];
-$titre ="Ajouter un vaccin";
+if(isset($_SESSION['logged_user']) || isset($_COOKIE['user_id_login'])){ 
+    $id_login = intval($_COOKIE['user_id_login']); 
+$idSire = $_GET['sire'];
 include_once('PHP/equide_functions/modification/ajoutVaccin_fct.php');
 ?>
 
@@ -12,7 +13,7 @@ include_once('PHP/equide_functions/modification/ajoutVaccin_fct.php');
     <div class="formulaire_1">
         <form method="post" class="formulaire_2" name="formajoutTraitement" enctype="multipart/form-data">
 
-            <a href="carnet_vaccination.php?numSIRE=<?=$idSire?>"><span class="material-symbols-outlined">close</span></a>
+            <a href="carnet_vaccination.php?sire=<?=$idSire?>"><span class="material-symbols-outlined">close</span></a>
             <label for="idVaccin">ID Vaccin :</label>
             <input type="text" id="idVaccin" name="idVaccin" placeholder="XXXXXXX" required><br>
 
@@ -40,13 +41,9 @@ include_once('PHP/equide_functions/modification/ajoutVaccin_fct.php');
             <button type="submit" name="ajouter">Ajouter</button>
         </form>
     </div>
-</div>
-        <label for="signatureVaccin">Signature :</label>
-        <input type="text" id="signatureVaccin" name="signatureVaccin" placeholder="Signature" required><br>
 
-			<button type="submit" name="ajouter">Ajouter le vaccin</button>
-    		</form>
-	</div>
+
+<?php include_once("footer.php"); ?>
 <?php }else {
     header("Location: index.php");
 }ob_end_flush(); ?>

@@ -39,11 +39,11 @@ if (mysqli_num_rows($result) > 0) {
         $nom_race = $rowData['nom_race'];
         $nomProprietaire = $rowData['nomProprietaire'];
         $prenomProprietaire = $rowData['prenomProprietaire'];
-        // $lienPdp = AffichagePhoto($mysqli,$photo);
+        $lienPdp = AffichagePhoto($mysqli,$sireEquide);
       
     ?>
             <div class="equide_bootstrap card " >
-                <img src="../ASSETS/img_bdd/" class="card-img-top" alt="Nom du cheval : <?php echo $nomEquide?>">
+                <img src="../EquidesWebSite/ASSETS/img_bdd/<?=$lienPdp?>" class="card-img-top" alt="Nom du cheval : <?php echo $nomEquide?>">
                 <div class="card-body ">
                     <h5 class="card-title"><strong><?php echo $nomEquide ?></strong></h5>
                         <ul class="list-group list-group-flush">
@@ -53,7 +53,6 @@ if (mysqli_num_rows($result) > 0) {
                                     <li class="list-group-item">Propriétaire : <?php echo $nomProprietaire;?> <?php echo $prenomProprietaire ?></li>
                                     <li class="list-group-item">En pension depuis le <?php echo $epdd1;?> jusqu'au <?php echo $epdf1 ?></li>
                                     <li class="modification list-group-item"><a href="#">PDF - Carnet de Santé</a></li>
-                                    <li class="modification list-group-item"><a href="#">PDF - Fiche de Transport</a></li>
                                     <li class="modification list-group-item" id="affichageEquides_info"><a  href="equide_description.php?sireEquide=<?php echo $rowData['sireEquide'];?>">plus d'info</a></li>
                         </ul> 
                 </div>

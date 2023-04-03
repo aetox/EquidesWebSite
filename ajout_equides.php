@@ -26,7 +26,7 @@ if(isset($_SESSION['logged_user'])) {
                 if (mysqli_num_rows($result) > 0) {      
                 
                     while($proprietaire = mysqli_fetch_array($result)){?>
-				        <option value="<?=$race['id_proprietaire']?>"><?php echo($proprietaire['prenom'].' '.$proprietaire['nom'])?></option>
+				        <option value="<?=$proprietaire['id_proprietaire']?>"><?php echo($proprietaire['prenom'].' '.$proprietaire['nom'])?></option>
                    <?php } 
                     }else{?>
 				        <option value="0">Aucune race</option>
@@ -113,7 +113,6 @@ if(isset($_SESSION['logged_user'])) {
 
 			<label for="marques_equide">Marque(s) :</label>
 			<textarea type="text" id="marques_equide" name="marques_equide"></textarea><br>
-
 
 			<button type="submit" name="ajouter">Ajouter </button>
 

@@ -38,11 +38,11 @@ if (mysqli_num_rows($result) > 0) {
         $nom_race = $rowData['nom_race'];
         $nomProprietaire = $rowData['nomProprietaire'];
         $prenomProprietaire = $rowData['prenomProprietaire'];
-        // $lienPdp = AffichagePhoto($mysqli,$photo);
+        $lienPdp = AffichagePhoto($mysqli,$sireEquide);
       
     ?>
             <div class="equide_bootstrap card " >
-                <img src="../ASSETS/img_bdd/" class="card-img-top" alt="Nom du cheval : <?php echo $nomEquide?>">
+                <img src="../EquidesWebSite/ASSETS/img_bdd/<?=$lienPdp?>" class="card-img-top" alt="Nom du cheval : <?php echo $nomEquide?>">
                 <div class="card-body ">
                     <h5 class="card-title"><strong><?php echo $nomEquide ?></strong></h5>
                         <ul class="list-group list-group-flush">
@@ -53,19 +53,20 @@ if (mysqli_num_rows($result) > 0) {
                         </ul> 
 
                         <a href="affectation_equide.php?sireEquide=<?php echo $rowData['sireEquide'];?>" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">Affecter</a>
-
-                                    
-
-                       
                              
                 </div>
             </div>
             
 <?php } ?>
 
+<?php }else { ?>
+<div class="carnet_traitement">
+<h3><?php echo("Tous les équidés sont affectés");}?></h3>
+    <a href="equides.php" class="boutton_orangeV2"><img src="ASSETS/ico/retour.png">retour</a>
+</div>
+
 <?php } ?>
 
-<h3><?php echo("Tous les équidés sont affectés");}?></h3>
 
 
         

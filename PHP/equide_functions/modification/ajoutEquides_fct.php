@@ -85,27 +85,17 @@ if (isset($_POST["ajouter"])) {
           
               if($_FILES['photo_equide']['size'] <= $maxsize){
 
-                  // //Pour l'image on définit un nom temporaire :
+                   //Pour l'image on définit un nom temporaire :
   
-                  // $tpm_nom = $_FILES['photo_equide']['tmp_name'];
-                  // $time = time();
+                  $tpm_nom = $_FILES['photo_equide']['tmp_name'];
+                  $time = time();
 
-                  // // On renome l'image avec le format : heure + nom de l'image 
+                  // On renome l'image avec le format : heure + nom de l'image 
                   
-                  // $new_img_name = $time.$img_equide;
+                  $new_img_name = $time.$img_equide;
                   
-                  // move_uploaded_file($tpm_nom,"$site_root/ASSETS/img_bdd/".$new_img_name);
+                  move_uploaded_file($tpm_nom,"$site_root/EquidesWebSite/ASSETS/img_bdd/".$new_img_name); // Supprimer Equide
 
-                  // // Requette pour ajouter l'image dans la bdd
-                  // $sqlImg ="INSERT INTO image VALUES (NULL,'$new_img_name','$numSire')";
-                  // $result_img = mysqli_query($mysqli,$sqlImg) or die(mysqli_error($mysqli));
-                  
-                  //   if ($result_img !== false) {
-                  //     $insert_id_img = mysqli_insert_id($mysqli); // Récupère l'id AUTO-INCREMENT
-                  //     array_push($info_succes, "Image ajouté");
-                  //   } else {
-                  //     array_push($info_error, "Erreur img");
-                  //   }
 
                     // Prépare la requête SQL pour insérer les données dans la table "equide"
                     $sql = "INSERT INTO equide (id_proprietaire, id_race, sire, ueln, nom, date_naissance, stud, lieu_naissance, sexe, robe, tete, antg, antd, postg, postd, marques, lieu_elevage, naisseur)
@@ -115,6 +105,20 @@ if (isset($_POST["ajouter"])) {
                     
                     if ($result_info !== false) {
                       $insert_id_equide = mysqli_insert_id($mysqli);
+
+                        // Requette pour ajouter l'image dans la bdd
+                        $sqlImg = "INSERT INTO image (id_equide, image) VALUES ('$insert_id_equide', '$new_img_name')";
+                        $result_img = mysqli_query($mysqli,$sqlImg) or die(mysqli_error($mysqli));
+                        
+                        if ($result_img !== false) {
+                          $insert_id_img = mysqli_insert_id($mysqli); // Récupère l'id AUTO-INCREMENT
+                          array_push($info_succes, "Image ajouté");
+                        } else {
+                          array_push($info_error, "Erreur img");
+                        }
+
+
+
                       
                       $sql2 ="INSERT INTO en_pension (id_equide) VALUES($insert_id_equide)";
 

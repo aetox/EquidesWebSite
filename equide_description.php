@@ -22,14 +22,14 @@ if (mysqli_num_rows($result) > 0) {
     while($equides = mysqli_fetch_array($result)){
 
         //Change le numSIRE pour l'équidé affiché et appelle la fonction Affichage photo avec les bons paramètres
-        //$lienPdp = AffichagePhoto($mysqli,$idSire);
+        $lienPdp = AffichagePhoto($mysqli,$sireEquide);
 
     ?>
 
     <div class="equide_description">
 
         <div class="card" style="min-width: 250px ; max-width: 400px;">                                                                                          
-            <img src="../ASSETS/img_bdd/<?php echo $lienPdp?>" class="card-img-top" alt="Nom équidé : <?php echo $equides['nom']?>">
+            <img src="../EquidesWebSite/ASSETS/img_bdd/<?php echo $lienPdp?>" class="card-img-top" alt="Nom équidé : <?php echo $equides['nom']?>">
             <div class="card-body">
                 <h5 class="card-title titre_1"><?php echo $equides['nom'] ?></h5>
             </div>
@@ -56,7 +56,7 @@ if (mysqli_num_rows($result) > 0) {
                 <li class="modification list-group-item"><a href="carnet_vaccination.php?sire=<?php echo $equides['sire'];?>"> Carnet de vaccination</a></li>
                 <li class="modification list-group-item"><a href="carnet_vermifuge.php?sire=<?php echo $equides['sire'];?>"> Carnet de vermifuge</a></li>
                 <li class="modification list-group-item"><a href="updateEquide.php?sire=<?php echo $equides['sire'];?>"> Modification</a></li>
-                <li class="modification list-group-item"><a href="PHP/equide_functions/modification/suppressionEquide.php?sire=<?php echo $equides['sire'];?>"> Suppression</a></li>
+                <li class="modification list-group-item"><a href="PHP/equide_functions/modification/suppressionEquide.php?sireEquide=<?php echo $equides['sire'];?>"> Suppression</a></li>
             </ul> 
         </div>
 

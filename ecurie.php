@@ -1,4 +1,5 @@
 <?php
+$titre ="Ecurie";
 ob_start();
 include_once("header.php");
 
@@ -17,7 +18,7 @@ if(isset($_SESSION['logged_user']) && isset($_SESSION['id_detenteur'])){
 
         <div class="ecurie">
 
-            <h1 class="titre_1"><?php echo $nomEcurie ?></h1>
+            <h1 class="titre_1"><?php echo $titre ?></h1>
 
             <div id="Equides">
 

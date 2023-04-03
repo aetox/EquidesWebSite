@@ -16,7 +16,7 @@ JOIN `vaccin`
 ON type_acte.id_vaccin=vaccin.id_vaccin
 
 
-WHERE sire ='$idSire' "; //ORDER BY `date_traitement` DESC
+WHERE sire ='$idSire' ORDER BY `date` DESC";
 $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 
 

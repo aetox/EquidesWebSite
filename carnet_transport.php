@@ -2,6 +2,7 @@
 $titre ="Carnet de transport";
 ob_start();
 include_once("header.php");
+$id_detenteur = $_SESSION['id_detenteur'];
 if(isset($_SESSION['logged_user'])) {
 ?>
 
@@ -18,7 +19,7 @@ if(isset($_SESSION['logged_user'])) {
 
 
     <div class="carnet_transport_pdf">
-    <a href="PHP/pdf_functions/carnet_transport_pdf.php" target="_blank" class="boutton_pdf"><img src="ASSETS/ico/telecharger2.png">PDF</a>
+    <a href="PHP/pdf_functions/carnet_transport_pdf.php?detenteur=<?=$id_detenteur?>" target="_blank" class="boutton_pdf"><img src="ASSETS/ico/telecharger2.png">PDF</a>
     </div>
 </div>
 

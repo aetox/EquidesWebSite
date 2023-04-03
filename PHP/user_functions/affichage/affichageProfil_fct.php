@@ -38,7 +38,6 @@ if(isset($_SESSION['id_detenteur'])){
 <div class="profil">
     <h1 class="titre_1">Mon Profil</h1>   
     <div class="card" style="min-width: 250px ; max-width: 400px;">
-            <img src="../ASSETS/img_bdd/<?php echo $lienPdp?>" class="card-img-top" alt="Détenteur n°<?php echo $id_detenteur?>">
             <div class="card-body">
             <h5 class="card-title"><?php echo $prenom." ".$nom; ?></h5>
             </div>  

@@ -12,7 +12,6 @@ if(isset($_SESSION['logged_user'])) {
 
 		<h1 class="titre_1">Mes équidés</h1>
 
-		<h3><a href="equides_sans_pension.php">Equides sans pension</a></h3>
 
 		<div class='web'>
 			<div class = "recherche">
@@ -29,6 +28,8 @@ if(isset($_SESSION['logged_user'])) {
 			<?php include_once('PHP/equide_functions/affichage/affichageEquides_fct.php') ?>
 		</div>
 		
+		<h3><a href="equides_sans_pension.php">Equides sans pension</a></h3>
+
 	</div>
 
 <?php }elseif(isset($_SESSION['id_proprietaire'])){

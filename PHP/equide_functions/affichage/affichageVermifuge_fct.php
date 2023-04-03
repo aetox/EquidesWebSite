@@ -16,7 +16,7 @@ JOIN `vermifuge`
 ON type_acte.id_vermifuge=vermifuge.id_vermifuge
 
 
-WHERE sire ='$idSire' "; //ORDER BY `date_vermifuge` DESC
+WHERE sire ='$idSire' ORDER BY `date` DESC ";
 $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 
 

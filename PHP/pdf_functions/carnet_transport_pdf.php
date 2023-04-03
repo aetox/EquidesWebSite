@@ -1,6 +1,6 @@
 <?php
 
-$idDetenteur = $_SESSION['id_detenteur'];
+$idDetenteur = $_GET['detenteur'];
 
 require_once '../../INCLUDES/vendor/autoload.php'; // chemin d'accès au fichier Mpdf autoload.php
 
@@ -36,7 +36,7 @@ $mpdf->debug = true;
 // Ajout d'une nouvelle page en mode paysage
 $mpdf->AddPage(''); // 'L' pour mettre le PDF en paysage
 
-$mpdf->SetTitle("Carnet de transport de l'ecurie $nomEcurie");
+$mpdf->SetTitle("Carnet de transport de l'ecurie : $nomEcurie ");
 
 
 
@@ -118,15 +118,15 @@ $html = '
           </style>
 
 		  	<img src="ico.png"/>
-			<h1>Carnet de transport de l\'ecurie $nomEcurie</h1>
+			<h1>Carnet de transport de l\'ecurie '.$nomEcurie.'</h1>
 
 ';
 
 
 	$html .= '
 			<ul>
-	   <li>Nom de l\'ecurie :  '.$nomEcurie.'</li>
-	   <li>Date du document : '.$dateDuJour.'</li>
+	   <li>Nom de l\'ecurie : '.$nomEcurie.'</li>
+	   <li>Date du document : '.date("d/m/y", strtotime($dateDuJour)).'</li>
 	</ul>';
 
 
@@ -153,7 +153,7 @@ $html .='
 
 
 
-// Génération des données du tableau en utilisant une boucle while
+//Génération des données du tableau en utilisant une boucle while
  while($row = mysqli_fetch_assoc($result)) {
     $nomEquide = $row["nomEquide"];
     $date_depart = date("d/m/y", strtotime($row['date_depart']));
@@ -178,4 +178,4 @@ $html .= '</table> </div>';
 $mpdf->WriteHTML($html);
 
 // Générer le PDF
-$mpdf->Output("Carnet_Transport_$idRegistre.pdf",'I'); // 'I' pour l'afficher dans une fenetre et 'D' pour le télécharger directement
+$mpdf->Output("Carnet_Transport.pdf",'I'); // 'I' pour l'afficher dans une fenetre et 'D' pour le télécharger directement

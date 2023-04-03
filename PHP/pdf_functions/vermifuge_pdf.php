@@ -20,7 +20,7 @@ ON acte.id_type_acte=type_acte.id_type_acte
 JOIN `traitement`
 ON type_acte.id_traitement=traitement.id_traitement
 
-WHERE sire ='$idSire' "; //ORDER BY `date_traitement` DESC
+WHERE sire ='$idSire' ORDER BY `date` DESC";
 
 $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 

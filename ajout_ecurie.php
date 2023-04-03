@@ -9,7 +9,6 @@ include_once('PHP/equide_functions/modification/ajoutEcurie_fct.php');
 
 $idDetenteur = $_SESSION['id_detenteur'];
 
-
 //On vérifie ici l'existence d'une écurie rattachée au détenteur, si c'est le cas, il sera redirigé vers la page ecurie.php, sinon il pourra en créer une
 $verif =
 "SELECT registre_equide.id_detenteur AS reid
@@ -20,7 +19,8 @@ WHERE registre_equide.id_detenteur='$idDetenteur'";
 
 $resultat = mysqli_query($mysqli,$verif) or die(mysqli_error($mysqli));
     if (mysqli_num_rows($resultat) > 0) {
-        header("Location: ecurie.php");}
+        header("Location: ecurie.php");
+	}
 	else {
 		$sql =
 		"SELECT nom, prenom
@@ -30,7 +30,9 @@ $resultat = mysqli_query($mysqli,$verif) or die(mysqli_error($mysqli));
 			if (mysqli_num_rows($result) > 0) {
 				while($rowData = mysqli_fetch_array($result)){
 					$nom = $rowData['nom'];
-					$prenom = $rowData['prenom'];}}
+					$prenom = $rowData['prenom'];
+				}
+			}
 		?>
 
 		<div class="ajout_ecurie">
@@ -72,7 +74,10 @@ $resultat = mysqli_query($mysqli,$verif) or die(mysqli_error($mysqli));
 				</div>
 		</div>
 
-<?php include_once("footer.php"); ?>
-<?php }}else {
+<?php include_once("footer.php");
+	}
+}
+else {
     header("Location: index.php");
-}ob_end_flush(); ?>
+}
+ob_end_flush(); ?>

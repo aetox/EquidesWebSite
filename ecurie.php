@@ -1,5 +1,5 @@
 <?php
-$titre ="Ecurie";
+$titre ="Mon écurie";
 ob_start();
 include_once("header.php");
 
@@ -22,22 +22,28 @@ if(isset($_SESSION['logged_user']) && isset($_SESSION['id_detenteur'])){
 
             <div id="Equides">
 
-            <?php include('PHP/equide_functions/affichage/affichageEcurie_fct.php')?>
+            <?php include('PHP/equide_functions/affichage/affichageEcurie_fct.php') ?>
 
             </div>
 
         </div>
     <?php
-    }}else {?>
+        }
+    }
+    else { ?>
         <h3>Vous n'avez pas d'écurie</h3>
         <div class="ecurie">
         <a href="ajout_ecurie.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">écurie</a>
         </div>
-<?php    }}
-elseif(isset($_SESSION['logged_user']) && isset($_SESSION['id_proprietaire'])){?>
+<?php    }
+}
+elseif(isset($_SESSION['logged_user']) && isset($_SESSION['id_proprietaire'])) { ?>
+
         <h3>Vous n'avez pas d'équidés</h3>
 
 <?php include_once("footer.php");
-}else {
+}
+else {
     header("Location: index.php");
-}ob_end_flush(); ?>
+}
+ob_end_flush(); ?>

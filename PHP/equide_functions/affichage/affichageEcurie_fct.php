@@ -9,7 +9,7 @@ if(isset($_SESSION['id_detenteur'])){
     // $resultEcurie = mysqli_query($mysqli,$idEcurie) or die(mysqli_error($mysqli));
     $ecuriesql =
     "SELECT detenteur.nom AS detenteurNom, detenteur.prenom AS detenteurPrenom,
-    registre_equide.id_registre AS idRegistre, registre_equide.nom_ecurie, registre_equide.rue AS registreRue,
+    registre_equide.id_registre AS idRegistre, registre_equide.nom_ecurie AS nomEcurie, registre_equide.rue AS registreRue,
     registre_equide.commune AS registreCommune, registre_equide.code_postal AS registreCodePostal, registre_equide.siret
     FROM `registre_equide`
     JOIN `detenteur`
@@ -23,7 +23,8 @@ if(isset($_SESSION['id_detenteur'])){
 
         while($rowData = mysqli_fetch_array($results)){
     
-            $nomEcurie = $rowData['nom_ecurie'];
+            $idRegistre = $rowData['idRegistre'];
+            $nomEcurie = $rowData['nomEcurie'];
             $detenteurNom = $rowData['detenteurNom'];
             $detenteurPrenom = $rowData['detenteurPrenom'];
             $registreRue = $rowData['registreRue'];
@@ -118,12 +119,14 @@ if(isset($_SESSION['id_detenteur'])){
                     $marechalPrenom = $rowDatasss['marechalPrenom'];?>
 
                 <li class="list-group-item"><u>Maréchal :</u> <?php echo $marechalNom;?> <?php echo $marechalPrenom;?> du <?php echo $amdb1;?> au <?php echo $amdf1; }}?></li>
-                <li class="modification list-group-item" id="affichageEquides_info"><a href="ecurie_description.php?idRegistre=<?php echo $rowData['idRegistre'];?>">plus d'info</a></li>
-    <?php
-} ?>
+                <li class="modification list-group-item" id="affichageEquides_info"><a href="updateEcurie.php?id_registre=<?php echo $idRegistre;?>">Modification</a></li>
+                <li class="modification list-group-item" id="affichageEquides_info"><a href="ecurie_confirmation_suppression.php?id_detenteur=<?=$idDetenteur;?>">Suppression</a></li>
             </ul>
 <?php
-}}elseif(isset($_SESSION['id_proprietaire'])) {
+        }
+    }
+}
+elseif(isset($_SESSION['id_proprietaire'])) {
 
     $idProprietaire = $_SESSION['id_proprietaire'];
     $sqlproprio =
@@ -153,4 +156,7 @@ if(isset($_SESSION['id_detenteur'])){
                 </div>
         </div>
 <?php
-}}}
+        }
+    }
+}
+?>

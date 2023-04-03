@@ -39,8 +39,9 @@ if (isset($_POST["ajouter"])) {
         $insert_id_equide = mysqli_insert_id($mysqli);
         array_push($info_succes, "Ecurie ajouté");
         header("Location: ../../EquidesWebsite/ecurie.php");
-    } else {
-        array_push($info_error, "Une erreur est survenue");
+    }
+    else {
+      array_push($info_error, "Une erreur est survenue");
     }
 }
 ?>

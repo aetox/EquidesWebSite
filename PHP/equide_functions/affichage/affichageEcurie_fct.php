@@ -37,38 +37,24 @@ if(isset($_SESSION['id_detenteur'])){
                 <li class="list-group-item"><u>Adresse de l'écurie :</u> <?php echo $registreRue;?> <?php echo $registreCommune; ?> <?php echo $registreCodePostal; ?></li>
                 <li class="list-group-item"><u>SIRET :</u> <?php echo $siret; ?></li>
                 <?php
-                $requete =
-                "SELECT affectation_marechal.date_debut AS amdb, affectation_marechal.date_fin AS amdf,
-                marechal.nom AS marechalNom, marechal.prenom AS marechalPrenom,
-                affectation_veterinaire.type_veterinaire, affectation_veterinaire.date_debut AS avdb, affectation_veterinaire.date_fin AS avdf,
+                $vetocourant =
+                "SELECT affectation_veterinaire.type_veterinaire, affectation_veterinaire.date_debut AS avdb, affectation_veterinaire.date_fin AS avdf,
                 veterinaire.nom AS veterinaireNom, veterinaire.prenom AS veterinairePrenom
                 FROM `registre_equide`
-                JOIN `detenteur`
-                ON registre_equide.id_detenteur = detenteur.id_detenteur
-                JOIN `affectation_marechal`
-                ON registre_equide.id_registre = affectation_marechal.id_registre
-                JOIN `marechal`
-                ON affectation_marechal.id_marechal = marechal.id_marechal
                 JOIN `affectation_veterinaire`
                 ON registre_equide.id_registre = affectation_veterinaire.id_registre
                 JOIN `veterinaire`
                 ON affectation_veterinaire.id_veterinaire = veterinaire.id_veterinaire
                 JOIN `groupement_veterinaire`
                 ON veterinaire.id_groupement_veterinaire = groupement_veterinaire.id_groupement_veterinaire
-                WHERE registre_equide.id_detenteur='$idDetenteur'
+                WHERE registre_equide.id_detenteur='$idDetenteur' AND type_veterinaire='Courant'
                 ORDER BY registre_equide.id_registre ASC";
-                $result = mysqli_query($mysqli,$requete) or die(mysqli_error($mysqli));
+                $resultVetoCourant = mysqli_query($mysqli,$vetocourant) or die(mysqli_error($mysqli));
     
-                if (mysqli_num_rows($result) > 0) {
+                if (mysqli_num_rows($resultVetoCourant) > 0) {
                     
-                    while($rowDatas = mysqli_fetch_array($result)){
+                    while($rowDatas = mysqli_fetch_array($resultVetoCourant)){
                 
-                    $amdb = $rowDatas['amdb'];
-                    $amdb1 = date("d/m/y", strtotime($amdb));
-                    $amdf = $rowDatas['amdf'];
-                    $amdf1 = date("d/m/y", strtotime($amdf));
-                    $marechalNom = $rowDatas['marechalNom'];
-                    $marechalPrenom = $rowDatas['marechalPrenom'];
                     $veterinaireNom = $rowDatas['veterinaireNom'];
                     $veterinairePrenom = $rowDatas['veterinairePrenom'];
                     $type_veterinaire = $rowDatas['type_veterinaire'];
@@ -78,7 +64,60 @@ if(isset($_SESSION['id_detenteur'])){
                     $avdf1 = date("d/m/y", strtotime($avdf));
                 ?>
                 <li class="list-group-item"><u>Vétérinaire sanitaire :</u> <?php echo $veterinaireNom;?> <?php echo $veterinairePrenom; ?> du <?php echo $avdb1;?> au <?php echo $avdf1; ?></li>
-                <li class="list-group-item"><u>Maréchal :</u> <?php echo $marechalNom;?> du <?php echo $amdb1;?> au <?php echo $amdf1; }}?></li>
+                <?php }}
+                $vetoSanitaire =
+                "SELECT affectation_veterinaire.type_veterinaire, affectation_veterinaire.date_debut AS avdb, affectation_veterinaire.date_fin AS avdf,
+                veterinaire.nom AS veterinaireNom, veterinaire.prenom AS veterinairePrenom
+                FROM `registre_equide`
+                JOIN `affectation_veterinaire`
+                ON registre_equide.id_registre = affectation_veterinaire.id_registre
+                JOIN `veterinaire`
+                ON affectation_veterinaire.id_veterinaire = veterinaire.id_veterinaire
+                JOIN `groupement_veterinaire`
+                ON veterinaire.id_groupement_veterinaire = groupement_veterinaire.id_groupement_veterinaire
+                WHERE registre_equide.id_detenteur='$idDetenteur' AND type_veterinaire='Sanitaire'
+                ORDER BY registre_equide.id_registre ASC";
+                $resultVetoSanitaire = mysqli_query($mysqli,$vetoSanitaire) or die(mysqli_error($mysqli));
+    
+                if (mysqli_num_rows($resultVetoSanitaire) > 0) {
+                    
+                    while($rowDatass = mysqli_fetch_array($resultVetoSanitaire)){
+                
+                    $veterinaireNom = $rowDatass['veterinaireNom'];
+                    $veterinairePrenom = $rowDatass['veterinairePrenom'];
+                    $type_veterinaire = $rowDatass['type_veterinaire'];
+                    $avdb = $rowDatass['avdb'];
+                    $avdb1 = date("d/m/y", strtotime($avdb));
+                    $avdf = $rowDatass['avdf'];
+                    $avdf1 = date("d/m/y", strtotime($avdf));?>
+
+                <li class="list-group-item"><u>Vétérinaire courant :</u> <?php echo $veterinaireNom;?> <?php echo $veterinairePrenom; ?> du <?php echo $avdb1;?> au <?php echo $avdf1;}} ?></li>
+                
+                <?php
+                $requete2 =
+                "SELECT affectation_marechal.date_debut AS amdb, affectation_marechal.date_fin AS amdf,
+                marechal.nom AS marechalNom, marechal.prenom AS marechalPrenom
+                FROM `registre_equide`
+                JOIN `affectation_marechal`
+                ON registre_equide.id_registre = affectation_marechal.id_registre
+                JOIN `marechal`
+                ON affectation_marechal.id_marechal = marechal.id_marechal
+                WHERE registre_equide.id_detenteur='$idDetenteur'
+                ORDER BY registre_equide.id_registre ASC";
+                $result2 = mysqli_query($mysqli,$requete2) or die(mysqli_error($mysqli));
+    
+                if (mysqli_num_rows($result2) > 0) {
+                    
+                    while($rowDatasss = mysqli_fetch_array($result2)){
+                
+                    $amdb = $rowDatasss['amdb'];
+                    $amdb1 = date("d/m/y", strtotime($amdb));
+                    $amdf = $rowDatasss['amdf'];
+                    $amdf1 = date("d/m/y", strtotime($amdf));
+                    $marechalNom = $rowDatasss['marechalNom'];
+                    $marechalPrenom = $rowDatasss['marechalPrenom'];?>
+
+                <li class="list-group-item"><u>Maréchal :</u> <?php echo $marechalNom;?> <?php echo $marechalPrenom;?> du <?php echo $amdb1;?> au <?php echo $amdf1; }}?></li>
                 <li class="modification list-group-item" id="affichageEquides_info"><a href="ecurie_description.php?idRegistre=<?php echo $rowData['idRegistre'];?>">plus d'info</a></li>
     <?php
 } ?>

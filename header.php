@@ -28,6 +28,7 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
     <link rel="stylesheet" href="CSS/carnet_traitement.css">
     <link rel="stylesheet" href="CSS/ajout_traitement.css">
     <link rel="stylesheet" href="CSS/ajout_equides.css">
+    <link rel="stylesheet" href="CSS/ajout_ecurie.css">
     <link rel="stylesheet" href="CSS/ajout_vaccin.css">
     <link rel="stylesheet" href="CSS/updateEquide.css">
     <link rel="stylesheet" href="CSS/website.css">

@@ -32,6 +32,7 @@ if(isset($_SESSION['id_detenteur'])){
             $siret = $rowData['siret'];?>
             
             <ul class="list-group list-group-flush">
+                <li class="list-group-item"><u>Nom de l'écurie :</u> <?php echo $nomEcurie; ?></li>
                 <li class="list-group-item"><u>Détenteur :</u> <?php echo $detenteurNom;?> <?php echo $detenteurPrenom; ?></li>
                 <li class="list-group-item"><u>Adresse de l'écurie :</u> <?php echo $registreRue;?> <?php echo $registreCommune; ?> <?php echo $registreCodePostal; ?></li>
                 <li class="list-group-item"><u>SIRET :</u> <?php echo $siret; ?></li>

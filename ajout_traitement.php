@@ -12,8 +12,8 @@ include_once('PHP/equide_functions/modification/ajoutTraitement_fct.php');
         <form method="post" class="formulaire_2" name="formajoutTraitement" enctype="multipart/form-data">
 
             <a href="carnet_traitement.php?sire=<?=$idSire?>"><span class="material-symbols-outlined">close</span></a>
-            <label for="moleculeTraitement">Molécule traitement :</label>
-            <input type="text" id="moleculeTraitement" name="moleculeTraitement" placeholder="Molécule traitement" required><br>
+            <label for="moleculeTraitement">Nom du traitement :</label>
+            <input type="text" id="moleculeTraitement" name="moleculeTraitement" placeholder="Nom du traitement" required><br>
 
             <label for="numSire">Référence traitement :</label>
             <input type="text" id="referenceTraitement" name="referenceTraitement" placeholder="Référence traitement" required><br>
@@ -24,6 +24,8 @@ include_once('PHP/equide_functions/modification/ajoutTraitement_fct.php');
             <label for="commentaireTraitement">Commentaire :</label>
             <input type="text" id="commentaireTraitement" name="commentaireTraitement" placeholder="Commentaire" required><br>
 
+            <?php include_once('PHP/other_functions/affichageErreurs.php');?>
+            
             <button type="submit" name="ajouter">Ajouter</button>
 
         </form>

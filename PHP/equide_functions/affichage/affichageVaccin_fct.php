@@ -2,7 +2,7 @@
 $idSire = $_GET['sire'];
 
 
-$sql = "SELECT vaccin.id_vaccin AS id_vaccin, vaccin.nom AS nom_vaccin, vaccin.maladie AS maladie_vaccin, acte.date AS date_acte, acte.details AS detail_acte
+$sql = "SELECT vaccin.id_vaccin AS id_vaccin, type_acte.nom_acte AS nom_vaccin, vaccin.nom AS numero_lot ,vaccin.maladie AS maladie_vaccin, vaccin.lieu AS lieu_vaccin, acte.date AS date_acte, acte.details AS detail_acte
 FROM `equide`
 JOIN `en_pension`
 ON equide.id_equide=en_pension.id_equide
@@ -29,13 +29,13 @@ if (mysqli_num_rows($result) > 0) {
                     <h5 class="card-title">Nom : <?=$vaccins['nom_vaccin']?></h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID Vaccin : <?=$vaccins['id_vaccin']?></li>
-                    <li class="list-group-item">Numéro de lot : <?=$vaccins['id_vaccin']?></li>
+                    <li class="list-group-item">Numéro de lot : <?=$vaccins['numero_lot']?></li>
                     <li class="list-group-item">Maladie(s) concernée(s) : <?=$vaccins['maladie_vaccin']?></li>
                     <li class="list-group-item">Date d'injection : <?=$vaccins['date_acte']?></li>
-                    <li class="list-group-item">Lieu : <?=$vaccins['nom_vaccin']?></li>
-                    <li class="list-group-item">Vétérinaire : <?=$vaccins['nom_vaccin']?></li>
-                    <li class="modification list-group-item"><a href="#">Supprimer</a></li>
+                    <li class="list-group-item">Lieu : <?=$vaccins['lieu_vaccin']?></li>
+                    <li class="list-group-item">Vétérinaire : TRAITER EN PHP</li>
+                    <li class="list-group-item">Commentaire : <?=$vaccins['detail_acte']?></li>
+                    <li class="modification list-group-item"><a href="PHP/equide_functions/modification/suppressionVaccin_fct.php?idVaccin=<?=$vaccins['id_vaccin']?>&amp;sire=<?=$idSire;?>">Supprimer</a></li>
                 </ul>
             </div>  
 

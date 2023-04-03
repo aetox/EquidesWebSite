@@ -9,7 +9,7 @@ ON equide.id_equide=en_pension.id_equide
 JOIN `registre_equide`
 ON en_pension.id_registre=registre_equide.id_registre
 JOIN `acte`
-ON registre_equide.id_registre=acte.id_registre
+ON equide.id_equide=acte.id_equide
 JOIN `type_acte`
 ON acte.id_type_acte=type_acte.id_type_acte
 JOIN `vaccin`

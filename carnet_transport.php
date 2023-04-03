@@ -12,15 +12,12 @@ if(isset($_SESSION['logged_user'])) {
 
     <!-- Afficher les cartes avec les voyages créés -->
 
-    <div></div>
-
     <a href="ajout_voyage.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">voyage</a>
 
+    <?php include_once('PHP\equide_functions\affichage\affichageTransport_fct.php');?>
+
+
     <div class="carnet_transport_pdf">
-    <!-- Télécharge le pdf -->
-    <!-- <a href="PHP/pdf_functions/carnet_transport_pdf.php" target="_blank">
-    <button>Télécharger le PDF</button>
-    </a> -->
     <a href="PHP/pdf_functions/carnet_transport_pdf.php" target="_blank" class="boutton_pdf"><img src="ASSETS/ico/telecharger2.png">PDF</a>
     </div>
 </div>

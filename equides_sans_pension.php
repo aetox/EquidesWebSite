@@ -1,5 +1,5 @@
 <?php
-$titre ="Mes équides";
+$titre ="équides sans pension";
 ob_start();
 include_once("header.php");
 	
@@ -10,23 +10,11 @@ if(isset($_SESSION['logged_user'])) {
 
 	<div class="equides">
 
-		<h1 class="titre_1">Mes équidés</h1>
-
-		<h3><a href="equides_sans_pension.php">Equides sans pension</a></h3>
-
-		<div class='web'>
-			<div class = "recherche">
-				<img src="ASSETS/ico/recherche.png" alt="">
-				<input type="text" class="search_keyword" id="search_keyword_id" placeholder="Rechercher un équidé" />
-			</div>
-			<div id="result"></div>
-		</div>
-	
-		<a href="ajout_equides.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">équidé</a>
-			
+		<h1 class="titre_1">Equidés sans pension</h1>
+					
 		<div id="Equides">
 			<!-- faire un appel de la fonction affichage erreurs. -->
-			<?php include_once('PHP/equide_functions/affichage/affichageEquides_fct.php') ?>
+			<?php include_once('PHP/equide_functions/affichage/affichageEquidesSansPension_fct.php') ?>
 		</div>
 		
 	</div>

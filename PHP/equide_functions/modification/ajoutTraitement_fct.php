@@ -35,25 +35,18 @@ if (isset($_POST["ajouter"])) {
             if (mysqli_query($mysqli, $sql2)) {
                 $id_type_acte = mysqli_insert_id($mysqli);
 
-                $sqlregistre ="SELECT registre_equide.id_registre AS identifiant_registre
-                FROM `equide`
-                JOIN `en_pension`
-                ON equide.id_equide = en_pension.id_equide
-                JOIN `registre_equide`
-                ON registre_equide.id_registre = en_pension.id_registre
-                
-                WHERE sire='$sire'";
+                $sqlregistre ="SELECT id_equide FROM `equide` WHERE sire='$sire'";
 
                 $result = mysqli_query($mysqli,$sqlregistre) or die(mysqli_error($mysqli));
 
                 if (mysqli_num_rows($result) > 0) {      
 
                     while($rowData = mysqli_fetch_array($result)){
-                        $id_registre = $rowData['identifiant_registre'];
+                        $identifiant_equide = $rowData['id_equide'];
                     }
                 }
             
-                $sql3 = "INSERT INTO `acte` (id_type_acte, id_registre, date, details) VALUES ($id_type_acte, $id_registre, '$date', '$commentaire')";
+                $sql3 = "INSERT INTO `acte` (id_type_acte, id_equide, date, details) VALUES ($id_type_acte, $identifiant_equide, '$date', '$commentaire')";
         
                 if (mysqli_query($mysqli, $sql3)) {
                     array_push($info_succes, 'Traitement ajouté');

@@ -35,9 +35,9 @@ if(isset($_SESSION['id_detenteur'])){
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><u>Nom de l'écurie :</u> <?php echo $nomEcurie; ?></li>
                 <li class="list-group-item"><u>Détenteur :</u> <?php echo $detenteurNom;?> <?php echo $detenteurPrenom; ?></li>
-                <li class="list-group-item"><u>Adresse :</u> <?php echo $registreRue;?> <?php echo $registreCommune; ?> <?php echo $registreCodePostal; ?></li>
-                <li class="list-group-item"><u>SIRET :</u> <?php echo $siret; ?></li>
-                <li class="modification list-group-item" id="affichageEquides_info"><a href="ecurie_description.php">Plus d'info</a></li>
+                <li class="list-group-item"><u>Adresse de l'écurie :</u> <?php echo $registreRue;?> <?php echo $registreCommune; ?> <?php echo $registreCodePostal; ?></li>
+                <li class="list-group-item"><u>SIRET :</u> <?php echo $siret; ?></li>     
+                <li class="modification list-group-item" id="affichageEquides_info"><a href="updateEcurie.php">Modifier</a></li>
             </ul>
 <?php
         }

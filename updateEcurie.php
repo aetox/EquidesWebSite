@@ -1,88 +1,85 @@
 <?php
-$titre ="Modification";
+$titre ="Modifier votre écurie";
 ob_start();
 include_once("header.php");
-if(isset($_SESSION['logged_user'])) {
-include_once('PHP/equide_functions/modification/updateEquide_fct.php');
 
-$info_error = array();
-$info_succes = array();
+if(isset($_SESSION['logged_user']) && isset($_SESSION['id_detenteur'])){
 
-$sire = $_GET['sire'];
-$sqlOld = "SELECT *
-FROM `equide`
-JOIN  `en_pension`
-ON equide.id_equide=en_pension.id_equide
-JOIN `registre_equide`
-ON en_pension.id_registre=registre_equide.id_registre
-JOIN `affectation_veterinaire`
-ON registre_equide.id_affectation_veterinaire=affectation_veterinaire.id_affectation_veterinaire
-JOIN `veterinaire`
-ON affectation_veterinaire.id_veterinaire=veterinaire.id_veterinaire
+include_once('PHP/ecurie_functions/modification/updateEcurie_fct.php');
 
-WHERE sire='$sire'";
-$resultOld = mysqli_query($mysqli, $sqlOld) or die(mysqli_error($mysqli));
-if (mysqli_num_rows($resultOld) > 0) {
-    $oldequides = mysqli_fetch_array($resultOld);
+$idDetenteur = $_SESSION['id_detenteur'];
+
+//On vérifie ici l'existence d'une écurie rattachée au détenteur, si c'est le cas, il sera redirigé vers la page ecurie.php, sinon il pourra en créer une
+$ecuriesql =
+"SELECT detenteur.nom AS detenteurNom, detenteur.prenom AS detenteurPrenom,
+registre_equide.id_registre AS idRegistre, registre_equide.nom_ecurie AS nomEcurie, registre_equide.rue AS registreRue,
+registre_equide.commune AS registreCommune, registre_equide.code_postal AS registreCodePostal, registre_equide.siret, registre_equide.espece AS registreEspece
+FROM `registre_equide`
+JOIN `detenteur`
+ON registre_equide.id_detenteur = detenteur.id_detenteur
+WHERE registre_equide.id_detenteur='$idDetenteur'
+ORDER BY registre_equide.id_registre ASC";
+
+$results = mysqli_query($mysqli,$ecuriesql) or die(mysqli_error($mysqli));
+
+if (mysqli_num_rows($results) > 0) {
+
+    while($rowData = mysqli_fetch_array($results)){
+
+        $idRegistre = $rowData['idRegistre'];
+        $nomEcurie = $rowData['nomEcurie'];
+        $detenteurNom = $rowData['detenteurNom'];
+        $detenteurPrenom = $rowData['detenteurPrenom'];
+        $registreRue = $rowData['registreRue'];
+        $registreCommune = $rowData['registreCommune'];
+        $registreCodePostal = $rowData['registreCodePostal'];
+        $siret = $rowData['siret'];
+        $registreEspece =$rowData['registreEspece'];}}?>
+		<div class="ajout_ecurie">
+
+				<h1>ajouter une écurie</h1>
+				<div class="formulaire_1">
+				<form method="post" class="formulaire_2" name="formajoutEcurie" enctype="multipart/form-data">
+
+					<a href="ecurie_description.php"><span class="material-symbols-outlined">close</span></a>
+					<br>
+					<label for="id_propriétaire">Vous (détenteur de l'écurie) :</label><strong><?php echo $detenteurNom;?> <?php echo $detenteurPrenom ?></strong>
+
+					<label for="nom_ecurie">Nom de l'écurie :</label>
+					<input type="text" id="nom_ecurie" name="nom_ecurie" value="<?=$nomEcurie?>" required><br>
+
+					<label for="SIRET">SIRET :</label>
+					<input type="text" id="SIRET" name="SIRET" minlength="12" maxlength="14" placeholder="14 chiffres" value="<?=$siret?>"  required><br>
+
+					<label for="rue">Adresse (numéro + rue)</label>
+					<input type="text" id="rue" name="rue" value="<?=$registreRue?>" required><br>
+
+					<label for="commune">Commune :</label>
+					<input type="text" id="commune" name="commune" value="<?=$registreCommune?>" required><br>
+
+					<label for="code_postal">Code postal :</label>
+					<input type="text" id="code_postal" name="code_postal" minlength="5" maxlength="5" placeholder="5 chiffres" value="<?=$registreCodePostal?>" required><br>
+
+					<label for="espece">Espece :</label>
+					<select id="espece" name="espece"  value="<?=$registreEspece?>"required>
+						<option value="Equides">Equides</option>
+						<option value="Chevaux">Chevaux</option>
+						<option value="Ânes">Ânes</option>
+						<option value="Zèbres">Zèbres</option>
+					</select><br>
+                    
+                    <?php include_once('PHP/other_functions/affichageErreurs.php');?>
+
+					<button type="submit" name="ajouter">Modifier</button>
+
+				</form>
+				</div>
+		</div>
+
+<?php include_once("footer.php");
+	
 }
-?>
-<div class="updateEquide">
-    <h1>Modification de l'équidé n°<?=$sire?></h1>
-    <div class="formulaire_1">
-    <form method="post" class="formulaire_2" name="formajoutEquides" enctype="multipart/form-data">
-        <a href="equide_description.php?sireEquide=<?=$sire?>"><span class="material-symbols-outlined">close</span></a>
-        <label for="numSire">Numero de sire :</label>
-        <input type="number" id="numSIRE" name="numSIRE" value="<?php echo $oldequides['sire'] ?>" readonly required><br>
-
-        <label for="numUELN">Numero de UELN :</label>
-        <input type="number" id="numUELN" name="numUELN" value="<?php echo $oldequides['ueln'] ?>" required><br>
-
-        <label for="nom_equide">Nom de l'equide :</label>
-        <input type="text" id="nom_equide" name="nom_equide" value="<?php echo $oldequides['nom'] ?>" required><br>
-
-        <label for="dateNaissance_equide">Date de naissance :</label>
-        <input type="date" id="dateNaissance_equide" name="dateNaissance_equide" value="<?php echo $oldequides['date_naissance'] ?>" required><br>
-
-        <label for="lieuNaissance_equide">Lieu de naissance :</label>
-        <input type="text" id="lieuNaissance_equide" name="lieuNaissance_equide" value="<?php echo $oldequides['lieu_naissance'] ?>" required><br>
-
-        <label for="race_equide">Race : NE PAS MODIFIER</label>
-        <input type="text" id="race_equide" name="race_equide" value="<?php echo $oldequides['id_race'] ?>" required><br>
-
-        <label for="stud_equide">Stud :</label>
-        <input type="text" id="stud_equide" name="stud_equide" value="<?php echo $oldequides['stud'] ?>" required><br>
-
-        <label for="lieuElevage_equide">Lieu d'élevage :</label>
-        <input type="text" id="lieuElevage_equide" name="lieuElevage_equide" value="<?php echo $oldequides['nom_ecurie'] ?>" readonly required><br>
-
-        <label for="sexe">Sexe du cheval :</label>
-        <select id="sexe" name="sexe" required>
-            <option value="Mâle" <?php if ($oldequides['sexe'] == 'Mâle') {
-                echo 'selected="selected"';
-            } ?>>Mâle
-            </option>
-            <option value="Femelle" <?php if ($oldequides['sexe'] == 'Femelle') {
-                echo 'selected="selected"';
-            } ?>>Femelle
-            </option>
-        </select>
-
-        <label for="robe_equide">Robe :</label>
-		<input type="text" id="robe_equide" name="robe_equide" value="<?php echo $oldequides['robe']?>"  required><br>
-
-		<label for="naisseurVeterinaire_equide">Veterinaire ayant assure la naissance : NE PAS MODIFIER</label>
-		<input type="text" id="naisseurVeterinaire_equide" name="naisseurVeterinaire_equide" value="<?php echo $oldequides['id_veterinaire']?>"  required><br> 
-		<!-- <label for="pere_equide">Père :</label>
-		<input type="text" id="pere_equide" name="pere_equide" value="<?php echo $oldequides['pere_equide']?>"  required><br>
-
-		<label for="mere_equide">Mère :</label>
-		<input type="text" id="mere_equide" name="mere_equide" value="<?php echo $oldequides['mere_equide']?>"  required><br> -->
-
-		<button type="submit" name="ajouter">Mettre à jour </button>
-    </form>
-	</div>
-
-<?php include_once("footer.php"); ?>
-<?php }else {
+else {
     header("Location: index.php");
-}ob_end_flush(); ?>
+}
+ob_end_flush(); ?>

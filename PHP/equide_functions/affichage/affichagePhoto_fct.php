@@ -1,17 +1,22 @@
 <?php
-
-    // Definition de la fonction Affichage de la photo avec en parametre la variable pour la connexion à la bdd et
-    // le numéro SIRE, la function return le lien pdp
-    
 function AffichagePhoto($mysqli,$sire){
 
-    $sqlImg = "SELECT * FROM `image` WHERE sire='$sire'";
-    $resulat_img = mysqli_query($mysqli,$sqlImg) or die (mysqli_error($mysqli));
+    $sql1 = "SELECT id_equide FROM `equide` WHERE sire='$sire'";
+    $resulat_img = mysqli_query($mysqli,$sql1) or die (mysqli_error($mysqli));
      
-    $lienPdp = '';
     if(mysqli_num_rows($resulat_img) > 0) {
-        while($pdp = mysqli_fetch_array($resulat_img)){
-                $lienPdp = $pdp['img'];
+        while($row = mysqli_fetch_array($resulat_img)){
+                $id_equide = $row['id_equide'];
+        }
+
+        $sqlImg = "SELECT * FROM `image` WHERE id_equide='$id_equide'";
+        $resulat_img1 = mysqli_query($mysqli,$sqlImg) or die (mysqli_error($mysqli));
+         
+        $lienPdp = '';
+        if(mysqli_num_rows($resulat_img) > 0) {
+            while($pdp = mysqli_fetch_array($resulat_img1)){
+                    $lienPdp = $pdp['image'];
+            }
         }
     }
 

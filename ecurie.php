@@ -31,7 +31,14 @@ if(isset($_SESSION['logged_user']) && isset($_SESSION['id_detenteur'])){
         }
     }
     else { ?>
+        <div class="ecurie">
+
+        <h1 class="titre_1"><?php echo $titre ?></h1>
+
+        </div>
+
         <h3>Vous n'avez pas d'écurie</h3>
+
         <div class="ecurie">
         <a href="ajout_ecurie.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">écurie</a>
         </div>

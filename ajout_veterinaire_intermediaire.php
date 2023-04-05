@@ -12,8 +12,8 @@ if(isset($_SESSION['logged_user'])) {
                 <a href="ajout_veterinaire.php">
                     <p>Affecter un nouveau vétérinaire à un groupement existant</p>
                 </a>
-                <a href="inscription_proprietaire.php">
-                    <p>Affecter un nouveau vétérinaire à un nouveau groupement </p>
+                <a href="ajout_GroupementVeterinaire.php">
+                    <p>Affecter un nouveau vétérinaire à un nouveau groupement</p>
                 </a>
                     
 </div>

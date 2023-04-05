@@ -42,8 +42,19 @@ $id_detenteur = $_SESSION['id_detenteur'];
         
         <?php 
 
+            $sqlRegistre ="SELECT `id_registre` FROM `registre_equide` WHERE `id_detenteur` ='$id_detenteur'";
+            $resultRegistre = mysqli_query($mysqli, $sqlRegistre);
+
+                if (mysqli_num_rows($resultRegistre) > 0) {      
+
+                    while($rowData = mysqli_fetch_array($resultRegistre)){
+                        $id_registre = $rowData['id_registre'];
+                    }
+                }
+    
+
             $sql = "SELECT groupement_veterinaire.id_groupement_veterinaire AS id_groupement, groupement_veterinaire.nom_groupement AS nom_groupement
-            FROM `groupement_veterinaire`";
+            FROM `groupement_veterinaire` WHERE `id_registre`='$id_registre'";
             $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 
 

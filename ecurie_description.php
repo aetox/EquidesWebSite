@@ -29,18 +29,37 @@ if(isset($_SESSION['logged_user']) && isset($_SESSION['id_detenteur'])){
                 <div class="ecurie">
 
                     <h3>Mes vétérinaires :</h3>
+
+                        <hr>
+
                     <h4>Vétérinaire sanitaire:</h4>
                     <?php include('PHP/ecurie_functions/affichage/affichageVeterinaireSanitaire_fct.php') ?>
 
+                        <hr>
+
                     <h4>Vétérinaire courants:</h4>
                     <?php include('PHP/ecurie_functions/affichage/affichageVeterinaireCourant_fct.php') ?> 
+
+                        <hr>
+
+                    <h4><a href="groupementVeterinaire.php">Mes groupements de vétériniare</a></h4>
+
+                        <hr>
+
                     <a href="ajout_veterinaire_intermediaire.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">Vétérinaire</a>
+
 
                 </div>
                 <div class="ecurie">
 
                     <h3>Mes maréchal ferrand :</h3>
+
+                        <hr>
+
                     <?php include('PHP/ecurie_functions/affichage/affichageMarechalFerrand_fct.php') ?> 
+
+                        <hr>
+
                     <a href="ajout_marechal.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">Maréchal Ferrand</a>
 
                 </div>

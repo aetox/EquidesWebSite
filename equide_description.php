@@ -44,12 +44,19 @@ if (mysqli_num_rows($result) > 0) {
                 <li class="list-group-item">Sexe : <?php echo $equides['sexe'] ?> </li>
                 <li class="list-group-item">Robe : <?php echo $equides['robe'] ?> </li>
                 <li class="list-group-item">Vétérinaire Naissance : <?php echo $equides['naisseur'] ?> </li>
-                <!-- <li class="list-group-item">Pere : <?php echo $equides['pere_equide'] ?> </li>
-                <li class="list-group-item">Mere : <?php echo $equides['mere_equide'] ?> </li> -->
+                <li class="list-group-item">Père : <strong>A traiter</strong></li>
+                <li class="list-group-item">Mère : <strong>A traiter</strong></li>
             </ul>
                 <div class="card-body">
                     <h4 class="card-title">Attributs physique</h5>
-                    <p class="card-text">Tête : </p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tête : <?php echo $equides['tete'] ?> </li>
+                            <li class="list-group-item">Antérieur gauche : <?php echo $equides['antg'] ?> </li>
+                            <li class="list-group-item">Antérieur droit : <?php echo $equides['antd'] ?> </li>
+                            <li class="list-group-item">Postérieur gauche : <?php echo $equides['postg'] ?> </li>
+                            <li class="list-group-item">Postérieur droit : <?php echo $equides['postd'] ?> </li>
+                            <li class="list-group-item">Marques : <?php echo $equides['marques'] ?> </li>
+                        </ul>
                 </div>
             <ul class="list-group list-group-flush">
                 <li class="modification list-group-item"><a href="carnet_traitement.php?sire=<?php echo $equides['sire'];?>"> Carnet de traitement</a></li>

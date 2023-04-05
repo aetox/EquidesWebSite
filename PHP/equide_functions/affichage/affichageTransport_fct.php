@@ -35,7 +35,7 @@ fiche_transport.lieu_arrivee AS lieu_arrivee, fiche_transport.motif_deplacement 
 FROM `fiche_transport`
 JOIN `equide`
 ON fiche_transport.id_equide=equide.id_equide
-WHERE id_registre=$idRegistre";
+WHERE id_registre=$idRegistre ORDER BY `date_depart` DESC";
 
 $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 

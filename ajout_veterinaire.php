@@ -43,15 +43,7 @@ $id_detenteur = $_SESSION['id_detenteur'];
         <?php 
 
             $sql = "SELECT groupement_veterinaire.id_groupement_veterinaire AS id_groupement, groupement_veterinaire.nom_groupement AS nom_groupement
-            FROM `registre_equide`
-            JOIN `affectation_veterinaire`
-            ON registre_equide.id_affectation_veterinaire=affectation_veterinaire.id_affectation_veterinaire
-            JOIN `veterinaire`
-            ON affectation_veterinaire.id_veterinaire=veterinaire.id_veterinaire
-            JOIN `groupement_veterinaire`
-            ON veterinaire.id_groupement_veterinaire=groupement_veterinaire.id_groupement_veterinaire
-
-            WHERE id_detenteur ='$id_detenteur' ";
+            FROM `groupement_veterinaire`";
             $result = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 
 

@@ -42,7 +42,7 @@ if (mysqli_num_rows($result) > 0) {
       
     ?>
             <div class="equide_bootstrap card " >
-                <img src="../EquidesWebSite/ASSETS/img_bdd/<?=$lienPdp?>" class="card-img-top" alt="Nom du cheval : <?php echo $nomEquide?>">
+                <img src="../ASSETS/img_bdd/<?=$lienPdp?>" class="card-img-top" alt="Nom du cheval : <?php echo $nomEquide?>">
                 <div class="card-body ">
                     <h5 class="card-title"><strong><?php echo $nomEquide ?></strong></h5>
                         <ul class="list-group list-group-flush">

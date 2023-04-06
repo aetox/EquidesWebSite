@@ -94,7 +94,7 @@ if (isset($_POST["ajouter"])) {
                   
                   $new_img_name = $time.$img_equide;
                   
-                  move_uploaded_file($tpm_nom,"$site_root/EquidesWebSite/ASSETS/img_bdd/".$new_img_name); // Supprimer Equide
+                  move_uploaded_file($tpm_nom,"$site_root/ASSETS/img_bdd/".$new_img_name); // Supprimer Equide
 
 
                     // Prépare la requête SQL pour insérer les données dans la table "equide"

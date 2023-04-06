@@ -7,14 +7,14 @@ require_once '../../INCLUDES/vendor/autoload.php'; // chemin d'accès au fichier
 
 require('../other_functions/connexion_bdd.php');
 
-$sql = "SELECT traitement.id_traitement AS id_traitement, traitement.nom AS nom_traitement, acte.date AS date_acte, acte.details AS detail_acte
+$sql = "SELECT traitement.id_traitement AS id_traitement, type_acte.nom_acte AS nom_traitement, traitement.nom AS reference_traitement, acte.date AS date_acte, acte.details AS detail_acte
 FROM `equide`
 JOIN `en_pension`
 ON equide.id_equide=en_pension.id_equide
 JOIN `registre_equide`
 ON en_pension.id_registre=registre_equide.id_registre
 JOIN `acte`
-ON registre_equide.id_registre=acte.id_registre
+ON equide.id_equide=acte.id_equide
 JOIN `type_acte`
 ON acte.id_type_acte=type_acte.id_type_acte
 JOIN `traitement`

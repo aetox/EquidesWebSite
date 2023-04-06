@@ -10,14 +10,14 @@ require('../other_functions/connexion_bdd.php');
 
 //Requete SQL pour les traitements
 
-$sql = "SELECT vaccin.id_vaccin AS id_vaccin, vaccin.nom AS nom_vaccin, vaccin.maladie AS maladie_vaccin, acte.date AS date_acte, acte.details AS detail_acte
+$sql = "SELECT vaccin.id_vaccin AS id_vaccin, type_acte.nom_acte AS nom_vaccin, vaccin.nom AS numero_lot ,vaccin.maladie AS maladie_vaccin, vaccin.lieu AS lieu_vaccin, acte.date AS date_acte, acte.details AS detail_acte
 FROM `equide`
 JOIN `en_pension`
 ON equide.id_equide=en_pension.id_equide
 JOIN `registre_equide`
 ON en_pension.id_registre=registre_equide.id_registre
 JOIN `acte`
-ON registre_equide.id_registre=acte.id_registre
+ON equide.id_equide=acte.id_equide
 JOIN `type_acte`
 ON acte.id_type_acte=type_acte.id_type_acte
 JOIN `vaccin`

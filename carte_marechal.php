@@ -48,7 +48,7 @@ if(isset($_SESSION['logged_user'])) { ?>
                     <li class="list-group-item">Date de debut d'affectation: <?=$avdb1 ?></li>
                     <li class="list-group-item">Date de fin d'affectation: <?=$avdf1 ?></li>
 
-                    <li class="modification list-group-item"><a href="PHP/ecurie_functions/modification/?idMarechal=<?=$idMarechal?>">Modifier</a></li>
+                    <li class="modification list-group-item"><a href="updateMarechal.php?idMarechal=<?=$idMarechal?>">Modifier</a></li>
                     <li class="modification list-group-item"><a href="PHP/ecurie_functions/suppression/suppressionMarechal_fct.php?idMarechal=<?=$idMarechal?>">Supprimer</a></li>
                 </ul>
             </div> 

@@ -11,7 +11,7 @@ $info_succes = array();
 $sire = $_GET['sire'];
 $sqlOld = "SELECT equide.sire AS sire_equide, equide.ueln AS ueln_equide, equide.nom AS nom_equide, equide.date_naissance AS date_naissance, equide.lieu_naissance AS lieu_naissance, 
 equide.id_race AS id_race, equide.stud AS equide_stud, equide.robe AS robe_equide, equide.sexe AS sexe_equide, veterinaire.prenom AS prenom_veterinaire ,veterinaire.nom AS nom_veterinaire, 
-registre_equide.nom_ecurie AS nom_ecurie, race.nom_race AS nom_race
+registre_equide.nom_ecurie AS nom_ecurie, race.nom_race AS nom_race, equide.tete AS tete, equide.antg AS antg, equide.antd AS antd, equide.postg AS postg, equide.postd AS postd, equide.marques AS marques
 FROM `equide`
 JOIN `race`
 ON equide.id_race=race.id_race
@@ -81,6 +81,27 @@ if (mysqli_num_rows($resultOld) > 0) {
 
 		<label for="mere_equide">Mère :</label>
 		<input type="text" id="mere_equide" name="mere_equide" value="<?php echo $oldequides['mere_equide']?>"  required><br> -->
+
+
+        <p>Attributs physiques</p>
+
+        <label for="tête_equide">Tête :</label>
+        <textarea type="text" id="tête_equide" name="tête_equide"><?php echo $oldequides['tete']?></textarea><br>
+
+        <label for="antg_equide">Côté antérieur gauche :</label>
+        <textarea type="text" id="antg_equide" name="antg_equide"><?php echo $oldequides['antg']?></textarea><br>
+
+        <label for="antd_equide">Côté antérieur droit :</label>
+        <textarea type="text" id="antd_equide" name="antd_equide"><?php echo $oldequides['antd']?></textarea><br>
+
+        <label for="postg_equide">Côté postérieur gauche :</label>
+        <textarea type="text" id="postg_equide" name="postg_equide"><?php echo $oldequides['postg']?></textarea><br>
+
+        <label for="postd_equide">Côté postérieur droit :</label>
+        <textarea type="text" id="postd_equide" name="postd_equide"><?php echo $oldequides['postd']?></textarea><br>
+
+        <label for="marques_equide">Marque(s) :</label>
+        <textarea type="text" id="marques_equide" name="marques_equide"><?php echo $oldequides['marques']?></textarea><br>
 
 		<button type="submit" name="ajouter">Mettre à jour </button>
     </form>

@@ -13,6 +13,12 @@ if (isset($_POST["ajouter"])) {
   $sexeEquide = $_POST['sexe'];
   $robeEquide = $_POST['robe_equide'];
   $naisseurVeterinaire = $_POST['naisseurVeterinaire_equide'];
+  $tete = $_POST['tête_equide'];
+  $antg =$_POST['antg_equide'];
+  $antd =$_POST['antd_equide'];
+  $postg =$_POST['postg_equide'];
+  $postd =$_POST['postd_equide'];
+  $marques =$_POST['marques_equide'];
   // $pereEquide = $_POST['pere_equide'];
   // $mereEquide = $_POST['mere_equide'];
 
@@ -28,7 +34,13 @@ if (isset($_POST["ajouter"])) {
   `lieu_naissance`='$lieuNaissance',
   `stud`='$studEquide',
   `sexe`='$sexeEquide', 
-  `robe`='$robeEquide'
+  `robe`='$robeEquide',
+  `tete`='$tete',
+  `antg`='$antg',
+  `antd`='$antd',
+  `postg`='$postg',
+  `postd` ='$postd',
+  `marques`='$marques'
 
   WHERE `sire`='$numSIRE'";
 

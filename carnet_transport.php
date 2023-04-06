@@ -15,7 +15,7 @@ if(isset($_SESSION['logged_user'])) {
 
     <a href="ajout_voyage.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">voyage</a>
 
-    <?php include_once('PHP\equide_functions\affichage\affichageTransport_fct.php');?>
+    <?php include_once('PHP/equide_functions/affichage/affichageTransport_fct.php');?>
 
 
     <div class="carnet_transport_pdf">

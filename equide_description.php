@@ -23,6 +23,7 @@ if (mysqli_num_rows($result) > 0) {
 
         //Change le numSIRE pour l'équidé affiché et appelle la fonction Affichage photo avec les bons paramètres
         $lienPdp = AffichagePhoto($mysqli,$sireEquide);
+        $idEquide = $equides['id_equide'];
 
     ?>
 
@@ -44,8 +45,16 @@ if (mysqli_num_rows($result) > 0) {
                 <li class="list-group-item">Sexe : <?php echo $equides['sexe'] ?> </li>
                 <li class="list-group-item">Robe : <?php echo $equides['robe'] ?> </li>
                 <li class="list-group-item">Vétérinaire Naissance : <?php echo $equides['naisseur'] ?> </li>
-                <li class="list-group-item">Père : <strong>A traiter</strong></li>
-                <li class="list-group-item">Mère : <strong>A traiter</strong></li>
+                <li class="list-group-item">Père :
+                    <ul>
+                        <?php include_once('PHP/equide_functions/affichage/affichagePereEquide_fct.php') ?>
+                    </ul>
+                </li>
+                <li class="list-group-item">Mère :
+                    <ul>
+                        <?php include_once('PHP/equide_functions/affichage/affichageMereEquide_fct.php') ?>
+                    </ul>
+                </li>
             </ul>
                 <div class="card-body">
                     <h4 class="card-title">Attributs physique</h5>

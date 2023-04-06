@@ -52,8 +52,9 @@ if(isset($_SESSION['logged_user'])) { ?>
                     <li class="list-group-item">Date de fin d'affectation: <?=$avdf1 ?></li>
                     <li class="list-group-item">Groupement de vétérinaire: <strong><?=$groupement ?></strong></li>
 
-                    <li class="modification list-group-item"><a href="#?idTraitement=<?=$rowDatas['id_veterinaire']?>">Modifier</a></li>
-                    <li class="modification list-group-item"><a href="#?idTraitement=<?=$rowDatas['id_veterinaire']?>">Supprimer</a></li>
+                    <li class="modification list-group-item"><a href="updateVeterinaire.php?idVeterinaire=<?=$idVeterinaire?>">Modifier</a></li>
+                    <li class="modification list-group-item"><a href="PHP/ecurie_functions/suppression/suppressionVeterinaire_fct.php?idVeterinaire=<?=$idVeterinaire?>">Supprimer</a></li>
+
                 </ul>
             </div> 
         <?php }}?>

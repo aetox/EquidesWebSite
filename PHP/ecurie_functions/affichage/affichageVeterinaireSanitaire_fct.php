@@ -27,7 +27,6 @@
                     $avdf1 = date("d/m/y", strtotime($avdf));?>
 
                     <li class="list-group-item"><?php echo $veterinaireNom;?> <?php echo $veterinairePrenom; ?> du <?php echo $avdb1;?> au <?php echo $avdf1;?>
-                     | <a href="PHP/ecurie_functions/suppression/suppressionVeterinaire_fct.php?idVeterinaire=<?=$idVeterinaire?>">Supprimer</a>
                      | <a href="carte_veterinaire.php?idVeterinaire=<?=$idVeterinaire?>">Plus d'info</a>
                 </li>
 

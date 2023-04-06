@@ -116,7 +116,7 @@ if(isset($_POST['inscription_detenteur'])){//l'utilisateur à cliqué sur "S'ins
                             $id_login = mysqli_insert_id($mysqli); // Recupere l'id généré lors de l'insertion
   
                             $sqlDetenteur = "INSERT INTO `detenteur` (`id_login`, `sire`, `nom`, `prenom`, `nombre_equides`, `rue`, `commune`, `code_postal`, `signature_detenteur`, `date_enregistrement`, `nationalite`) 
-                            VALUES ('$id_login', NULL, '$nom', '$prenom', NULL, '$rue', '$commune', '$code_postal', NULL, NULL, NULL)";
+                            VALUES ('$id_login', $sire, '$nom', '$prenom', NULL, '$rue', '$commune', '$code_postal', NULL, NULL, NULL)";
                             
                             $resultDetenteur = mysqli_query($mysqli,$sqlDetenteur) or die(mysqli_error($mysqli));
     

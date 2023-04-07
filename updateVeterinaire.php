@@ -3,12 +3,14 @@ $titre ="Modification Vétérinaire";
 ob_start();
 include_once("header.php");
 if(isset($_SESSION['logged_user'])) {
-// include_once('PHP/user_functions/modification/updateVeterinaire_fct.php');
+
+$id_veterinaire =$_GET['idVeterinaire'];
+
+include_once('PHP/ecurie_functions/modification/updateVeterinaire_fct.php');
 
 $info_error = array();
 $info_succes = array();
 
-$id_veterinaire =$_GET['idVeterinaire'];
 
     $sql =
     "SELECT veterinaire.nom as nomVeto, veterinaire.prenom AS prenomVeto, veterinaire.rue AS rueVeto, veterinaire.commune AS communeVeto, veterinaire.code_postal AS cpVeto,
@@ -26,6 +28,7 @@ $id_veterinaire =$_GET['idVeterinaire'];
 
     if(mysqli_num_rows($resultOld) > 0){
         while($rowDataOld=mysqli_fetch_array($resultOld)){
+
             $nomVeto = $rowDataOld['nomVeto'];
             $prenomVeto = $rowDataOld['prenomVeto'];
             $rueVeto = $rowDataOld['rueVeto'];
@@ -75,9 +78,9 @@ $id_veterinaire =$_GET['idVeterinaire'];
         <label for="dateFinAffectationVeterinaire">Date de fin d'affectation :</label>
         <input type="date" id="dateFinAffectationVeterinaire" name="dateFinAffectationVeterinaire" value="<?=$dateFinAffectation?>"  required><br>  
 
-        <?php include_once('PHP/other_functions/affichageErreurs.php');?>
+        <?php include('PHP/other_functions/affichageErreurs.php');?>
 
-        <button type="submit" name="ajouter">Ajouter</button>
+        <button type="submit" name="ajouter">Mettre à jour</button>
 
         </form>
     </div>	

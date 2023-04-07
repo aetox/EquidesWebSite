@@ -17,7 +17,7 @@ if(isset($_SESSION['logged_user'])) { ?>
 
     $veto =
     "SELECT affectation_marechal.date_debut AS amdb, affectation_marechal.date_fin AS amdf,
-    marechal.nom AS marechalNom, marechal.prenom AS marechalPrenom, marechal.id_marechal AS id_marechal
+    marechal.nom AS marechalNom, marechal.prenom AS marechalPrenom, marechal.id_marechal AS id_marechal, marechal.rue AS marechalRue, marechal.commune AS marechalCommune, marechal.code_postal AS marechalCP
     FROM `marechal`
     JOIN `affectation_marechal`
     ON affectation_marechal.id_marechal = marechal.id_marechal
@@ -32,6 +32,9 @@ if(isset($_SESSION['logged_user'])) { ?>
         $idMarechal =$rowDatas['id_marechal'];
         $marechalNom = $rowDatas['marechalNom'];
         $marechalPrenom = $rowDatas['marechalPrenom'];
+        $marechalRue = $rowDatas['marechalRue'];
+        $marechalCommune = $rowDatas['marechalCommune'];
+        $marechalCP = $rowDatas['marechalCP'];
         $avdb = $rowDatas['amdb'];
         $avdb1 = date("d/m/y", strtotime($avdb));
         $avdf = $rowDatas['amdf'];
@@ -45,6 +48,9 @@ if(isset($_SESSION['logged_user'])) { ?>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Nom  : <?=$marechalNom ?></li>
                     <li class="list-group-item">Prénom  : <?=$marechalPrenom ?></li>
+                    <li class="list-group-item">Rue  : <?=$marechalRue ?></li>
+                    <li class="list-group-item">Commune  : <?=$marechalCommune ?></li>
+                    <li class="list-group-item">Code Postal  : <?=$marechalCP?></li>
                     <li class="list-group-item">Date de debut d'affectation: <?=$avdb1 ?></li>
                     <li class="list-group-item">Date de fin d'affectation: <?=$avdf1 ?></li>
 

@@ -130,7 +130,7 @@ $html = '
             }
           </style>
 
-		  	<img src="ico.png"/>
+		  	<img src="../ASSETS/ico/ico.png"/>
 			<h1>Carnet de transport de l\'ecurie '.$nomEcurie.'</h1>
 
 ';

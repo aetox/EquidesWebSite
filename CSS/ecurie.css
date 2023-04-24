@@ -1,10 +1,7 @@
 /*     -----     ECURIE    -----     */
 
 .ecurie {
-    padding: 10px 10px 80px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
 }
 
 #Ecurie {
@@ -12,4 +9,17 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+/*     -----     ECURIE DESCRPTION    -----     */
+
+.partie-1 {
+    
+    background: rgb(207,113,3);
+    background: linear-gradient(180deg, rgba(207,113,3,1) 49%, rgba(209,119,13,1) 56%, rgba(255,255,255,1) 98%); 
+    display: flex;
+}
+
+.gauche-partie-1 {
+    
 }

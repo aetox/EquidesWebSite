@@ -10,9 +10,9 @@ if(isset($_SESSION['logged_user'])) {
 
 	<div class="equides">
 
-		<h1 class="titre_1">Equidés sans pension</h1>
+		<h1 class="titre_1">équidés sans pension</h1>
 					
-		<div id="Equides">
+		<div id="Equides--">
 			<!-- faire un appel de la fonction affichage erreurs. -->
 			<?php include_once('PHP/equide_functions/affichage/affichageEquidesSansPension_fct.php') ?>
 		</div>

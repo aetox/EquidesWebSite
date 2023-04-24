@@ -28,7 +28,7 @@ if(isset($_SESSION['logged_user'])) {
 			<?php include_once('PHP/equide_functions/affichage/affichageEquides_fct.php') ?>
 		</div>
 		
-		<h3><a href="equides_sans_pension.php">Equides sans pension</a></h3>
+		<h3><a class ="boutton_pdf" href="equides_sans_pension.php">Equides sans pension</a></h3>
 
 	</div>
 

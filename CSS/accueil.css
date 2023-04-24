@@ -19,7 +19,7 @@
 }
 
 .accueil_soustitre {
-    color: rgba(255, 255, 255, 0.699);
+    color: rgba(255, 255, 255, 0.81);
     text-align: left;
     text-transform:none;
 }
@@ -63,7 +63,7 @@
 }
 
 .boutton_orange_accueil img {
-    width: 30px;
+    width: 25px;
     margin-right: 25px; 
 }
 
@@ -89,12 +89,18 @@
     }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (-webkit-min-device-pixel-ratio: 2){
 
     .accueil_titre {
         font-size: 60px;
         padding-top: 0px;
     }
+
+    .left img {
+        width: 300px;
+    }
 }
+
+
 
 

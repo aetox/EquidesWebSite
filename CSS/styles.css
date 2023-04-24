@@ -152,6 +152,28 @@ h5 {
     background-color: rgb(30, 179, 0);
 }
 
+.boutton_vertV3 {
+    font-family: 'Asap Condensed', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: solid 1px transparent;/*Pour que enlever le décalement lorsque on survole*/
+    background-color: rgba(0, 109, 31, 1) ;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 24px;
+    transition: 0.3s;
+    padding: 8px 20px 8px 15px; 
+}
+
+.boutton_vertV3:hover {
+    color: white;
+    background-color: rgb(30, 179, 0);
+}
+
 /* BOUTTON PDF */
 
 .boutton_pdf {

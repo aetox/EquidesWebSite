@@ -1,7 +1,7 @@
 /*     -----     ECURIE    -----     */
 
-.ecurie {
-    
+.ecurie-description {
+    font-family: 'Asap Condensed', sans-serif;
 }
 
 #Ecurie {
@@ -14,12 +14,188 @@
 /*     -----     ECURIE DESCRPTION    -----     */
 
 .partie-1 {
-    
-    background: rgb(207,113,3);
-    background: linear-gradient(180deg, rgba(207,113,3,1) 49%, rgba(209,119,13,1) 56%, rgba(255,255,255,1) 98%); 
+    padding-top: 90px;
+    background: rgb(32,18,0);
+    background: linear-gradient(0deg, rgba(32,18,0,1) 3%, rgba(207,113,3,1) 94%, rgba(207,113,3,1) 96%);
     display: flex;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .gauche-partie-1 {
+    color: white;
+}
+
+.gauche-partie-1 h1 {
+    color: white;
+    font-weight: 600;
+    font-size: 90px;
+    padding-top: 30px;
+    text-align: left;
+}
+
+.gauche-partie-1-informations {
+    font-size: 30px;
+}
+
+/*     -----     PARTIE 2    -----     */
+
+.partie-2 h3 {
+    color: rgba(207, 113, 3, 1);
+    font-weight: 600;
+    font-size: 60px;
+    padding-top: 30px;
+    text-align: left;
+}
+
+.partie-2 h4 {
+    font-size: 40px;
+    color: rgb(65, 34, 0);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.partie-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    font-size: 25px;
+}
+
+
+
+/*     -----     PARTIE 3    -----     */
+
+.partie-3 {
+    background: rgb(255,186,106);
+    background: linear-gradient(90deg, rgba(255,186,106,1) 0%, rgba(205,110,6,1) 0%, rgba(93,57,0,1) 82%);  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 25px;
+    color: white;
+}
+
+.gauche-partie-3 img {
+    width: 290px;
+    margin-right: 50px;
+}
+
+.droite-partie-3 h3 {
+    color: white;
+    font-weight: 600;
+    font-size: 50px;
+    padding-top: 30px;
+    text-align: left;
+}
+
+.droite-partie-3-boutton {
+    display: flex;
+    justify-content: center;
+}
+
+/*     -----     PARTIE 4    -----     */
+
+.partie-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.partie-4 h3 {
+    color: rgba(207, 113, 3, 1);
+    font-weight: 600;
+    font-size: 60px;
+    padding-top: 30px;
+    text-align: left;
+}
+
+/*     -----     PARTIE 5    -----     */
+
+.partie-5 {
+    padding-bottom: 30px;
+}
+
+/*     -----     MEDIA QUERIES    -----     */
+
+@media screen and (max-width: 1100px){
+
+    .partie-1 {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 25px;
+        min-height: 0vh;
+        height: 500px;
+    }
+
+    .partie-1 img {
+        position: absolute;
+        opacity: 0.1;
+        right: 240px;
+        width: 400px;
+    }
+
+    .partie-3 {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 25px;
+        padding-bottom: 25px;
+    }
+
+    .partie-3 img {
+        display: none;
+    }
+    
+}
+
+.affichagemaréchalferrand-boutton {
+    color: rgb(245, 204, 150);
+}
+
+.affichagemaréchalferrand-boutton:hover {
+    color: rgb(255, 185, 92);
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio: 2){
+
+    .partie-1 h1 {
+        font-size: 50px;
+        padding-top: 0px;
+    }
+
+    .partie-1 img {
+        width: 350px;
+        left: 15px
+    }
+
+    .partie-2 {
+        padding: 10px 25px;
+        font-size: 21px;
+    }
+
+    .partie-2 h3 {
+        font-size: 40px;
+    }
+
+    .partie-2 h4 {
+        font-size: 30px;
+    }
+
+    .left img {
+        width: 300px;
+    }
+    .gauche-partie-1-informations {
+        font-size: 25px;
+    }
     
 }

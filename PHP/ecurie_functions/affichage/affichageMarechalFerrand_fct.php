@@ -24,7 +24,7 @@
                     $idMarechal =$rowDatasss['id_marechal'];?>
 
                 <li class="list-group-item"><?php echo $marechalNom;?> <?php echo $marechalPrenom;?> du <?php echo $amdb1;?> au <?php echo $amdf1;?>
-                 | <a href="carte_marechal.php?idMarechal=<?=$idMarechal?>">Plus d'info</a>
+                 | <a class= "affichagemaréchalferrand-boutton" href="carte_marechal.php?idMarechal=<?=$idMarechal?>">Plus d'info</a>
 
             </li>
 <?php }

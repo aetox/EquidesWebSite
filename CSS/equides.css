@@ -66,6 +66,28 @@ table.affichageTable tr td{
     transition: 0.5s;
 } 
 
+.equide-sans-pension_bootstrap {
+    width: 300px;
+    margin: 30px;
+    -webkit-box-shadow: 5px 5px 15px 5px #9d9d9d; 
+    box-shadow: 5px 5px 15px 1px #9d9d9d;
+}
+
+.equide-sans-pension_bootstrap img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.equide-sans-pension_bootstrap a {
+    text-align: center;
+}
+
+.equides_sans_pension-retour {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
 
 #affichageEquides_info {
     font-family: 'Asap Condensed', sans-serif;

@@ -16,54 +16,74 @@ if(isset($_SESSION['logged_user']) && isset($_SESSION['id_detenteur'])){
         while($rowData = mysqli_fetch_array($result)){
             $nomEcurie = $rowData['nom_ecurie'];?>
 
-        <div class="ecurie">
+        <div class="ecurie-description">
             <div class="partie-1">
                 <div class="gauche-partie-1">
                     <h1 class="titre_1"><?php echo $titre ?></h1>
-                    <h3>Mes infos :</h3>
+                    <div class="gauche-partie-1-informations">
                     <?php include('PHP/equide_functions/affichage/affichageEcurieDescription_fct.php') ?>
-                    <a href="updateEcurie.php" class="boutton_pdf">Modifer</a>
+                    </div>
+                    <a href="updateEcurie.php" class="boutton_orange_accueil">Modifer</a>
                 </div>
                 <div class="droite-partie-1">
-                    <img src="" alt="">
+                    <img src="ASSETS/ico/cowshed.png" alt="">
                 </div>
             </div>
 
-            <h3>Mes vétérinaires :</h3>
+            <div class="partie-2">
 
-            <hr>
-                <h4>Vétérinaire sanitaire:</h4>
-                <?php include('PHP/ecurie_functions/affichage/affichageVeterinaireSanitaire_fct.php') ?>
-
-            <hr>
-                <h4>Vétérinaire courants:</h4>
-                <?php include('PHP/ecurie_functions/affichage/affichageVeterinaireCourant_fct.php') ?> 
-            <hr>
-
-                <h4><a href="groupementVeterinaire.php">Mes groupements de vétériniare</a></h4>
-
-            <hr>
-
-            <a href="ajout_veterinaire_intermediaire.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">Vétérinaire</a>
-
-
-            <h3>Mes maréchal ferrand :</h3>
-
-            <hr>
-                <?php include('PHP/ecurie_functions/affichage/affichageMarechalFerrand_fct.php') ?> 
-            <hr>
-
-            <a href="ajout_marechal.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">Maréchal Ferrand</a>
-  
-            <h3>Mes Equides:</h3>
-            <?php include('PHP/ecurie_functions/affichage/affichageEquideEcurie_fct.php') ?> 
-            <a href="ajout_equides.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">équidé</a>
+                <h3>Les vétérinaires</h3>
+            
+                <h4>sanitaires :</h4>
                 
+                <?php include('PHP/ecurie_functions/affichage/affichageVeterinaireSanitaire_fct.php') ?>
+                
+                <h4>courants :</h4>
+            
+                <?php include('PHP/ecurie_functions/affichage/affichageVeterinaireCourant_fct.php') ?> 
+                
+                <h4><a href="groupementVeterinaire.php" class="boutton_pdf">groupements vétérinaires</a> <br></h4>
+                <a href="ajout_veterinaire_intermediaire.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">Vétérinaire</a>
+            </div>
 
+            
+            <div class="partie-3">
+                <div class="gauche-partie-3">
+                    <img src="ASSETS/ico/tshirt.png" alt="">
+                </div>
+                <div class="droite-partie-3">
+                    <h3>Mes maréchaux ferrands<br></h3>
+                    <?php include('PHP/ecurie_functions/affichage/affichageMarechalFerrand_fct.php')?> 
+                    <br>
+                    <div class="droite-partie-3-boutton">
+                    <a href="ajout_marechal.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">Maréchal Ferrand</a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="partie-4">
+                <h3>Les équides</h3>                
+                <div class='web'>
+					<div class = "recherche">
+						<img src="ASSETS/ico/recherche.png" alt="">
+						<input type="text" class="search_keyword" id="search_keyword_id" placeholder="Rechercher un équidé" />
+					</div>
+					<div id="result"></div>
+				</div>
+                <div class="carnet_traitement_affichage">
+                    <?php include('PHP/ecurie_functions/affichage/affichageEquideEcurie_fct.php') ?> 
+                </div>
+            </div>   
 
-            <li class="modification list-group-item" id="affichageEquides_info"><a href="ecurie_confirmation_suppression.php?id_detenteur=<?=$idDetenteur;?>">Supprimer mon écurie</a></li>
+            <div class="partie-5">
+                <hr>
+                <li class="modification list-group-item" id="affichageEquides_info"><a href="ecurie_confirmation_suppression.php?id_detenteur=<?=$idDetenteur;?>">Supprimer mon écurie</a></li>
+            </div>
 
         </div>
+
+        <?php include_once("footer.php");?>
     <?php
         }
     }

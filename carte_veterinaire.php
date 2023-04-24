@@ -4,10 +4,10 @@ ob_start();
 include_once("header.php");
 if(isset($_SESSION['logged_user'])) { ?>
 
-
-            <h1>Info sur le vétérinaire</h1>
-
-
+    
+            <h1 class="titre_1">Info sur le vétérinaire</h1>
+    
+           
 <?php
 
     $idVeterinaireGet = $_GET['idVeterinaire'];
@@ -39,10 +39,10 @@ if(isset($_SESSION['logged_user'])) { ?>
         $avdf = $rowDatas['avdf'];
         $avdf1 = date("d/m/y", strtotime($avdf)); ?>
 
-    
+        <div class="profil">
             <div class="equide_bootstrap card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title"><?=$rowDatas['veterinaireNom']?></h5>
+                    <h5 class="card-title"><?=$rowDatas['veterinairePrenom'].' '.$rowDatas['veterinaireNom']?></h5>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Nom  : <?=$rowDatas['veterinaireNom'] ?></li>
@@ -57,6 +57,10 @@ if(isset($_SESSION['logged_user'])) { ?>
 
                 </ul>
             </div> 
+        </div> 
+        <div class="equides_sans_pension-retour">
+		<a href="ecurie_description.php" class="boutton_orangeV2"><img src="ASSETS/ico/retour.png">retour</a>
+		</div>
         <?php }}?>
 
 

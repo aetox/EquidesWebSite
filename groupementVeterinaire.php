@@ -21,15 +21,16 @@ if(isset($_SESSION['logged_user']) && isset($_SESSION['id_detenteur'])){
             <h1 class="titre_1"><?php echo $titre ?></h1>
 
            
-
+            <div class="carnet_traitement_affichage">
                 <?php include('PHP/ecurie_functions/affichage/affichageGroupementVeterinaire_fct.php') ?>
+            </div>
                 <br>
 
                 <a href="ajout_GroupementVeterinaire.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">groupements veterinaire</a>
-
-        
-
         </div>
+        <div class="equides_sans_pension-retour">
+		    <a href="ecurie_description.php" class="boutton_orangeV2"><img src="ASSETS/ico/retour.png">retour</a>
+		</div>
     <?php
         }
     }

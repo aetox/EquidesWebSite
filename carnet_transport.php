@@ -28,8 +28,9 @@ if(isset($_SESSION['logged_user'])) {
     <a href="ajout_voyage.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">voyage</a>
     <br>
 
-    <?php include_once('PHP/equide_functions/affichage/affichageTransport_fct.php');?>
-
+    <div class="carnet_traitement_affichage">
+        <?php include_once('PHP/equide_functions/affichage/affichageTransport_fct.php');?>
+    </div>
 
     <div class="carnet_transport_pdf">
     <a href="PHP/pdf_functions/carnet_transport_pdf.php?detenteur=<?=$id_detenteur?>" target="_blank" class="boutton_pdf"><img src="ASSETS/ico/telecharger2.png">PDF</a>

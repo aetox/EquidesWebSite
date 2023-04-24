@@ -1,11 +1,11 @@
 <?php
-$titre ="Information vétérinaire";
+$titre ="Information Maréchal";
 ob_start();
 include_once("header.php");
 if(isset($_SESSION['logged_user'])) { ?>
 
 
-            <h1>Info sur le marechal</h1>
+        <h1 class="titre_1">Info sur le maréchal</h1>
 
 
 <?php
@@ -40,10 +40,10 @@ if(isset($_SESSION['logged_user'])) { ?>
         $avdf = $rowDatas['amdf'];
         $avdf1 = date("d/m/y", strtotime($avdf)); ?>
 
-    
+        <div class="profil">
             <div class="equide_bootstrap card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title"><?=$marechalNom?></h5>
+                    <h5 class="card-title"><?=$marechalPrenom.' '.$marechalNom?></h5>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Nom  : <?=$marechalNom ?></li>
@@ -57,7 +57,11 @@ if(isset($_SESSION['logged_user'])) { ?>
                     <li class="modification list-group-item"><a href="updateMarechal.php?idMarechal=<?=$idMarechal?>">Modifier</a></li>
                     <li class="modification list-group-item"><a href="PHP/ecurie_functions/suppression/suppressionMarechal_fct.php?idMarechal=<?=$idMarechal?>">Supprimer</a></li>
                 </ul>
-            </div> 
+            </div>
+        </div> 
+        <div class="equides_sans_pension-retour">
+		    <a href="ecurie_description.php" class="boutton_orangeV2"><img src="ASSETS/ico/retour.png">retour</a>
+		</div>
         <?php }}?>
 
 

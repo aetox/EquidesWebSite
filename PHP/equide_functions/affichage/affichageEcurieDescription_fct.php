@@ -32,12 +32,12 @@ if(isset($_SESSION['id_detenteur'])){
             $registreCodePostal = $rowData['registreCodePostal'];
             $siret = $rowData['siret'];?>
             
-            <ul>
-                <li><u>Nom de l'écurie :</u> <?php echo $nomEcurie; ?></li>
-                <li><u>Détenteur :</u> <?php echo $detenteurNom;?> <?php echo $detenteurPrenom; ?></li>
-                <li><u>Adresse de l'écurie :</u> <?php echo $registreRue;?> <?php echo $registreCommune; ?> <?php echo $registreCodePostal; ?></li>
-                <li><u>SIRET :</u> <?php echo $siret; ?></li>     
-            </ul>
+            
+                <p><strong>Nom : </strong></u> <?php echo $nomEcurie; ?></p>
+                <p><strong>Détenteur :</strong></u> <?php echo $detenteurNom;?> <?php echo $detenteurPrenom; ?></p>
+                <p><strong>Adresse :</strong></u> <?php echo $registreRue;?> <?php echo $registreCommune; ?> <?php echo $registreCodePostal; ?></p>
+                </p><strong>SIRET :</strong></u> <?php echo $siret; ?></p>     
+            
             
 <?php
         }

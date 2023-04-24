@@ -12,9 +12,13 @@ if(isset($_SESSION['logged_user'])) {
 
 		<h1 class="titre_1">équidés sans pension</h1>
 					
-		<div id="Equides--">
+		<div class="carnet_traitement_affichage">
 			<!-- faire un appel de la fonction affichage erreurs. -->
 			<?php include_once('PHP/equide_functions/affichage/affichageEquidesSansPension_fct.php') ?>
+		</div>
+
+		<div class="equides_sans_pension-retour">
+		<a href="equides.php" class="boutton_orangeV2"><img src="ASSETS/ico/retour.png">retour</a>
 		</div>
 		
 	</div>

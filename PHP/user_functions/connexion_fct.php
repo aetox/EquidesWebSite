@@ -67,8 +67,24 @@ if(isset($_POST['mail'],$_POST['password'])){//l'utilisateur à cliqué sur "S'i
                       header('Location: ../../accueil.php');
                     }
                   }
-                }
+                  else{
+                  $queryAdmin = "SELECT * FROM `administrateur` WHERE id_login=$id_login"; 
+                  $resultAdmin = mysqli_query($mysqli,$queryAdmin) or die(mysqli_error($mysqli));
 
+                  if(mysqli_num_rows($resultAdmin) > 0){
+                    while($rowData = mysqli_fetch_array($resultAdmin)){
+
+                      // stock dans une variable SESSION ( session qui reste active avec session_start()) les infos de l'utlisateur 
+                      $_SESSION['type_profil'] = "administrateur";    
+                      $_SESSION['id_login'] = $rowData['id_login'];  
+                      $_SESSION['id_admin'] = $rowData['id_admin'];
+                      $_SESSION['prenom'] = $rowData['prenom'];
+                      $_SESSION['logged_user'] = true;
+                      header('Location: ../../admin.php');
+                }
+              }
+            }
+          }
             }else{
               array_push($info_error, "L'email ou le mot de passe est incorrect");
       }

@@ -45,7 +45,30 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
 <body>
     <div class="contenu"> <!-- Cette div se ferme dans footer.php -->
 
-        <?php if(isset($_SESSION['logged_user'])) { ?>
+        <?php if(isset($_SESSION['logged_user'])) {
+            
+            if($_SESSION['type_profil']=="administrateur"){ ?>
+
+                <header>
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" id="nav_img" href="accueil.php">
+                                <img src="ASSETS/ico/logo_horizontal.png" alt="Logo" height="40" class="d-inline-block align-text-right">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                <div class="navbar-nav ms-auto justify-content-end"> <!-- Utilisation de la classe "justify-content-end" pour aligner à droite -->
+                                    <a class="nav-link text-uppercase text-white" aria-current="page" href="admin.php">Admin</a>
+                                    <a class="nav-link text-uppercase text-white" href="PHP/user_functions/deconnexion.php">Déconnexion</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+
+            <?php }else{?>
 
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light">
@@ -70,4 +93,5 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
                 </nav>
             </header>
 
-        <?php }else {}; ?>
+        <?php }
+    }else {}; ?>

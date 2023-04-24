@@ -36,7 +36,7 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="icon" type="image/png" href="ASSETS/ico/ico.png" />
+    <link rel="icon" type="image/png" href="ASSETS/ico/fer-a-cheval(1).png" />
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <!-- Permet d'avoir par défaut le titre Equide avec le ?? -->

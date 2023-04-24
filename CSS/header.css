@@ -1,7 +1,7 @@
 /*     -----     HEADER    -----     */
 
 header {
-    background-color: rgba(207, 113, 3, 1);
+    background-color: rgba(207, 113, 3, 1) ;
 }
 
 
@@ -31,6 +31,10 @@ nav a:hover {
 }
 
 #nav_img:hover {
+    background-color: rgba(207, 113, 3, 1) !important ;
+}
+
+.navbar-toggler {
     background-color: rgba(207, 113, 3, 1) !important ;
 }
 

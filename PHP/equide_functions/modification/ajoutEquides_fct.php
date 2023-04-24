@@ -57,10 +57,6 @@ if (isset($_POST["ajouter"])) {
     array_push($info_error, "Veuillez indiquer la robe de l'équidé !");
   }elseif (empty($naisseurVeterinaire_equide)) {
     array_push($info_error, "Veuillez indiquer le vétérinaire naisseur de l'équidé !");
-  }elseif(empty($pere_equide)){
-    array_push($info_error, "Veuillez indiquer le père de l'équidé !");
-  }elseif(empty($mere_equide)){
-    array_push($info_error, "Veuillez indiquer la mère de l'équidé !");
   }elseif(empty($img_equide)){
     array_push($info_error, "Veuillez ajouter une image pour l'équidé !");
   }

@@ -85,12 +85,6 @@ if(isset($_SESSION['logged_user'])) {
 			<label for="naisseurVeterinaire_equide">Vétérinaire ayant assuré la naissance :</label>
 			<input type="text" id="naisseurVeterinaire_equide" name="naisseurVeterinaire_equide" required><br>
 
-			<label for="pere_equide">Nom du père :</label>
-			<input type="text" id="pere_equide" name="pere_equide" required><br>
-
-			<label for="mere_equide">Nom de la mère :</label>
-			<input type="text" id="mere_equide" name="mere_equide" required><br>
-
 			<label for="photo_equide">Photo de l'equide :</label>
 			<input type="file" id="photo_equide" name="photo_equide" required><br>
 			

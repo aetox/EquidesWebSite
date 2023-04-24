@@ -31,7 +31,6 @@ if(!isset($_SESSION['logged_user'])) {
             <input type="text" name="commune" id="commune_inscription" placeholder="Commune"  >
             <input type="text" name="code_postal" id="codePostal_inscription" placeholder="Code Postal" >
             <label for="photo_detenteur">Photo de profil :</label>
-			<input type="file" id="photo_detenteur" name="photo_detenteur" >
             <div>
                 <input type="checkbox" name="inscription_accept_conditions" id="inscription_accept_conditions" >
                 <label for="inscription_accept_conditions">J'accepte les conditions d'utilisation</label>

@@ -26,7 +26,7 @@ if (mysqli_num_rows($result) > 0) {
         $sireMere = $rowData['sire'];
         $couleurMere = $rowData['couleur'];
         $idRaceMere =$rowData['id_race'];
-        $sireEquide =$rowData['sire'];
+        $sireParent =$rowData['sire'];
 
 
         $sql2="SELECT nom_race FROM race WHERE id_race ='$idRaceMere'";

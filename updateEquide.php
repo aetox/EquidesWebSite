@@ -47,14 +47,14 @@ if (mysqli_num_rows($resultOld) > 0) {
         <label for="lieuNaissance_equide">Lieu de naissance :</label>
         <input type="text" id="lieuNaissance_equide" name="lieuNaissance_equide" value="<?php echo $oldequides['lieu_naissance'] ?>" required><br>
 
-        <label for="race_equide">Race : NE PAS MODIFIER</label>
-        <input type="text" id="race_equide" name="race_equide" value="<?php echo $oldequides['nom_race'] ?>" required readonly><br>
+        <label for="race_equide">Race :</label>
+        <input type="text" id="race_equide" name="race_equide" value="<?php echo $oldequides['nom_race'] ?>" required ><br>
 
         <label for="stud_equide">Stud :</label>
         <input type="text" id="stud_equide" name="stud_equide" value="<?php echo $oldequides['equide_stud'] ?>" required><br>
 
-        <label for="lieuElevage_equide">Lieu d'élevage : NE PAS MODIFIER</label>
-        <input type="text" id="lieuElevage_equide" name="lieuElevage_equide" value="<?php echo $oldequides['nom_ecurie'] ?>" readonly required><br>
+        <label for="lieuElevage_equide">Lieu d'élevage </label>
+        <input type="text" id="lieuElevage_equide" name="lieuElevage_equide" value="<?php echo $oldequides['nom_ecurie'] ?>"  required><br>
 
         <label for="sexe">Sexe du cheval :</label>
         <select id="sexe" name="sexe" required>
@@ -72,7 +72,7 @@ if (mysqli_num_rows($resultOld) > 0) {
 		<input type="text" id="robe_equide" name="robe_equide" value="<?php echo $oldequides['robe_equide']?>"  required><br>
 
 		<label for="naisseurVeterinaire_equide">Veterinaire ayant assure la naissance : </label>
-		<input type="text" id="naisseurVeterinaire_equide" name="naisseurVeterinaire_equide" value="<?php echo $oldequides['veterinaire_naisseur'] ?>" readonly required><br> 
+		<input type="text" id="naisseurVeterinaire_equide" name="naisseurVeterinaire_equide" value="<?php echo $oldequides['veterinaire_naisseur'] ?>"  required><br> 
 		<!-- <label for="pere_equide">Père :</label>
 		<input type="text" id="pere_equide" name="pere_equide" value="<?php echo $oldequides['pere_equide']?>"  required><br>
 

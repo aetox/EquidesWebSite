@@ -47,7 +47,7 @@ if (isset($_POST["ajouter"])) {
   $result_info = mysqli_query($mysqli,$sql) or die (mysqli_error($mysqli));
   
   if ($result_info !== false) {
-    header("Location: ../equides.php");
+    header("Location: ../equides_description.php?sireEquide=$numSIRE");
   } else {
     array_push($info_error, "Erreur img");
   }

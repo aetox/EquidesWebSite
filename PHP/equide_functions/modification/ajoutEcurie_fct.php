@@ -8,12 +8,12 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
 if (isset($_POST["ajouter"])) {
 
   $idDetenteur = $_SESSION['id_detenteur'];
-  $nom_ecurie = $_POST["nom_ecurie"];
-  $SIRET = $_POST["SIRET"];
-  $rue = $_POST["rue"];
-  $commune = $_POST["commune"];
-  $code_postal = $_POST["code_postal"];
-  $espece = $_POST["espece"];
+  $nom_ecurie = mysqli_real_escape_string($mysqli, $_POST["nom_ecurie"]);
+  $SIRET = mysqli_real_escape_string($mysqli, $_POST["SIRET"]);
+  $rue = mysqli_real_escape_string($mysqli, $_POST["rue"]);
+  $commune = mysqli_real_escape_string($mysqli, $_POST["commune"]);
+  $code_postal = mysqli_real_escape_string($mysqli, $_POST["code_postal"]);
+  $espece = mysqli_real_escape_string($mysqli, $_POST["espece"]);
 
   if(empty($SIRET)){
     array_push($info_error, "Veuillez indiquer un numéro de SIRE !");

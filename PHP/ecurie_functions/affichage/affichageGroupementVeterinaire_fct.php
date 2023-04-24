@@ -62,7 +62,7 @@ if (mysqli_num_rows($result) > 0) {
                                             
                                               <?php }
                                               } else { ?>
-                                                <h4> Vous n'avez pas de vétérinaires sanitaire</h4>
+                                                <h4> Vous n'avez pas de vétérinaires courants</h4>
                                        <?php } ?>
 
                                     </li>

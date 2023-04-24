@@ -25,7 +25,7 @@ if (isset($_POST["ajouter"])) {
   
   if ($result_info !== false) {
 
-    header("Location: ../equides_description?sireEquide=$sireEquide.php");
+    header("Location: ../equides_description.php?sireEquide=$sireEquide");
   } else {
     array_push($info_error,  $result_info);
   }

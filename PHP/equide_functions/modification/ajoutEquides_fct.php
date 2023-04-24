@@ -106,7 +106,6 @@ if (isset($_POST["ajouter"])) {
                         
                         if ($result_img !== false) {
                           $insert_id_img = mysqli_insert_id($mysqli); // Récupère l'id AUTO-INCREMENT
-                          array_push($info_succes, "Image ajouté");
                         } else {
                           array_push($info_error, "Erreur img");
                         }

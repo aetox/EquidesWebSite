@@ -117,7 +117,7 @@ $html = '
           </style>
 
 		  	<img src="ico.png"/>
-			<h1>Carnet de traitement de l\'équidé n°'.$idSire.'</h1>
+			<h1>Carnet de vermifuge de l\'équidé n°'.$idSire.'</h1>
 
 ';
 
@@ -139,8 +139,8 @@ $html .='
 		<table border="1">
 			<tr>
 				<th>Id </th>
-				<th>Molécule traitement</th>
-				<th>Référence traitement</th>
+				<th>Molécule vermifuge</th>
+				<th>Référence vermifuge</th>
 				<th>Date</th>
 				<th>Commentaire</th>
 			</tr>
@@ -158,9 +158,9 @@ $html .='
  while($row = mysqli_fetch_assoc($result)) {
 	$html .= '
 	<tr>
-	   <td>'.$row["id_traitement"].'</td>
-	   <td>'.$row["nom_traitement"].'</td>
-	   <td>'.$row["id_traitement"].'</td>
+	   <td>'.$row["id_vermifuge"].'</td>
+	   <td>'.$row["nom_vermifuge"].'</td>
+	   <td>'.$row["id_vermifuge"].'</td>
 	   <td>'.date("d/m/y", strtotime($row['date_acte'])).'</td>
 	   <td>'.$row["detail_acte"].'</td>
 	</tr>';
@@ -171,4 +171,4 @@ $html .= '</table> </div>';
 $mpdf->WriteHTML($html);
 
 // Générer le PDF
-$mpdf->Output("Carnet_Traitement_Equide$idSire.pdf",'I'); // 'I' pour l'afficher dans une fenetre et 'D' pour le télécharger directement
+$mpdf->Output("Carnet_Vermifuge_Equide$idSire.pdf",'I'); // 'I' pour l'afficher dans une fenetre et 'D' pour le télécharger directement

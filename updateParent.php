@@ -3,13 +3,16 @@ $titre ="Modification";
 ob_start();
 include_once("header.php");
 if(isset($_SESSION['logged_user'])) {
+
+$sireEquide = $_GET['sireEquide'];
+$id_parent =$_GET['idParent'];
+
 include_once('PHP/equide_functions/modification/updateParent_fct.php');
 
 $info_error = array();
 $info_succes = array();
 
-$sireEquide = $_GET['sireEquide'];
-$id_parent =$_GET['idParent'];
+
 
 $sqlOld="SELECT ascendance.nom AS nom, ascendance.couleur AS couleur, ascendance.sire AS sire, ascendance.id_race AS id_race, ascendance.id_ascendance AS id_parent, race.nom_race AS nom_race 
 FROM `ascendance`

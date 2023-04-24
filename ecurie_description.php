@@ -94,11 +94,11 @@ if(isset($_SESSION['logged_user']) && isset($_SESSION['id_detenteur'])){
 
         </div>
 
-        <h3>Vous n'avez pas d'écurie</h3>
-
-        <div class="ecurie">
-        <a href="ajout_ecurie.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">écurie</a>
-        </div>
+		<div class="equides">
+						<h3>Veuillez engistrer une écurie</h3>
+						<br>
+						<a href="ajout_ecurie.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">ecurie</a>
+				</div>
 <?php    }
 }
 elseif(isset($_SESSION['logged_user']) && isset($_SESSION['id_proprietaire'])) { ?>

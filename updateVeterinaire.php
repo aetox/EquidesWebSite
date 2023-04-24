@@ -47,7 +47,7 @@ $info_succes = array();
     <div class="formulaire_1">
         <form method="post" class="formulaire_2" name="formajoutTraitement" enctype="multipart/form-data">
 
-        <a href="ecurie_description.php"><span class="material-symbols-outlined">close</span></a>
+        <a href="carte_veterinaire.php?idVeterinaire=<?=$id_veterinaire?>"><span class="material-symbols-outlined">close</span></a>
 
         <label for="nomVeterinaire">Nom :</label>
         <input type="text" id="nomVeterinaire" name="nomVeterinaire" placeholder="Nom" value="<?=$nomVeto?>" required><br>

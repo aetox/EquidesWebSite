@@ -102,7 +102,7 @@ if (mysqli_num_rows($result) > 0) {
                                        <?php } ?>
 
                                     </li>
-                                    <li class="modification list-group-item" id="affichageEquides_info"><a  href="update_GroupementVeterinaire.php?idGroupement=<?=$id_groupement?>">Mettre à jour</a></li>
+                                    <li class="modification list-group-item" id="affichageEquides_info"><a  href="update_GroupementVeterinaire.php?idGroupement=<?=$id_groupement?>">Modifier</a></li>
                                     <li class="modification list-group-item" id="affichageEquides_info"><a  href="PHP/ecurie_functions/suppression/suppressionGroupementVeterinaire_fct.php?idGroupement=<?=$id_groupement?>">Supprimer</a></li>
                         </ul> 
                 </div>

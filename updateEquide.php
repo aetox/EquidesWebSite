@@ -8,9 +8,9 @@ include_once('PHP/equide_functions/modification/updateEquide_fct.php');
 $info_error = array();
 $info_succes = array();
 
-$sire = $_GET['sire'];
+$sire = $_GET['sireEquide'];
 $sqlOld = "SELECT equide.sire AS sire_equide, equide.ueln AS ueln_equide, equide.nom AS nom_equide, equide.date_naissance AS date_naissance, equide.lieu_naissance AS lieu_naissance, 
-equide.id_race AS id_race, equide.stud AS equide_stud, equide.robe AS robe_equide, equide.sexe AS sexe_equide, veterinaire.prenom AS prenom_veterinaire ,veterinaire.nom AS nom_veterinaire, 
+equide.id_race AS id_race, equide.stud AS equide_stud, equide.robe AS robe_equide, equide.sexe AS sexe_equide, equide.naisseur AS veterinaire_naisseur,
 registre_equide.nom_ecurie AS nom_ecurie, race.nom_race AS nom_race, equide.tete AS tete, equide.antg AS antg, equide.antd AS antd, equide.postg AS postg, equide.postd AS postd, equide.marques AS marques
 FROM `equide`
 JOIN `race`
@@ -19,10 +19,7 @@ JOIN  `en_pension`
 ON equide.id_equide=en_pension.id_equide
 JOIN `registre_equide`
 ON en_pension.id_registre=registre_equide.id_registre
-JOIN `affectation_veterinaire`
-ON registre_equide.id_affectation_veterinaire=affectation_veterinaire.id_affectation_veterinaire
-JOIN `veterinaire`
-ON affectation_veterinaire.id_veterinaire=veterinaire.id_veterinaire
+
 
 WHERE sire='$sire'";
 $resultOld = mysqli_query($mysqli, $sqlOld) or die(mysqli_error($mysqli));
@@ -74,8 +71,8 @@ if (mysqli_num_rows($resultOld) > 0) {
         <label for="robe_equide">Robe :</label>
 		<input type="text" id="robe_equide" name="robe_equide" value="<?php echo $oldequides['robe_equide']?>"  required><br>
 
-		<label for="naisseurVeterinaire_equide">Veterinaire ayant assure la naissance : NE PAS MODIFIER</label>
-		<input type="text" id="naisseurVeterinaire_equide" name="naisseurVeterinaire_equide" value="<?=$oldequides['prenom_veterinaire'].' '.$oldequides['nom_veterinaire']?>" readonly required><br> 
+		<label for="naisseurVeterinaire_equide">Veterinaire ayant assure la naissance : </label>
+		<input type="text" id="naisseurVeterinaire_equide" name="naisseurVeterinaire_equide" value="<?php echo $oldequides['veterinaire_naisseur'] ?>" readonly required><br> 
 		<!-- <label for="pere_equide">Père :</label>
 		<input type="text" id="pere_equide" name="pere_equide" value="<?php echo $oldequides['pere_equide']?>"  required><br>
 

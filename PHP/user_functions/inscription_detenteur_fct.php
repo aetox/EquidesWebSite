@@ -63,8 +63,6 @@ if(isset($_POST['inscription_detenteur'])){//l'utilisateur à cliqué sur "S'ins
       array_push($info_error,"Le champ Mot de passe est vide");
     } elseif(empty($_POST['inscription_accept_conditions'])){
       array_push($info_error, "Vous devez accepter les conditions d'utilisations.");
-    } elseif(empty($_FILES['photo_detenteur'])){
-      array_push($info_error,"Vous devez ajouter une photo de profil");
     } elseif(empty($sire)){
       array_push($info_error,"Veuillez ajouter un numéro de sire");
     }elseif(empty($date_enregistrement)){
@@ -74,68 +72,26 @@ if(isset($_POST['inscription_detenteur'])){//l'utilisateur à cliqué sur "S'ins
     }else{
 
         if(strlen($code_postal)  == 5){
-          $img_detenteur= $_FILES['photo_detenteur']['name']; 
-          $imgExtensions = array('jpg','gif','png','jpeg'); //Extensions d'images autorisées
-          $extension  = pathinfo($_FILES['photo_detenteur']['name'], PATHINFO_EXTENSION); // Recupère l'extention de l'image
-  
-          if(in_array(strtolower($extension),$imgExtensions)){ // verifie l'extension du fichier
-                
-  
-            //******************************************************************************************* */
-                              // AJout d'image
-  
-                $maxsize=5000000; // Poids de 5Mo maximum pour la photo
-            
-                if($_FILES['photo_detenteur']['size'] <= $maxsize){
-                
-                //   $tpm_nom = $_FILES['photo_detenteur']['tmp_name'];
-                //   $time = time();
-  
-                //   // On renome l'image avec le format : heure + nom de l'image 
-                
-                //   $new_img_name = $time.$img_detenteur;
-                
-                //   move_uploaded_file($tpm_nom,"$site_root/ASSETS/img_bdd/".$new_img_name);
-                
-                //   // Requette pour ajouter l'image dans la bdd
-                //   $sqlImg ="INSERT INTO image VALUES (NULL,'$new_img_name','$sire')";
-                //   $result_img = mysqli_query($mysqli,$sqlImg) or die(mysqli_error($mysqli));
-                
-                //    if ($result_img !== false) {
-                //       $insert_id = mysqli_insert_id($mysqli);
-                //     } else {
-                //       array_push($info_error, "Erreur img");
-                //       }
-          //****************************************************************************************************** */
-                      //toutes les vérifications sont faites, on passe à l'enregistrement dans la base de données:
-                      //Bien évidement il s'agit là d'un script simplifié au maximum, libre à vous de rajouter des conditions avant l'enregistrement comme la longueur minimum du mot de passe par exemple
-                      
+                         
                             $sqlLoginDetenteur ="INSERT INTO `login` (email, mot_de_passe) VALUES ('".$mail."', '".hash('sha256', $password)."')";
                             $resultLoginDetenteur = mysqli_query($mysqli,$sqlLoginDetenteur) or die(mysqli_error($mysqli));
   
                             $id_login = mysqli_insert_id($mysqli); // Recupere l'id généré lors de l'insertion
   
-                            $sqlDetenteur = "INSERT INTO `detenteur` (`id_login`, `sire`, `nom`, `prenom`, `nombre_equides`, `rue`, `commune`, `code_postal`, `signature_detenteur`, `date_enregistrement`, `nationalite`) 
-                            VALUES ('$id_login', $sire, '$nom', '$prenom', NULL, '$rue', '$commune', '$code_postal', NULL, NULL, NULL)";
+                            $sqlDetenteur = "INSERT INTO `detenteur` (`id_login`, `sire`, `nom`, `prenom`, `rue`, `commune`, `code_postal`, `signature_detenteur`, `date_enregistrement`) 
+                            VALUES ('$id_login', $sire, '$nom', '$prenom', '$rue', '$commune', '$code_postal', '$signature', '$date_enregistrement')";
                             
                             $resultDetenteur = mysqli_query($mysqli,$sqlDetenteur) or die(mysqli_error($mysqli));
     
                             array_push($info_succes, "Vous êtes inscrit !");
-                    
               }else{
-                array_push($info_error,"Veuillez choisir une image inférieur à 5Mo !");
-              }
-          }else{
-            array_push($info_error,"Veuillez choisir une image de type  : jpg, gif, png, jpeg");
-          }
-
-        }else{
             $len = strlen($code_postal);
-          array_push($info_error,"Veuillez entrer un code postal composé de 5 chiffres .'$len'..'$code_postal.");
+          array_push($info_error,"Veuillez entrer un code postal composé de 5 chiffres.");
         }
-
-      }
+    }
   }
+
+      
 
 ?>
     

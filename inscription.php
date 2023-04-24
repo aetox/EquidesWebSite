@@ -14,10 +14,10 @@ if(!isset($_SESSION['logged_user'])) {
             <h3>detenteur</h3>
             <p>Je possède au moins un équidé, une écurie et un numéro de SIRE.</p>
         </a>
-        <a href="inscription_proprietaire.php">
+        <!-- <a href="inscription_proprietaire.php">
             <h3>proprietaire</h3>
             <p>Je possède au moins équidé.</p>
-        </a>
+        </a> -->
         <div class ="redirection-compte">Déjà un compte ?<a href="index.php">Cliquez-ici !</a></div> 
             
     </div>

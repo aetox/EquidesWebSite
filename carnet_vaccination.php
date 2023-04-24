@@ -8,12 +8,13 @@ if(isset($_SESSION['logged_user'])) {
 
 <div class="carnet_traitement">
     <h1>Carnet de vaccination pour l'équide n°<?=$idSire?></h1>
-    <a href="ajout_vaccin.php?sire=<?=$idSire?>" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">vaccin</a>    
+    <a href="ajout_vaccin.php?sire=<?=$idSire?>" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">vaccin</a>
+    <br>    
     <div class="carnet_traitement_affichage">
         <?php include_once('PHP/equide_functions/affichage/affichageVaccin_fct.php') ?>
     </div>
+    <br>
     <a href="equide_description.php?sireEquide=<?=$idSire?>" class="boutton_orangeV2"><img src="ASSETS/ico/retour.png">retour</a>
-
     <div class="carnet_transport_pdf">
         <a href="PHP/pdf_functions/vaccin_pdf.php?sire=<?=$idSire;?>&amp;detenteurSIRE=<?=$_SESSION['id_detenteur'];?>" target="_blank" class="boutton_pdf">
         <img src="ASSETS/ico/telecharger2.png">PDF</a>

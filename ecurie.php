@@ -31,26 +31,20 @@ if(isset($_SESSION['logged_user']) && isset($_SESSION['id_detenteur'])){
         }
     }
     else { ?>
-        <div class="ecurie">
+        <div class="carnet_transport">
 
-        <h1 class="titre_1"><?php echo $titre ?></h1>
+            <h1 class="titre_1"><?php echo $titre ?></h1>
 
+            <h3>Vous n'avez pas d'écurie</h3>
+
+            <a href="ajout_ecurie.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">écurie</a>
+    
         </div>
-
-        <h3>Vous n'avez pas d'écurie</h3>
-
-        <div class="ecurie">
-        <a href="ajout_ecurie.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">écurie</a>
-        </div>
+        
 <?php    }
-}
-elseif(isset($_SESSION['logged_user']) && isset($_SESSION['id_proprietaire'])) { ?>
-
-        <h3>Vous n'avez pas d'équidés</h3>
-
-<?php include_once("footer.php");
-}
-else {
+    
+include_once("footer.php");
+}else {
     header("Location: index.php");
 }
 ob_end_flush(); ?>

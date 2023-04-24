@@ -22,8 +22,6 @@ if (isset($_POST["ajouter"])) {
   $sexe_equide = $_POST["sexe_equide"];
   $robe_equide = $_POST["robe_equide"];
   $naisseurVeterinaire_equide = $_POST["naisseurVeterinaire_equide"];
-  $pere_equide = $_POST["pere_equide"];
-  $mere_equide = $_POST["mere_equide"];
   $img_equide = $_FILES['photo_equide']['name']; 
   $detenteur = $_SESSION["id_detenteur"];
   /*Rajout par Noé, je ne les ai pas mit en required, donc je ne les vérifie pas juste en dessous, c'est facultatif*/

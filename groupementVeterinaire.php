@@ -16,15 +16,18 @@ if(isset($_SESSION['logged_user']) && isset($_SESSION['id_detenteur'])){
         while($rowData = mysqli_fetch_array($result)){
             $nomEcurie = $rowData['nom_ecurie'];?>
 
-        <div class="ecurie">
+        <div class="carnet_transport">
 
             <h1 class="titre_1"><?php echo $titre ?></h1>
 
-            <div id="Equides">
+           
 
-            <?php include('PHP/ecurie_functions/affichage/affichageGroupementVeterinaire_fct.php') ?>
+                <?php include('PHP/ecurie_functions/affichage/affichageGroupementVeterinaire_fct.php') ?>
+                <br>
 
-            </div>
+                <a href="ajout_GroupementVeterinaire.php" class="boutton_vertV2"><img src="ASSETS/ico/plus2.png">groupements veterinaire</a>
+
+        
 
         </div>
     <?php

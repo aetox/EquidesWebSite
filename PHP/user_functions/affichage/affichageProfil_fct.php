@@ -10,13 +10,29 @@ if(isset($_SESSION['id_detenteur'])){
     FROM `detenteur`
     JOIN `login`
     ON detenteur.id_login=login.id_login
-    JOIN `registre_equide`
-    ON detenteur.id_detenteur = registre_equide.id_detenteur
+    -- JOIN `registre_equide`
+    -- ON detenteur.id_detenteur = registre_equide.id_detenteur
     WHERE detenteur.id_detenteur=$id_detenteur";  
     $resultDetenteur = mysqli_query($mysqli,$queryDetenteur) or die(mysqli_error($mysqli));
     
     if(mysqli_num_rows($resultDetenteur) > 0){
-        
+
+        $ecurieDetenteur = "SELECT * 
+        FROM `detenteur`
+        JOIN `registre_equide`
+        ON detenteur.id_detenteur = registre_equide.id_detenteur
+        WHERE detenteur.id_detenteur=$id_detenteur";
+
+        $resultecurieDetenteur = mysqli_query($mysqli,$ecurieDetenteur) or die(mysqli_error($mysqli));
+
+        if(mysqli_num_rows($resultecurieDetenteur) > 0){
+            while($rowData = mysqli_fetch_array($resultecurieDetenteur)){
+            $nomEcurie = $rowData['nom_ecurie'];
+            }
+        }else {
+            $nomEcurie = "Vous n'avez pas d'écurie";
+        }
+
         while($rowData = mysqli_fetch_array($resultDetenteur)){
 
             $nom = $rowData['nom'];
@@ -30,7 +46,6 @@ if(isset($_SESSION['id_detenteur'])){
             $signature_detenteur = $rowData['signature_detenteur'];
             $date_enregistrement = $rowData['date_enregistrement'];
             $nationalite = $rowData['nationalite'];
-            $nomEcurie = $rowData['nom_ecurie'];
         }
     }
 ?>

@@ -10,7 +10,7 @@ include_once('PHP/ecurie_functions/modification/ajoutGroupement_fct.php');
     <div class="formulaire_1">
         <form method="post" class="formulaire_2" name="formajoutTraitement" enctype="multipart/form-data">
 
-            <a href="ajout_veterinaire_intermediaire.php"><span class="material-symbols-outlined">close</span></a>
+            <a href="groupementVeterinaire.php"><span class="material-symbols-outlined">close</span></a>
             
             <label for="nomGroupement">Nom du groupement :</label>
             <input type="text"  name="nomGroupement" placeholder="Nom du groupement" required><br>

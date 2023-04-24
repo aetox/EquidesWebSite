@@ -71,7 +71,7 @@ if (mysqli_num_rows($result) > 0) {
                 <li class="modification list-group-item"><a href="carnet_traitement.php?sire=<?php echo $equides['sire'];?>"> Carnet de traitement</a></li>
                 <li class="modification list-group-item"><a href="carnet_vaccination.php?sire=<?php echo $equides['sire'];?>"> Carnet de vaccination</a></li>
                 <li class="modification list-group-item"><a href="carnet_vermifuge.php?sire=<?php echo $equides['sire'];?>"> Carnet de vermifuge</a></li>
-                <li class="modification list-group-item"><a href="updateEquide.php?sire=<?php echo $equides['sire'];?>"> Modification</a></li>
+                <li class="modification list-group-item"><a href="updateEquide.php?sireEquide=<?php echo $equides['sire'];?>"> Modification</a></li>
                 <li class="modification list-group-item"><a href="PHP/equide_functions/modification/suppressionEquide.php?sireEquide=<?php echo $equides['sire'];?>"> Suppression</a></li>
             </ul> 
         </div>

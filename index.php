@@ -2,6 +2,9 @@
 $titre ="Connexion";
 ob_start();
 include("header.php");
+if(isset($_SESSION['logged_user'])) {
+    header("Location: accueil.php");
+ }else{
 ?>
 <?php include_once('PHP/user_functions/connexion_fct.php') ?>
 
@@ -24,6 +27,6 @@ include("header.php");
         <p>Pas de compte ? <a href="inscription.php">Créez-en un ici !</a></p> 
     </div>
 </div>
-
-<?php include("footer.php"); ?>
+ 
+<?php } include("footer.php"); ?>
 <? ob_end_flush(); ?>

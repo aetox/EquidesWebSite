@@ -59,6 +59,6 @@ if (mysqli_num_rows($result) > 0) {
     }else {?>
     
         <li class="list-group-item">Pas de père enregistré</li>
-        <li class="list-group-item"><a href="ajout_parent.php?sireEquide=<?=$idEquide?>">Ajouter</a></li>
+        <li class="list-group-item"><a href="ajout_parent.php?sireEquide=<?=$sireEquide?>">Ajouter</a></li>
 
    <?php } ?>

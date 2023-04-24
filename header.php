@@ -83,7 +83,7 @@ $site_root = $_SERVER['DOCUMENT_ROOT'];
                             <div class="navbar-nav ms-auto justify-content-end"> <!-- Utilisation de la classe "justify-content-end" pour aligner à droite -->
                                 <a class="nav-link text-uppercase text-white" aria-current="page" href="accueil.php">Accueil</a>
                                 <a class="nav-link text-uppercase text-white" href="equides.php">Equides</a>
-                                <a class="nav-link text-uppercase text-white" href="ecurie.php">Ecurie</a>
+                                <a class="nav-link text-uppercase text-white" href="ecurie_description.php">Ecurie</a>
                                 <a class="nav-link text-uppercase text-white" href="carnet_transport.php">Transport</a>
                                 <a class="nav-link text-uppercase text-white" href="profil.php">Mon profil</a>
                                 <a class="nav-link text-uppercase text-white" href="PHP/user_functions/deconnexion.php">Déconnexion</a>

@@ -22,7 +22,7 @@ if(isset($_SESSION['logged_user'])) {
 
         <div class="accueil_div_bouttons">
             <a href="equides.php" class="boutton_orange_accueil"><img src="ASSETS\ico\ico-fer-a-cheval.png">Mes équidés</a>
-            <a href="ecurie.php" class="boutton_orange_accueil"><img src="ASSETS\ico\ico-obstacle.png">Mon écurie</a>
+            <a href="ecurie_description.php" class="boutton_orange_accueil"><img src="ASSETS\ico\ico-obstacle.png">Mon écurie</a>
             <a href="carnet_transport.php" class="boutton_vert"><img src="ASSETS\ico\ico-panneau.png">Je voyage</a>         
         </div>
     </div>

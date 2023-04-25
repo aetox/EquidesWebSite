@@ -49,4 +49,4 @@ Les contributions sont les bienvenues ! Pour contribuer au projet, veuillez soum
 
 ## Licence
 
-EquidesWebSite est un logiciel libre sous licence [INSERER_LICENCE_ICI]. Pour plus d'informations, consultez le fichier `LICENSE` inclus dans ce dépôt.
+EquidesWebSite est un logiciel libre. 

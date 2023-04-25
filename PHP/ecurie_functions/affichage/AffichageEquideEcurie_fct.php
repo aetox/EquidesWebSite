@@ -52,7 +52,7 @@ if (mysqli_num_rows($result) > 0) {
                                     <li class="list-group-item">UELN : <?php echo $uelnEquide ?></li>
                                     <li class="list-group-item">Propriétaire : <?php echo $nomProprietaire;?> <?php echo $prenomProprietaire ?></li>
                                     <li class="list-group-item">En pension depuis le <?php echo $epdd1;?> jusqu'au <?php echo $epdf1 ?></li>
-                                    <li class="modification list-group-item"><a href="#">PDF - Carnet de Santé</a></li>
+                                    <!-- <li class="modification list-group-item"><a href="#">PDF - Carnet de Santé</a></li> -->
                                     <li class="modification list-group-item" id="affichageEquides_info"><a  href="equide_description.php?sireEquide=<?php echo $rowData['sireEquide'];?>">plus d'info</a></li>
                         </ul> 
                 </div>

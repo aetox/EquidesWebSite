@@ -31,11 +31,17 @@ if(isset($_SESSION['id_detenteur'])){
         }
     }
 ?>
+<div class="ajout_ecurie">
+    <h1>Modifier mes informations</h1>
+    <div class="formulaire_1">
 
-    <form name="form_inscription" class="form_inscription" method="post" enctype="multipart/form-data">
+    <form name="form_inscription" class="formulaire_2" method="post" enctype="multipart/form-data">
+        
+        <a href="profil.php"><span class="material-symbols-outlined">close</span></a>
+        <br>
+        <label for="id_propriétaire">Vous :</label><strong><?php echo $nom;?> <?php echo $prenom ?></strong>
+        <br>
 
-
-        <h1>Modifier mes informations</h1>
 
         <!--Appelle la fonction affichageErreurs et affiche l'erreur sous forme de tableau  -->
         <?php include_once('PHP/other_functions/affichageErreurs.php');?>
@@ -61,6 +67,8 @@ if(isset($_SESSION['id_detenteur'])){
 
         <button type="submit" name="update" >Mettre à jour</button> 
     </form>
+    </div>
+</div>
 
 <?php } elseif(isset($_SESSION['id_proprietaire'])){ 
 

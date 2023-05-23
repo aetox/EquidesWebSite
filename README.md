@@ -31,7 +31,7 @@ Pour utiliser EquidesWebSite, vous aurez besoin des éléments suivants :
 
 2. Créez une base de données MySQL et importez le fichier `database.sql` pour créer les tables nécessaires.
 
-3. Configurez les paramètres de connexion à la base de données en modifiant le fichier `config.php`.
+3. Configurez les paramètres de connexion à la base de données en modifiant le fichier `/PHP/other_functions/connexion_bdd.php`.
 
 4. Accédez à l'URL de votre serveur web où vous avez cloné le dépôt et suivez les instructions pour terminer l'installation.
 

@@ -29,7 +29,7 @@ Pour utiliser EquidesWebSite, vous aurez besoin des éléments suivants :
    git clone https://github.com/aetox/EquidesWebSite.git
    ```
 
-2. Créez une base de données MySQL et importez le fichier `database.sql` pour créer les tables nécessaires.
+2. Créez une base de données MySQL et importez le fichier `dbs10369264.sql` pour créer les tables nécessaires.
 
 3. Configurez les paramètres de connexion à la base de données en modifiant le fichier `/PHP/other_functions/connexion_bdd.php`.
 
